@@ -6,19 +6,19 @@ const express = require("express"),
 	  routes  = require("./codebloc/routes/html-routes.js"), // html-routes for site navigation
 	  users   = require("./codebloc/routes/api-routes.js"); // api-routes for backend CRUD
 
-const mysql = require("mysql"), // mySQL driver
-	  Sequelize = require("sequelize"), // mySQL node.js ORM
-	  path = require("path"), // handles and transforms file paths
-	  logger = require("morgan"), // HTTP request logger middleware
-	  bodyParser = require("body-parser"), // body parsing middleware
+const mysql        = require("mysql"), // mySQL driver
+	  Sequelize    = require("sequelize"), // mySQL node.js ORM
+	  path         = require("path"), // handles and transforms file paths
+	  logger       = require("morgan"), // HTTP request logger middleware
+	  bodyParser   = require("body-parser"), // body parsing middleware
 	  cookieParser = require("cookie-parser"), // cookie parsing with signatures
-	  http = require("http"), // default http service
-	  fs        = require("fs"), // default filesystem utility
-	  debug = require("debug")("codebloc:server"), // debug utility
-	  moment = require("moment"), // date and time utility
+	  http         = require("http"), // default http service
+	  fs           = require("fs"), // default filesystem utility
+	  debug        = require("debug")("codebloc:server"), // debug utility
+	  moment       = require("moment"), // date and time utility
 
-
-now = moment().format(); // sets now to current time+date
+	  now = moment().format(); // sets now to current time+date
+// END const declarations //
 
 // var favicon = require("serve-favicon");
 
