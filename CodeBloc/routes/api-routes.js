@@ -18,7 +18,7 @@ router.route("/api/users")
 		var response = {};
 
 		User.find({}, function (err, data) {
-			// GET all data from mongo collection
+			
 			if (err) {
 				response = {"error": true, "message": "Error fetching data"};
 				console.error(err);
