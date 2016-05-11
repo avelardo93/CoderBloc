@@ -33,7 +33,6 @@ console.log("Hey!"); // log connection result
 console.log("Server Listening on " + PORT + " @ " + now);
 server.listen(PORT);
 server.on('error', onError);
-server.on('listening', onListening);
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
