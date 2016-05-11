@@ -1,0 +1,9 @@
+# www.robotstxt.org/
+
+# Allow Google Bot
+User-agent: Google
+Disallow:
+
+# Forbid all other bots
+User-agent: *
+Disallow: /

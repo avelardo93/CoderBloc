@@ -14,7 +14,7 @@ You'll Learn, We Promise®
 
 CodeBloc Deconstructed
 ----------------------
-* RCB centric coding/social message board. Focused on RCB and being local for now
+* RCB support network with message board, projects and live help. Focused on RCB and being local for now
 * Utilize the express router to provide GET, POST, PUT & DELETE Functionality
 * SEO Utilization meeting Google's basic guidelines
 * Unit Testing using Mocha with Chai assertion library
@@ -25,22 +25,23 @@ CodeBloc Deconstructed
 -------------------------
 Folder & File Structure
 -------------------------
-    -- node modules
-    -- tests(Unit Testing)
-    -- models(ORM/Schema)
-    -- views(HTML & View-Templates)
-      -- layouts
-    -- controllers(Angular Module/Controllers)
-    -- routes(Express Routing)
-      - html routes
-      - api routes
+    --CodeBloc
+      -- config(DB config)
+        - dbconnection.js
+      -- controllers(Angular Controllers)
+      -- models(ORM/Schema)
+      -- routes(Express Routing)
+        - html routes
+        - api routes
+      -- tests(Unit Testing)
+      -- views(HTML & View-Templates)
+        -- layouts
     -- public(Static Files & Client Side Code)
       -- assets
       -- stylesheets
       -- javascript
-        - app.js(Angular app)
-    -- config(DB config)
-      - dbconnection.js
+        - angular-app.js(Angular app)
+    -- node modules
     - package.json
     - server.js(Express Setup)
 
@@ -49,5 +50,5 @@ Folder & File Structure
 * User authentication done with the DB, GitHub, Google or other services
 
 * Migration strategy
-    - Cloning the DB and storing copies in desired format ~ Minimal Downtime
-    - Writing all the info to a second DB ~ No Downtime, More Space + initial "work"
+    - Cloning the DB and storing copies in desired format ~ Minimal downtime
+    - Writing all the info to a second DB ~ No Downtime, More space + initial "work"
