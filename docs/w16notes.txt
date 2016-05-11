@@ -14,3 +14,6 @@ Mariah, Kevin, Raghav, Anthony
 * Handlebars/Angular/Pug for template engine
 * Authentication with the DB
 * Migration strategy would be allowing people to the backend with a full API, remote connecting with workbench?
+
+* Social coding help site related to stackoverflow
+* 
