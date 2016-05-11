@@ -17,9 +17,11 @@ You'll Learn, We Promise®
 
 CodeBloc Deconstructed
 ----------------------
-* Social coding help site related to stackoverflow with a project room. Focused on RCB and being local for now
-* After complete see how we can integrate with other bootcamps
-* Utilize the express router to provide GET, POST, PUT & Delete Functionality
+"Bloc" - a combination of persons, groups, or nations forming a unit with a common interest or purpose
+------------------------------------------------------------------------------------------------------
+
+* RCB centric coding/social message board. Focused on RCB and being local for now
+* Utilize the express router to provide GET, POST, PUT & DELETE Functionality
 * SEO Utilization meeting Google's basic guidelines
 * Unit Testing using Mocha with Chai assertion library
 * Heroku + Provisioned DB. VPS afterwards and for testing + DB Backups
@@ -31,7 +33,6 @@ CodeBloc Deconstructed
     - package.json
     - server.js
 
-
 * HIGH QUALITY CODE STANDARDS. Utilize linters and the advanced IDE WebStorm
 * User authentication done with the DB, GitHub, Google or other services
 
@@ -41,6 +42,7 @@ CodeBloc Deconstructed
 
 * Use an existing API - Share APIs with the group consolidating RCB's info?
 * Slack or GitHub API? Something unique we can do with these since they are already used in the course?
+* After complete see how we can integrate with other bootcamps
 
 SITEMAP
 -------
