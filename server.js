@@ -2,7 +2,7 @@
  * Created by CodeBloc on 5/11/2016.
  */
 
-var express = require("express"),
+const express = require("express"),
 	routes  = require("./codebloc/routes/html-routes.js"), // html-routes for site navigation
 	users   = require("./codebloc/routes/api-routes.js"); // api-routes for backend CRUD
 
