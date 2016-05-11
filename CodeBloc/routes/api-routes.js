@@ -2,11 +2,9 @@
  * Created by CodeBloc on 5/11/2016.
  */
 
-const app    = require("app"),
-      router = express.Router(),
-	  express = require('express'),
-      path = require('path'),
-      User = require("User");
+const app     = require("app"),
+      router  = app.Router(),
+      User    = require("User");
 
 // TODO Needs to be adjusted for sequelize kevh-5/11 @ 5:55 PM //
 
