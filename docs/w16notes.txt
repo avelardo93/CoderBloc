@@ -1,0 +1,28 @@
+/**
+ * Created by kevo on 5/10/2016.
+ */
+
+Project 2
+---------
+
+Mariah, Kevin, Raghav, Anthony
+------------------------------
+//TODO
+* KEV - Start forum
+
+* Heroku + DB on VPS so we have control
+* Full routing with express router
+* Angular as new library? Not hard for basic stuff
+* Handlebars/Angular/Pug for template engine
+* Authentication with the DB
+* Migration strategy would be allowing people to the backend with a full API, remote connecting with workbench?
+
+* Social coding help site related to stackoverflow
+* Help Room - Get help and give help
+* Project Room - find other people interested in making an app with you
+* Panic Room - Last/Urgent help - Live chat?
+* Coder Connections - Connect with people for general coding
+* Angular as the new technology
+* Speak Ahmed about Slack access
+
+* After complete see how we can integrate with other bootcamps
