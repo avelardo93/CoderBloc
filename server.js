@@ -3,8 +3,8 @@
  */
 
 const express = require("express"),
-	routes  = require("./codebloc/routes/html-routes.js"), // html-routes for site navigation
-	users   = require("./codebloc/routes/api-routes.js"); // api-routes for backend CRUD
+	  routes  = require("./codebloc/routes/html-routes.js"), // html-routes for site navigation
+	  users   = require("./codebloc/routes/api-routes.js"); // api-routes for backend CRUD
 
 const mysql = require("mysql"), // mySQL driver
 	  Sequelize = require("sequelize"), // mySQL node.js ORM
