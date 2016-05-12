@@ -21,7 +21,7 @@ router.route("/api/users")
 
 			if (err) {
 				response = {"error": true, "message": "Error fetching data"};
-				console.error(err);
+				console.error(response);
 
 			} else {
 				response = {"error": false, "message": data};
@@ -48,7 +48,7 @@ router.route("/api/users/:id")
 
 			if(err) {
 				response = {"error" : true,"message" : "Error fetching data"};
-				console.error(err);
+				console.error(response);
 
 			} else {
 				response = {"error" : false,"message" : data};
@@ -94,7 +94,7 @@ router.route("/api/users/:id")
 				User.remove({_id : req.params.id},function(err){
 					if(err) {
 						response = {"error" : true,"message" : "Error deleting data"};
-						console.error(err);
+						console.error(response);
 					} else {
 						response = {"error" : true,"message" : "Data associated with " + req.params.id + "is deleted"};
 					}
