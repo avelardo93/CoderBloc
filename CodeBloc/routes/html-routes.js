@@ -27,3 +27,5 @@ router.use(function(req, res, then) {
 	res.sendFIle(path.join(process.cwd(), "public", "/404.html"))
 		.then(alert("WOOPSIE DAISY"));
 });
+
+module.exports = router;
