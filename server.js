@@ -7,7 +7,6 @@ const express = require("express"),
 	  users   = require("./codebloc/routes/api-routes.js"); // api-routes for backend CRUD
 
 const mysql        = require("mysql"), // mySQL driver
-	  Sequelize    = require("sequelize"), // mySQL node.js ORM
 	  path         = require("path"), // handles and transforms file paths
 	  logger       = require("morgan"), // HTTP request logger middleware
 	  bodyParser   = require("body-parser"), // body parsing middleware

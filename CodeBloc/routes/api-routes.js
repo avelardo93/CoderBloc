@@ -2,9 +2,9 @@
  * Created by CodeBloc on 5/11/2016.
  */
 
-const app     = require("app"),
-      router  = app.Router(),
-      User    = require("User");
+const express = require("express"),
+      router  = express.Router(),
+      User    = require("../models/model.js");
 
 // TODO Needs to be adjusted for sequelize kevh-5/11 @ 5:55 PM //
 
@@ -18,7 +18,7 @@ router.route("/api/users")
 		var response = {};
 
 		User.find({}, function (err, data) {
-			
+
 			if (err) {
 				response = {"error": true, "message": "Error fetching data"};
 				console.error(err);

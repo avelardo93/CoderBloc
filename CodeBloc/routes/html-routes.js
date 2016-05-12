@@ -4,8 +4,8 @@
 
 // TODO TESTING NAMING OF EXPRESS APP kevh- 5/11 @ 6:00 PM //
 
-const app     = require("app"),
-	  router  = app.Router();
+const express = require("express"),
+	  router  = express.Router();
 
 // GET index.html on initial site load
 router.get("/", function(req, res, then) {
