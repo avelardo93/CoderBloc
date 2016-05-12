@@ -44,15 +44,8 @@ app.use('/node_modules', express.static(__dirname + '/node_modules')); // define
 app.use(express.static(__dirname + '/public')); // define static route for client side static files
 
 // define routes. do it here then use the router? what's the best approach?
-app.get("/", routes);
-app.get("/survey", routes);
-app.get("/profile", routes);
-app.get("/api/users", users);
-app.get("/api/users/:id", users);
-app.post("/api/users", users);
-app.put("/api/users", users);
-app.put("/api/users/:id", users);
-app.delete("/api/users/:id", users);
+app.use("/", htmlRoutes);
+app.use("/api/users", apiRoutes);
 
 // BEGIN listeners/error handlers
 function normalizePort(val) {
