@@ -46,14 +46,14 @@ router.get("/contact", function(req, res, then) {
 // middleware to catch 404s. can create or template custom 404 page
 // this is different than the 404 handler in server.js
 router.use(function(req, res, then) {
-<<<<<<< HEAD
+
 	res.sendStatus(404);
-	res.sendFIle(path.join(process.cwd(), "public", "/404.html"))
-		.then(alert("WOOPSIE DAISY"));
-=======
+	// res.sendFIle(path.join(process.cwd(), "public", "/404.html"))
+	// 	.then(alert("WOOPSIE DAISY"));
+
 	res.sendFile(path.join(process.cwd(), "public", "/404.html"));
 	then(console.log("This is a promise!"));
->>>>>>> a0d1715c917755972ccd31bd60efdc8de170a850
+
 });
 
 module.exports = router;
