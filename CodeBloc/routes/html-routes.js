@@ -5,11 +5,12 @@
 // TODO TESTING NAMING OF EXPRESS APP kevh- 5/11 @ 6:00 PM //
 
 const express = require("express"),
-	  router  = express.Router();
+	  path    = require("path");
+const router  = express.Router();
 
 // GET index.html on initial site load
 router.get("/", function(req, res, then) {
-	res.sendFile(path.join(process.cwd(), "public", "/index.html)"));
+	res.sendFile(path.join(process.cwd(), "public", "/index.html"));
 });
 
 router.get("/signup", function(req, res, then) {
@@ -27,3 +28,5 @@ router.use(function(req, res, then) {
 	res.sendFIle(path.join(process.cwd(), "public", "/404.html"))
 		.then(alert("WOOPSIE DAISY"));
 });
+
+module.exports = router;

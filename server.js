@@ -2,9 +2,9 @@
  * Created by CodeBloc on 5/11/2016.
  */
 
-const express = require("express"),
-	  routes  = require("./codebloc/routes/html-routes.js"), // html-routes for site navigation
-	  users   = require("./codebloc/routes/api-routes.js"); // api-routes for backend CRUD
+const express      = require("express"),
+	  htmlRoutes   = require("./codebloc/routes/html-routes.js"), // html-routes for site navigation
+	  apiRoutes    = require("./codebloc/routes/api-routes.js"); // api-routes for backend CRUD
 
 const mysql        = require("mysql"), // mySQL driver
 	  path         = require("path"), // handles and transforms file paths
@@ -44,15 +44,15 @@ app.use('/node_modules', express.static(__dirname + '/node_modules')); // define
 app.use(express.static(__dirname + '/public')); // define static route for client side static files
 
 // define routes. do it here then use the router? what's the best approach?
-app.get("/", routes);
-app.get("/survey", routes);
-app.get("/profile", routes);
-app.get("/api/users", users);
-app.get("/api/users/:id", users);
-app.post("/api/users", users);
-app.put("/api/users", users);
-app.put("/api/users/:id", users);
-app.delete("/api/users/:id", users);
+app.get("/", htmlRoutes);
+app.get("/survey", htmlRoutes);
+app.get("/profile", htmlRoutes);
+app.get("/api/users", apiRoutes);
+app.get("/api/users/:id", apiRoutes);
+app.post("/api/users", apiRoutes);
+app.put("/api/users", apiRoutes);
+app.put("/api/users/:id", apiRoutes);
+app.delete("/api/users/:id", apiRoutes);
 
 // BEGIN listeners/error handlers
 function normalizePort(val) {
