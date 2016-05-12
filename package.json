@@ -3,6 +3,24 @@
   "version": "1.0.0",
   "description": "RCB Coding Support Network",
   "main": "server.js",
+  "maintainers": [
+    {
+      "name": "kevinh",
+      "email": "kevo548@gmail.com"
+    },
+    {
+      "name": "",
+      "email": ""
+    },
+	{
+	  "name": "",
+	  "email": ""
+	},
+	{
+	  "name": "",
+	  "email": ""
+	}
+  ],
   "directories": {
     "doc": "docs"
   },
@@ -30,7 +48,6 @@
     "SEQUELIZE",
     "API"
   ],
-  "author": "Raghav M, Anthony A, Mariah M, Kevin H",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/avelardo93/CodeBlock/issues"
