@@ -21,12 +21,16 @@ router.route("/api/users")
 
 			if (err) {
 				response = {"error": true, "message": "Error fetching data"};
-				console.error(response);
+				console.error(err);
 
-			} else {
+			}
+
+			else {
 				response = {"error": false, "message": data};
 			}
+
 			res.json(response);
+
 		});
 	})
 	.post(function(req,res) {
@@ -42,19 +46,22 @@ router.route("/api/users")
 // GET user by data id
 router.route("/api/users/:id")
 	.get(function(req,res) {
+
 		var response = {};
 
 		User.findById(req.params.id,function(err,data) {
 
 			if(err) {
 				response = {"error" : true,"message" : "Error fetching data"};
-				console.error(response);
+				console.error(err);
+			}
 
-			} else {
+			else {
 				response = {"error" : false,"message" : data};
 			}
 
 			res.json(response);
+
 		});
 	}) // UPDATE user data
 	.put(function(req,res){
@@ -67,7 +74,9 @@ router.route("/api/users/:id")
 				response = {"error" : true,"message" : "Error fetching data"};
 				console.error(err);
 
-			} else {
+			}
+
+			else {
 				data.save(function(err){
 					if(err) {
 						response = {"error" : true,"message" : "Error updating data"};
@@ -79,6 +88,7 @@ router.route("/api/users/:id")
 
 				res.json(req.body);
 			}
+			
 		});
 	}) // DELETE user data
 	.delete(function(req,res){
@@ -94,7 +104,7 @@ router.route("/api/users/:id")
 				User.remove({_id : req.params.id},function(err){
 					if(err) {
 						response = {"error" : true,"message" : "Error deleting data"};
-						console.error(response);
+						console.error(err);
 					} else {
 						response = {"error" : true,"message" : "Data associated with " + req.params.id + "is deleted"};
 					}
