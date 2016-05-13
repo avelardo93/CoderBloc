@@ -2,9 +2,9 @@
  * Created by CodeBloc on 5/11/2016.
  */
 
-const express = require("express"),
-	  routes  = require("./codebloc/routes/html-routes.js"), // html-routes for site navigation
-	  users   = require("./codebloc/routes/api-routes.js"); // api-routes for backend CRUD
+const express      = require("express"),
+	  htmlRoutes   = require("./codebloc/routes/html-routes.js"), // html-routes for site navigation
+	  apiRoutes    = require("./codebloc/routes/api-routes.js"); // api-routes for backend CRUD
 
 const mysql        = require("mysql"), // mySQL driver
 	  path         = require("path"), // handles and transforms file paths

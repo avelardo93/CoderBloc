@@ -1,0 +1,10 @@
+/*
+ * Created by kevo on 5/11/2016.
+ */
+
+
+FREENODE IRC EMBED FRAME
+------------------------
+<iframe src="http://webchat.freenode.net?channels=%23nodejs%2C%23
+javascript%2C%23mysql&uio=MTY9dHJ1ZSYyPXRydWUmND10cnVlJjk9dHJ1ZSY
+xMD10cnVlJjExPTI2NyYxNT10cnVl7a" width="647" height="400"></iframe>
