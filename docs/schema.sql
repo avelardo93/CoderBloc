@@ -52,3 +52,11 @@ ALTER TABLE `posts` ADD FOREIGN KEY(`post_topic`) REFERENCES `topics`(`topic_id`
 
 # link posts to topics, same scenario as the second foreign key
 ALTER TABLE `posts` ADD FOREIGN KEY(`post_by`) REFERENCES `users`(`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+# extended profile info
+ALTER TABLE `users` ADD `avatar` VARCHAR(256),
+ADD `user_rank` VARCHAR(60),
+ADD `user_realname` VARCHAR(60),
+ADD `user_postcount` INT(8),
+ADD `user_favlang` VARCHAR(60),
+ADD `user_about` VARCHAR(256);

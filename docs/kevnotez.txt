@@ -11,12 +11,30 @@
 * Noticed I had complete admin control on mySQL workbench. very cool.
 
                                 ~~~~~~~~~~~~~~~
-                                  mySQL SCHEMA
+                                    API DOCS
                                 ~~~~~~~~~~~~~~~
 
 HTTP SETUP FOR FORUM
 --------------------
+* Come up with IDs for all of the DB fields and documents this, will later be used and expanded upon for API JSDOCS
+* Modal buttons for new thread? reply? or will that get annoying if it disappears on a misclick?
 * Users don't need a DELETE method
+* Only admins can create categories
+
+                                ~~~~~~~~~~~~~~~
+                                  REGISTRATION
+                                ~~~~~~~~~~~~~~~
+
+* USERNAME (REGEX to only allow letters, numbers and underscores)
+  PASSWORD (REGEX to only allow ??)
+  CONFIRM PASSWORD
+  EMAIL (REGEX to verify it's an actual email, or use a service for this)
+
+*  1. Validate the user data
+   2. IF not valid, display error message and indicate error'd fields
+   3. If no erros and the data is valid, then save the user info into the user table
+
+* sha1 password hashing in suquelize after validation and pre input into user table
 
                                 ~~~~~~~~~~~~~~~
                                   mySQL SCHEMA
