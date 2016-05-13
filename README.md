@@ -28,7 +28,7 @@ Folder & File Structure
     --CodeBloc
       -- config(DB config)
         - dbconnection.js
-      -- controllers(Angular Controllers)
+      -- controllers
       -- models(ORM/Schema)
       -- routes(Express Routing)
         - html routes
@@ -40,7 +40,6 @@ Folder & File Structure
       -- assets
       -- stylesheets
       -- javascript
-        - angular-app.js(Angular app)
     -- node modules
     - package.json
     - server.js(Express Setup)
