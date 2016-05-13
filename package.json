@@ -12,14 +12,14 @@
       "name": "",
       "email": ""
     },
-	{
-	  "name": "",
-	  "email": ""
-	},
-	{
-	  "name": "",
-	  "email": ""
-	}
+    {
+      "name": "",
+      "email": ""
+    },
+    {
+      "name": "",
+      "email": ""
+    }
   ],
   "directories": {
     "doc": "docs"
