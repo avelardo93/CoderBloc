@@ -10,8 +10,13 @@
 ----
 * Noticed I had complete admin control on mySQL workbench. very cool.
 
+                                ~~~~~~~~~~~~~~~
+                                  mySQL SCHEMA
+                                ~~~~~~~~~~~~~~~
 
-
+HTTP SETUP FOR FORUM
+--------------------
+* Users don't need a DELETE method
 
                                 ~~~~~~~~~~~~~~~
                                   mySQL SCHEMA
@@ -20,6 +25,10 @@
 mySQL SCHEMA FOR USER ACCOUNTS
 ------------------------------
 * Have the mySQL query monitor on my server showing the query log live to the class in a snap window
+* USER LEVELS ~ 0 - user //// 1 - admin
+
+* The column in the referencing table the foreign key refers to must be a primary key
+* The values that are referred to must exist in the referenced table
 
 FIELDS
 -------
