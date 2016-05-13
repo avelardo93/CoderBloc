@@ -2,6 +2,21 @@
  * Created by kevo on 5/11/2016.
  */
 
+                                ~~~~~~~~~~~~~~~
+                                     NOTEz
+                                ~~~~~~~~~~~~~~~
+
+5/13
+----
+* Noticed I had complete admin control on mySQL workbench. very cool.
+
+
+
+
+                                ~~~~~~~~~~~~~~~
+                                  mySQL SCHEMA
+                                ~~~~~~~~~~~~~~~
+
 mySQL SCHEMA FOR USER ACCOUNTS
 ------------------------------
 * Have the mySQL query monitor on my server showing the query log live to the class in a snap window
@@ -10,7 +25,7 @@ FIELDS
 -------
 
 USER TABLE
-------------
+----------
 USER TABLE ON CREATION
 ----------------------
 * userId - (PRIMARY KEY)
@@ -20,9 +35,9 @@ USER TABLE ON CREATION
 
 PROFILE FOR POST CREATION
 -------------------------
-* Registartion Date
-* avatar
+* Registration Date
 * postCount - this is incremented in the logic controller when someone POSTS a... new post or thread
+* avatar
 * session - the RCB session you are in
 * realName
 * location
@@ -45,10 +60,11 @@ GET HELP
 --------
 
 PROJECT TABLE
--------
+-------------
 
-
-
+                                ~~~~~~~~~~~~~~~
+                                   SEQUELIZE
+                                ~~~~~~~~~~~~~~~
 
 const Sequelize = require("sequelize"); // mySQL node.js ORM
 const db = new Sequelize("mysql://username:pass@host:port/dbname");
