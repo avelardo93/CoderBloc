@@ -8,15 +8,47 @@ mySQL SCHEMA FOR USER ACCOUNTS
 
 FIELDS
 -------
+
+USER TABLE
+------------
+USER TABLE ON CREATION
+----------------------
+* userId - (PRIMARY KEY)
+* userName - (UNIQUE)
 * emailAddr (UNIQUE, PRIMARY, AUTO INC)
-* realName
-* userName
-* passWord - hashed * salted (mmmm)
+* password - hashed * salted (mmmm)
+
+PROFILE FOR POST CREATION
+-------------------------
+* Registartion Date
 * avatar
 * postCount - this is incremented in the logic controller when someone POSTS a... new post or thread
 * session - the RCB session you are in
+* realName
 * location
 * favLang
+
+FORUM TABLES
+------------
+THREAD TABLE
+------------
+
+POST TABLE
+----------
+
+HELP ROOM TABLES
+----------------
+GIVE HELP
+---------
+
+GET HELP
+--------
+
+PROJECT TABLE
+-------
+
+
+
 
 const Sequelize = require("sequelize"); // mySQL node.js ORM
 const db = new Sequelize("mysql://username:pass@host:port/dbname");
