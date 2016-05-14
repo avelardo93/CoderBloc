@@ -18,6 +18,9 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/t/bs-3.3.6/jq-2.2.0,dt-1.10.11,af-2.1.1,b-1.1.2/datatables.min.css"/>
 	<link rel="stylesheet" href="assets/stylesheets/main.css">
+
+	<!-- Add Angular -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
 
 <body>
@@ -29,7 +32,7 @@
 
 		<!-- BEGIN navbar -->
 
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navBar">
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -38,15 +41,15 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<span id="navText">CodeBloc</span> 
+				<a class="navbar-brand" href="#">CodeBloc</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="badge btnColor">Login</span></a></li>
-					<li><a href="#"><span class="badge btnColor">Register</span></a></li>
+					<li><a href="#" data-toggle="modal" data-target="#loginModal"><span class="badge btnColor">Login</span></a></li>
+					<li><a href="#" data-toggle="modal" data-target="#registerModal"><span class="badge btnColor">Register</span></a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</nav> <!-- END navbar -->
@@ -67,8 +70,16 @@
 	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="roomChoice"> <!-- content -->
 		<div id="helpRoom">
 			<h2> HELP ROOM </h2>
-				<span id=helpDescr>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur rem quod esse corrupti, omnis necessitatibus culpa mollitia, nobis reiciendis amet, eius. Nihil dignissimos incidunt, ut voluptatibus, iure iusto quos eligendi!
+				<span id="helpDescr">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur rem quod esse corrupti, omnis necessitatibus culpa mollitia, nobis reiciendis amet, eius. Nihil dignissimos incidunt, ut voluptatibus, iure iusto quos eligendi
+					<div class="buttons">
+						
+					
+					  <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#studHelpModal">Get Help</button><span>
+					  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#helperModal">Be a Helper</button>	
+					  </span>
+					  
+					  </div>
 				</span>
 		</div>
 
@@ -97,6 +108,241 @@
 		
 	</div>
 </div>
+
+
+
+<!-- Mariah : added modal for register and login -->
+
+<!-- Modal for REGISTER -->
+<div id="regModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Please fill out your information below</h4>
+      </div>
+      <div class="modal-body">
+
+		<form>
+		  <div class="form-group">
+		    <label for="regEmail">Email:</label>
+		    <input type="email" class="form-control" id="regEmail" placeholder="John@AOL.com">
+		  </div>			
+		  <div class="form-group">
+		    <label for="regUserName">User Name:</label>
+		    <input type="text" class="form-control" id="regUserName" placeholder="User Name">
+		  </div>
+		  <div class="form-group">
+		    <label for="regPassword">Password:</label>
+		    <input type="password" class="form-control" id="regPassword" placeholder="Password">
+		  </div>
+			
+		  <!-- <button type="submit" class="btn btn-default" id="register">Register</button> -->
+		</form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-default" data-dismiss="modal" id="register">Register</button>
+      </div>
+    </div> 
+
+  </div><!-- end modal -->
+</div>
+
+<!-- Modal for login -->
+<div id="loginModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Welcome Back</h4>
+      </div>
+      <div class="modal-body">
+			
+		<form>			
+		  <div class="form-group">
+		    <label for="loginUserName">User Name:</label>
+		    <input type="text" class="form-control" id="loginUserName" placeholder="User Name">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">Password:</label>
+		    <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+		  </div>
+
+		  <!-- <button type="submit" class="btn btn-default" id="login">Login</button> -->
+		</form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-default" data-dismiss="modal" id="login">Login</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal for students requesting help -->
+<div id="studHelpModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Fill out the form to receive help</h4>
+      </div>
+      <div class="modal-body">
+			
+		<form>			
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Your Name:</label>
+		    <input type="text" class="form-control" id="studName" placeholder="Your Name">
+		  </div>
+			<h4>What do you need help with?</h3>
+		  <div class="checkbox">
+		    <label>
+		      <input type="checkbox" value="html">HTML
+		    </label>
+		    <label>
+		      <input type="checkbox" value="express">Git
+		    </label>
+		    <label>
+		      <input type="checkbox" value="css">CSS
+		    </label>
+		    <label>
+		      <input type="checkbox" value="javascript">Javascript/JQuery
+		    </label>	
+		    <label>
+		      <input type="checkbox" value="node">Node.js
+		    </label>
+		    <label>
+		      <input type="checkbox" value="express">Express
+		    </label>	    		    		    		    	    		    
+		  </div>
+
+
+		  <h4>What day(s) are you available?</h4>
+
+		  <div class="checkbox">
+		    <label>
+		      <input type="checkbox" value="monday">Monday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="tuesday">Tuesday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="wednesday">Wednesday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="thursday">Thursday
+		    </label>	
+		    <label>
+		      <input type="checkbox" value="friday">Friday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="saturday">Saturday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="sunday">Sunday
+		    </label>	    		    		    		    	    		    
+		  </div>
+
+		  <!-- <button type="submit" class="btn btn-default" id="login">Submit</button> -->
+		</form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-default" data-dismiss="modal" id="login">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal for helper signup-->
+<div id="helperModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Complete form to be a helper</h4>
+      </div>
+      <div class="modal-body">
+			
+		<form>			
+		  <div class="form-group">
+		    <label for="helperName">Name:</label>
+		    <input type="text" class="form-control" id="helperName" placeholder="Your Name">
+		  </div>
+			  
+			<h4>What can you  help with?</h3>
+		  <div class="checkbox">
+		    <label>
+		      <input type="checkbox" value="html">HTML
+		    </label>
+		    <label>
+		      <input type="checkbox" value="express">Git
+		    </label>
+		    <label>
+		      <input type="checkbox" value="css">CSS
+		    </label>
+		    <label>
+		      <input type="checkbox" value="javascript">Javascript/JQuery
+		    </label>	
+		    <label>
+		      <input type="checkbox" value="node">Node.js
+		    </label>
+		    <label>
+		      <input type="checkbox" value="express">Express
+		    </label>	    		    		    		    	    		    
+		  </div>			
+
+
+		<h4>What day(s) are you available?</h4>
+
+		  <div class="checkbox">
+		    <label>
+		      <input type="checkbox" value="monday">Monday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="tuesday">Tuesday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="wednesday">Wednesday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="thursday">Thursday
+		    </label>	
+		    <label>
+		      <input type="checkbox" value="friday">Friday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="saturday">Saturday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="sunday">Sunday
+		    </label>	    		    		    		    	    		    
+		  </div>
+		</form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="helperSubmit">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- End Mariah's code -->
 
 
 </body>
