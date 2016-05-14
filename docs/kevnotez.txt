@@ -10,9 +10,18 @@
 ----
 * Noticed I had complete admin control on mySQL workbench. very cool.
 
+5/14
+----
+* Help buttons will add users to the give help/ get help tables
+* Picture pops up with match
+* Try to get a forum thread created on submit
+* If not matches, go to help forum
+*
+
                                 ~~~~~~~~~~~~~~~
                                     API DOCS
                                 ~~~~~~~~~~~~~~~
+
 
 HTTP SETUP FOR FORUM
 --------------------
@@ -40,6 +49,8 @@ HTTP SETUP FOR FORUM
                                   mySQL SCHEMA
                                 ~~~~~~~~~~~~~~~
 
+
+
 mySQL SCHEMA FOR USER ACCOUNTS
 ------------------------------
 * Have the mySQL query monitor on my server showing the query log live to the class in a snap window
@@ -49,7 +60,7 @@ mySQL SCHEMA FOR USER ACCOUNTS
 * The values that are referred to must exist in the referenced table
 
 FIELDS
--------
+------
 
 USER TABLE
 ----------
