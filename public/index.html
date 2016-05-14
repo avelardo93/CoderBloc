@@ -18,9 +18,15 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/t/bs-3.3.6/jq-2.2.0,dt-1.10.11,af-2.1.1,b-1.1.2/datatables.min.css"/>
 	<link rel="stylesheet" href="assets/stylesheets/main.css">
+
+	<!-- Add Angular -->
+
 </head>
 
-<body>
+<body ng-app="CodeBloc" ng-controller="signUpCtrl">
+
+<div class="row">
+	
 <div class="wrapper">
 	<div class="container">
 
@@ -40,46 +46,324 @@
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">Boards</a></li>
-					<li><a href="#">Projects</a></li>
-				</ul>
-				<div id="search">
-					<form class="navbar-form navbar-left" role="search">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search CodeBloc...">
-						</div>
-						<button type="submit" class="btn btn-default fa fa-search"></button>
-					</form>
-				</div>
+				
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="badge btnColor">Login</span></a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="_blank">Profile</a></li>
-							<li><a href="Boop">Settings</a></li>
-							<li><a href="Boop">Chat</a></li>
-							<li><a href="#">Email Support</a></li>
-						</ul>
-					</li>
+					<li><a href="#" data-toggle="modal" data-target="#loginModal"><span class="badge btnColor">Login</span></a></li>
+					<li><a href="#registerModal" data-toggle="modal" data-target="#regModal"><span class="badge btnColor">Register</span></a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</nav> <!-- END navbar -->
 
 
+
 	</div> <!-- END initial container -->
+
+
 </div> <!-- END initial wrapper -->
+</div> <!-- END initial row -->
+
+<div class="row"> <!-- Beginning second row -->
+	<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+	
+	</div>
+
+	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="roomChoice"> <!-- content -->
+		<div id="helpRoom">
+			<h2> HELP ROOM </h2>
+				<span id="helpDescr">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur rem quod esse corrupti, omnis necessitatibus culpa mollitia, nobis reiciendis amet, eius. Nihil dignissimos incidunt, ut voluptatibus, iure iusto quos eligendi
+					<div class="buttons">
+						
+					
+					  <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#studHelpModal">Get Help</button><span>
+					  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#helperModal">Be a Helper</button>	
+					  </span>
+					  
+					  </div>
+				</span>
+		</div>
+
+		<div id="projectRoom">
+			<h2> PROJECT ROOM </h2>
+				<span id="projDescr">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos consectetur ipsa nam fuga nostrum eligendi reprehenderit dolorum id, vitae? Maxime dolore fugiat similique minima iure beatae facilis temporibus veritatis aperiam!
+				</span>
+		</div>
+
+		<div id="panicRoom">
+			<h2> PANIC ROOM </h2>
+				<span id="panicDescr">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem harum, exercitationem est placeat ullam quod distinctio ipsum odit commodi tenetur rem repellat, quos fugiat aperiam, accusamus itaque! Et earum, in.
+				</span>
+		</div>
+
+		<div id="coderConnections">
+			<h2> CODER CONNECTIONS </h2>
+				<span id="codeDescr">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid soluta, tempora deleniti quam modi iure a nesciunt, hic aut quis nisi recusandae, totam. Maiores voluptatibus tenetur, illo, itaque sint temporibus.
+				</span>
+		</div>
+
+
+		
+	</div>
+</div>
+
+
+
+<!-- Mariah : added modal for register and login -->
+
+
+
+
+<!-- Modal for REGISTER -->
+<div id="regModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Please fill out your information below</h4>
+      </div>
+      <div class="modal-body">
+
+		<form ng-submit="createUser()">
+		  <div class="form-group">
+		    <label for="regEmail">Email:</label>
+		    <input ng-model="formData.email" type="email" class="form-control" id="regEmail" placeholder="John@AOL.com">
+		  </div>			
+		  <div class="form-group">
+		    <label for="regUserName">User Name:</label>
+		    <input type="text" ng-model="formData.userName" class="form-control" id="regUserName" placeholder="User Name">
+		  </div>
+		  <div class="form-group">
+		    <label for="regPassword">Password:</label>
+		    <input type="password" ng-model="formData.password"  class="form-control" id="regPassword" placeholder="Password">
+		  </div>
+			
+		  <!-- <button type="submit" class="btn btn-default" id="register">Register</button> -->
+		</form>
+
+
+      </div>
+      <div>
+      	{{formData}}
+      </div>
+      <div class="modal-footer">
+        <button type="submit" ng-click="createUser()" class="btn btn-default" data-dismiss="modal" id="register">Register</button>
+      </div>
+    </div> 
+
+  </div><!-- end modal -->
+</div>
+
+<!-- Modal for login -->
+<div id="loginModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Welcome Back</h4>
+      </div>
+      <div class="modal-body">
+			
+		<form>			
+		  <div class="form-group">
+		    <label for="loginUserName">User Name:</label>
+		    <input type="text" class="form-control" id="loginUserName" placeholder="User Name">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">Password:</label>
+		    <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+		  </div>
+			
+		  <!-- <button type="submit" class="btn btn-default" id="login">Login</button> -->
+		</form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-default" data-dismiss="modal" id="login">Login</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal for students requesting help -->
+<div id="studHelpModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Fill out the form to receive help</h4>
+      </div>
+      <div class="modal-body">
+			
+		<form>			
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Your Name:</label>
+		    <input type="text" class="form-control" id="studName" placeholder="Your Name">
+		  </div>
+			<h4>What do you need help with?</h3>
+		  <div class="checkbox">
+		    <label>
+		      <input type="checkbox" value="html">HTML
+		    </label>
+		    <label>
+		      <input type="checkbox" value="express">Git
+		    </label>
+		    <label>
+		      <input type="checkbox" value="css">CSS
+		    </label>
+		    <label>
+		      <input type="checkbox" value="javascript">Javascript/JQuery
+		    </label>	
+		    <label>
+		      <input type="checkbox" value="node">Node.js
+		    </label>
+		    <label>
+		      <input type="checkbox" value="express">Express
+		    </label>	    		    		    		    	    		    
+		  </div>
+
+
+		  <h4>What day(s) are you available?</h4>
+
+		  <div class="checkbox">
+		    <label>
+		      <input type="checkbox" value="monday">Monday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="tuesday">Tuesday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="wednesday">Wednesday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="thursday">Thursday
+		    </label>	
+		    <label>
+		      <input type="checkbox" value="friday">Friday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="saturday">Saturday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="sunday">Sunday
+		    </label>	    		    		    		    	    		    
+		  </div>
+
+		  <!-- <button type="submit" class="btn btn-default" id="login">Submit</button> -->
+		</form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-default" data-dismiss="modal" id="login">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal for helper signup-->
+<div id="helperModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Complete form to be a helper</h4>
+      </div>
+      <div class="modal-body">
+			
+		<form>			
+		  <div class="form-group">
+		    <label for="helperName">Name:</label>
+		    <input type="text" class="form-control" id="helperName" placeholder="Your Name">
+		  </div>
+			  
+			<h4>What can you  help with?</h3>
+		  <div class="checkbox">
+		    <label>
+		      <input type="checkbox" value="html">HTML
+		    </label>
+		    <label>
+		      <input type="checkbox" value="express">Git
+		    </label>
+		    <label>
+		      <input type="checkbox" value="css">CSS
+		    </label>
+		    <label>
+		      <input type="checkbox" value="javascript">Javascript/JQuery
+		    </label>	
+		    <label>
+		      <input type="checkbox" value="node">Node.js
+		    </label>
+		    <label>
+		      <input type="checkbox" value="express">Express
+		    </label>	    		    		    		    	    		    
+		  </div>			
+
+
+		<h4>What day(s) are you available?</h4>
+
+		  <div class="checkbox">
+		    <label>
+		      <input type="checkbox" value="monday">Monday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="tuesday">Tuesday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="wednesday">Wednesday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="thursday">Thursday
+		    </label>	
+		    <label>
+		      <input type="checkbox" value="friday">Friday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="saturday">Saturday
+		    </label>
+		    <label>
+		      <input type="checkbox" value="sunday">Sunday
+		    </label>	    		    		    		    	    		    
+		  </div>
+		</form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="helperSubmit">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- End Mariah's code -->
+
+
 </body>
 
 <!-- BEGIN scripts -->
 <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+<script src="assets/javascript/app.js" type="text/javascript"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../node_modules/angular/angular.js"></script>
 <script src="../node_modules/angular-route/angular-route.js"></script>
-<script type="text/javascript" src="assets/javascript/angular-app.js"></script> <!-- Angular Module and Service Initialization -->
+<script src="../CodeBloc/controllers/sign-up-ctrl.js"></script>
+<!-- <script type="text/javascript" src="assets/javascript/angular-app.js"></script>  --><!-- Angular Module and Service Initialization
 <script type="text/javascript" src="../codebloc/controllers/sign-up-ctrl.js"></script> <!-- Angular Controller for user account creation -->
 <!-- END scripts -->
-
+<!-- 
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+ -->
 </html>

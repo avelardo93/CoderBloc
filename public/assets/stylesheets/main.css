@@ -5,8 +5,52 @@ body, html{height: 100%;}
 html {
 	-webkit-tap-highlight-color:transparent;
 }
+/* END stop blue highlighting of elements */
 
 button:focus {
 	outline:0;
 }
-/* END stop blue highlighting of elements */
+
+body {
+	background-image: url("../images/Technique-for-Faster-Web-Development-1.jpg");
+}
+
+#roomChoice {
+	margin-top: 200px;
+	padding: 10px;
+	border: 5px solid black;
+	background: rgba(32,32,32, 0.5);
+	color: white;
+}
+
+h2 {
+	text-align: center;	
+}
+
+#helpRoom {
+	border: 1px solid black;
+	margin-bottom: 5px;	
+}
+
+#projectRoom {
+	border: 1px solid black;
+	margin-bottom: 5px;	
+
+}
+
+#panicRoom {
+	border: 1px solid black;
+	margin-bottom: 5px;	
+}
+
+#coderConnections {
+	border: 1px solid black;
+}
+
+/*Mariah's Style: */
+
+.buttons{
+	text-align: center;
+}
+
+
