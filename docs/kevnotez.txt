@@ -48,6 +48,7 @@ mySQL SCHEMA FOR USER ACCOUNTS
 * The column in the referencing table the foreign key refers to must be a primary key
 * The values that are referred to must exist in the referenced table
 
+
 FIELDS
 -------
 
@@ -92,6 +93,10 @@ PROJECT TABLE
                                 ~~~~~~~~~~~~~~~
                                    SEQUELIZE
                                 ~~~~~~~~~~~~~~~
+* Sequelize.TEXT ~ this allows large amounts of text in a column. might be great for posts?
+* Can add validation logic functions in the validation field of a model
+* findOrCreate() ~ create only if doesn't exist, similar to a unique key
+
 
 const Sequelize = require("sequelize"); // mySQL node.js ORM
 const db = new Sequelize("mysql://username:pass@host:port/dbname");
