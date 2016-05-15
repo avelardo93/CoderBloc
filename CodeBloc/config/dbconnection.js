@@ -1,13 +1,24 @@
 /*
  * Created by CodeBloc on 5/11/2016.
  */
+const server = require("../../server.js");
 
-const app = require("app"); // require initial server connection
-
-var db = new Sequelize('mysql://user:pass@example.com:27015/dbname', { // initiate mySQL DB connection with sequelize
+var Sequelize = require("sequelize");
+var   db = new Sequelize("Bamazon", "root", "$S0LdIeRsQl!@#", {
+	host: "localhost",
+	port: 3306,
+	dialect: "mysql",
 	define: {
 		timestamps: true // true by default. these can be set on every sequelize .define
 	}
 });
 
-module.exports = db; // make the DB connection available elsewhere
+db.authenticate().then(function (err) {
+	if (err) {
+		console.error("ERROR, Please check your connection");
+	} else {
+		console.log("Connection Successful!");
+	}
+});
+
+module.exports = db;

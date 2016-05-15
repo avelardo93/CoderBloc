@@ -93,9 +93,11 @@ PROJECT TABLE
                                 ~~~~~~~~~~~~~~~
                                    SEQUELIZE
                                 ~~~~~~~~~~~~~~~
+
 * Sequelize.TEXT ~ this allows large amounts of text in a column. might be great for posts?
 * Can add validation logic functions in the validation field of a model
 * findOrCreate() ~ create only if doesn't exist, similar to a unique key
+* Can add regex and other things as sequelize model params after everything is working
 
 
 const Sequelize = require("sequelize"); // mySQL node.js ORM
