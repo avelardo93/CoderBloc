@@ -6,9 +6,11 @@
 const Sequelize = require("sequelize");
 const db = require("../config/dbconnection.js"); // connection to the db
 
-var Categories = require("./category-model.js");
+const   Categories = require("./category-model.js"),
+		Threads    = require("./thread-model.js"),
+		Posts      = require("./post-model.js");
 
-var Users = db.define("users", { // user table model
+var Users = db.define("users", {
 
 	userId: {
 		type: Sequelize.INTEGER,
@@ -67,14 +69,14 @@ var Users = db.define("users", { // user table model
 
 Users.sync({force:false})
 	.then(Categories.sync({force:false}))
+	.then(Threads.sync({force:false}))
+	.then(Posts.sync({force:false}))
 	.then(function (err) { // sync the table with the db, IF it doesn't exist it will be created
-	if(err){
-		console.error("ERROR - " + err); // for some reason, an error is being thrown on table creation every time. still succeeds though.
-	}
+		if (err) {
+			console.error("ERROR - " + err); // for some reason, an error is being thrown on table creation every time. still succeeds though.
+		}
 
-	else{
-		console.log("Table Created Successfully");
-	}
-});
-
-module.exports = Users;
+		else {
+			console.log("Table Created Successfully");
+		}
+	});

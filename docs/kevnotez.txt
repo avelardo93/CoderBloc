@@ -100,6 +100,9 @@ PROJECT TABLE
                                    SEQUELIZE
                                 ~~~~~~~~~~~~~~~
 
+* Setup foreign keys after site is setup
+* Try to make one single sync file, it isn't seeing the connection though
+* See which date works better. the Sequelize.DATE or the one it creates default
 * Sequelize.TEXT ~ this allows large amounts of text in a column. might be great for posts?
 * Can add validation logic functions in the validation field of a model
 * findOrCreate() ~ create only if doesn't exist, similar to a unique key

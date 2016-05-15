@@ -5,30 +5,40 @@
 const Sequelize = require("sequelize");
 const db = require("../config/dbconnection.js"); // connection to the db
 
-var Categories = db.define("categories", {
+var Threads = db.define("threads", {
 
-	catId: {
+	threadId: {
 		type: Sequelize.INTEGER,
-		field: "category_id",
+		field: "thread_id",
 		allowNull: false,
 		autoIncrement: true,
 		primaryKey: true
 	},
 
-	catName: {
+	threadName: {
 		type: Sequelize.STRING,
-		field: "category_name",
+		field: "thread_name",
 		allowNull: false,
 		unique: true
 	},
-	
-	catDescription: {
+
+	threadCat: {
 		type: Sequelize.STRING,
-		field: "category_description"
+		field: "thread_category"
+	},
+
+	threadAuthor: {
+		type: Sequelize.STRING,
+		field: "thread_author"
+	},
+
+	threadDate: {
+		type: Sequelize.DATE,
+		field: "thread_date"
 	}
 
 }, {
 	freezeTableName: true
 });
 
-module.exports = Categories;
+module.exports = Threads;
