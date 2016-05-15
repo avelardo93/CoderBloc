@@ -1,3 +1,4 @@
+# noinspection SqlNoDataSourceInspectionForFile
 CREATE DATABASE IF NOT EXISTS `codebloc`;
 
 USE codebloc;
@@ -7,7 +8,7 @@ CREATE TABLE users (
 	`user_name`   VARCHAR(30) NOT NULL,
 	`user_pass`   VARCHAR(255) NOT NULL,
 	`user_email`  VARCHAR(255) NOT NULL,
-	`user_date`   DATETIME NOT NULL,
+	`user_date`   DATETIME NOT NULL
 	`user_level`  INT(8) NOT NULL,
 	UNIQUE INDEX `user_email_unique` (`user_name`, `user_email`),
 	PRIMARY KEY (`user_id`)

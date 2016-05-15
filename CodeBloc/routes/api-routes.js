@@ -4,7 +4,7 @@
 
 const express = require("express"),
       router  = express.Router(),
-      User    = require("../models/model.js");
+      User    = require("../models/user-model.js");
 
 // TODO Needs to be adjusted for sequelize kevh-5/11 @ 5:55 PM //
 
