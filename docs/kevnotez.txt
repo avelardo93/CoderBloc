@@ -37,6 +37,12 @@ HTTP SETUP FOR FORUM
 * sha1 password hashing in suquelize after validation and pre input into user table
 
                                 ~~~~~~~~~~~~~~~
+                                  HELP SURVEY
+                                ~~~~~~~~~~~~~~~
+
+* mySQL doesn't support arrays. will make another table for answers and make it a foreign key of user_id
+
+                                ~~~~~~~~~~~~~~~
                                   mySQL SCHEMA
                                 ~~~~~~~~~~~~~~~
 
@@ -94,35 +100,79 @@ PROJECT TABLE
                                    SEQUELIZE
                                 ~~~~~~~~~~~~~~~
 
+* Setup foreign keys after site is setup
+* Try to make one single sync file, it isn't seeing the connection though
+* See which date works better. the Sequelize.DATE or the one it creates default
 * Sequelize.TEXT ~ this allows large amounts of text in a column. might be great for posts?
 * Can add validation logic functions in the validation field of a model
 * findOrCreate() ~ create only if doesn't exist, similar to a unique key
 * Can add regex and other things as sequelize model params after everything is working
+* Singular names for sequelize models and define a plural name for the db?
+
+// Create the tables:
+Project.sync()
+Task.sync()
+
+// Force the creation!
+Project.sync({force: true}) // this will drop the table first and re-create it afterwards
+
+// drop the tables:
+Project.drop()
+Task.drop()
+
+// event handling:
+Project.[sync|drop]().then(function() {
+  // ok ... everything is nice!
+}).catch(function(error) {
+  // oooh, did you enter wrong database credentials?
+})
+
+// Sync all models that aren't already in the database
+sequelize.sync()
+
+// Force sync all models
+sequelize.sync({force: true})
+
+// Drop all tables
+sequelize.drop()
+
+// emit handling:
+sequelize.[sync|drop]().then(function() {
+  // woot woot
+}).catch(function(error) {
+  // whooops
+})
+
+                                ~~~~~~~~~~~~~~~
+                                  PASS HASHING
+                                ~~~~~~~~~~~~~~~
+
+npm install passport
+npm install bcrypt ~ IF YOU HAVE PROBLEMS INSTALL MS VISUAL STUDIO COMMUNITY 2015 with all the language packs
+
+http://www.techonthenet.com/mysql/functions/password.php ~ mySQL password syntax
+
+"They are different things bcrypt work factor prevents brute forcing the passwords stored on the server.
+When someone breaks into your system they will not be able to run a brute force and crack all the passwords of your users, since people tend
+to use same passwords all over the place this is very useful. Passwords are also salted. First link explains it better then I can"
+
+"I would recommend using the default 10 rounds when "salting", bcrypt.hash('password', 10, func .."
+
+SET @salt := CONV(FLOOR(RAND() * 0x100000000), 10, 16)
 
 
-const Sequelize = require("sequelize"); // mySQL node.js ORM
-const db = new Sequelize("mysql://username:pass@host:port/dbname");
+MYSQL SALTING
+-------------
+UPDATE  passwords
+SET     password = CONCAT(@salt, SHA(CONCAT(@salt, @typed_password)))
 
+SELECT  1
+FROM    passwords
+WHERE   SHA(CONCAT(SUBSTRING(password, 1, 8), @typed_password)) = SUBSTRING(password, 9, 40)
 
-const User = db.define('user', { // create new table in the DB
-	firstName: {
-		type: db.STRING,
-		field: 'first_name' // will result in an attribute that is firstName when user facing but first_name in the database
-	},
-	lastName: {
-		type: db.STRING,
-		field: 'last_name'
-	}
-}, {
-	freezeTableName: true // model tableName will be the same as the model name
-});
+                                ~~~~~~~~~~~~~~~
+                                  UNIT TESTING
+                                ~~~~~~~~~~~~~~~
 
-User.sync({force: true}).then(function () {
-	// table created
-	return User.create({
-		firstName: 'test',
-		lastName: 'noobertron5000'
-	});
-});
-
-module.exports = User;
+* Use Mocha or Chai?
+* Do it on post creation

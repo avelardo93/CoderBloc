@@ -1,10 +1,10 @@
 /*
  * Created by CodeBloc on 5/11/2016.
  */
-const server = require("../../server.js");
 
 var Sequelize = require("sequelize");
-var   db = new Sequelize("Bamazon", "root", "$S0LdIeRsQl!@#", {
+
+var   db = new Sequelize("codebloc", "root", "$S0LdIeRsQl!@#", {
 	host: "localhost",
 	port: 3306,
 	dialect: "mysql",
