@@ -41,11 +41,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use('/node_modules', express.static(__dirname + '/node_modules')); // define static route for node modules
+app.use('/CodeBloc/controllers', express.static(__dirname + '/CodeBloc/controllers')); // allows controllers to be used
 app.use(express.static(__dirname + '/public')); // define static route for client side static files
 
 // define routes. do it here then use the router? what's the best approach?
 app.use("/", htmlRoutes);
-app.use("/api/users", apiRoutes);
+app.get("/api/users", apiRoutes);
 
 // BEGIN listeners/error handlers
 function normalizePort(val) {

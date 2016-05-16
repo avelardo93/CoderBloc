@@ -4,7 +4,7 @@
 
 const express = require("express"),
       router  = express.Router(),
-      User    = require("../models/user-model.js");
+      Users   = require("../models/user-model.js");
 
 // TODO Needs to be adjusted for sequelize kevh-5/11 @ 5:55 PM //
 
@@ -14,121 +14,120 @@ const express = require("express"),
 // GET user data
 
 router.route("/api/users")
-	.get (function(req, res, next) { // calling next(); passes control to the next matching route
+	.get(function(req, res) { // calling next(); passes control to the next matching route
 
 		var response = {};
 
-		User.find({}, function (err, data) {
+		Users.findAll({raw: true})
+			.then(function(data) {
+				// if(err) {
+				// 	response = {"error" : true, "message" : "Error fetching data"};
+				// 	console.error(err);
+				// }
 
-			if (err) {
-				response = {"error": true, "message": "Error fetching data"};
-				console.error(err);
-			}
 
-			else {
-				response = {"error": false, "message": data};
-			}
-
-			res.json(response);
-
-		});
-
-	})
-	.post(function(req,res, next) {
-		var db = new User(req.body);
-
-		db.save(function(err){
-			if(err)
-				res.send(err);
-		});
-
-		return res; // this prevented the data from posting to the DB twice
-
-	});
-
-// GET user by data id
-router.route("/api/users/:id")
-	.get(function(req,res, next) {
-
-		var response = {};
-
-		User.findById(req.params.id,function(err,data) {
-
-			if(err) {
-				response = {"error" : true,"message" : "Error fetching data"};
-				console.error(err);
-			}
-
-			else {
-				response = {"error" : false,"message" : data};
-			}
-
-			res.json(response);
-
-		});
-
-	}) // UPDATE user data
-	.put(function(req,res, next){
-
-		var response = {};
-
-		User.findById(req.params.id,function(err,data) {
-
-			if(err) {
-				response = {"error" : true,"message" : "Error fetching data"};
-				console.error(err);
-			}
-
-			else {
-
-				data.save(function(err){
-					if(err) {
-						response = {"error" : true,"message" : "Error updating data"};
-						console.error(err);
-					}
-
-					else {
-						response = {"error" : false,"message" : "Data is updated for " + req.params.id};
-					}
-
-				});
-
-				res.json(req.body);
-			}
-
-		});
-
-	}) // DELETE user data
-	.delete(function(req,res, next){
-		var response = {};
-
-		User.findById(req.params.id,function(err,data){
-
-			if(err) {
-				response = {"error" : true,"message" : "Error fetching data"};
-				console.error(err);
-			}
-
-			else {
-
-				User.remove({_id : req.params.id},function(err){
-					if(err) {
-						response = {"error" : true,"message" : "Error deleting data"};
-						console.error(err);
-					}
-
-					else {
-						response = {"error" : true,"message" : "Data associated with " + req.params.id + "is deleted"};
-					}
-
+					response = {"error" : false, "message" : data};
 					res.json(response);
 
-				});
-
-			}
-
-		});
-
-	});
+				console.log(response);
+				// console.log(result.dataValues.userId);
+	})
+});
+// 	.post(function(req,res, next) {
+// 		var db = new User(req.body);
+//
+// 		db.save(function(err){
+// 			if(err)
+// 				res.send(err);
+// 		});
+//
+// 		return res; // this prevented the data from posting to the DB twice
+//
+// 	});
+//
+// // GET user by data id
+// router.route("/api/users/:id")
+// 	.get(function(req,res, next) {
+//
+// 		var response = {};
+//
+// 		User.findById(req.params.id,function(err,data) {
+//
+// 			if(err) {
+// 				response = {"error" : true,"message" : "Error fetching data"};
+// 				console.error(err);
+// 			}
+//
+// 			else {
+// 				response = {"error" : false,"message" : data};
+// 			}
+//
+// 			res.json(response);
+//
+// 		});
+//
+// 	}) // UPDATE user data
+// 	.put(function(req,res, next){
+//
+// 		var response = {};
+//
+// 		User.findById(req.params.id,function(err,data) {
+//
+// 			if(err) {
+// 				response = {"error" : true,"message" : "Error fetching data"};
+// 				console.error(err);
+// 			}
+//
+// 			else {
+//
+// 				data.save(function(err){
+// 					if(err) {
+// 						response = {"error" : true,"message" : "Error updating data"};
+// 						console.error(err);
+// 					}
+//
+// 					else {
+// 						response = {"error" : false,"message" : "Data is updated for " + req.params.id};
+// 					}
+//
+// 				});
+//
+// 				res.json(req.body);
+// 			}
+//
+// 		});
+//
+// 	}) // DELETE user data
+// 	.delete(function(req,res, next){
+// 		var response = {};
+//
+// 		User.findById(req.params.id,function(err,data){
+//
+// 			if(err) {
+// 				response = {"error" : true,"message" : "Error fetching data"};
+// 				console.error(err);
+// 			}
+//
+// 			else {
+//
+// 				User.remove({_id : req.params.id},function(err){
+// 					if(err) {
+// 						response = {"error" : true,"message" : "Error deleting data"};
+// 						console.error(err);
+// 					}
+//
+// 					else {
+// 						response = {"error" : true,"message" : "Data associated with " + req.params.id + "is deleted"};
+// 					}
+//
+// 					res.json(response);
+//
+// 				});
+//
+// 			}
+//
+// 		});
+//
+// 	});
 
 module.exports = router;

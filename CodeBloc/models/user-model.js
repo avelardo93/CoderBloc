@@ -67,16 +67,18 @@ var Users = db.define("users", {
 	freezeTableName: true // model tableName will be the same as the model name
 });
 
-Users.sync({force:false})
-	.then(Categories.sync({force:false}))
-	.then(Threads.sync({force:false}))
-	.then(Posts.sync({force:false}))
-	.then(function (err) { // sync the table with the db, IF it doesn't exist it will be created
-		if (err) {
-			console.error("ERROR - " + err); // for some reason, an error is being thrown on table creation every time. still succeeds though.
-		}
+// Users.sync({force:false})
+// 	.then(Categories.sync({force:false}))
+// 	.then(Threads.sync({force:false}))
+// 	.then(Posts.sync({force:false}))
+// 	.then(function (err) { // sync the table with the db, IF it doesn't exist it will be created
+// 		if (err) {
+// 			console.error("ERROR - " + err); // for some reason, an error is being thrown on table creation every time. still succeeds though.
+// 		}
+//
+// 		else {
+// 			console.log("Table Created Successfully");
+// 		}
+// 	});
 
-		else {
-			console.log("Table Created Successfully");
-		}
-	});
+module.exports = Users;
