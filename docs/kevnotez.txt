@@ -12,6 +12,7 @@
 
 5/16
 ----
+* 404 catching middleware is currently commented out at the bottom of html-routes.js
 * Server setup
 * Sequelize models and seeds created. All models separated with the seed at the bottom. Table creation currently happens at
   the bottom of user-model.js
@@ -37,6 +38,15 @@
                                 ~~~~~~~~~~~~~~~
                                   ROUTING/HTTP
                                 ~~~~~~~~~~~~~~~
+
+ROUTING
+-------
+Users
+Categories
+Threads
+Posts
+
+* Each have their own model, route file and controller
 
 HTTP SETUP FOR FORUM
 --------------------
@@ -89,6 +99,11 @@ HTTP SETUP FOR FORUM
 
 * sha1 password hashing in suquelize after validation and pre input into user table
 
+                                ~~~~~~~~~~~~~~~
+                                  USER LANDING
+                                ~~~~~~~~~~~~~~~
+
+* Identify users in routing by userName?
 * Users will hit a landing page after login. it's similar to the main page, but displays a welcome $USERNAME, the current date and time
   and number of current logged in users
 
@@ -154,8 +169,10 @@ PROJECT TABLE
 
                                 ~~~~~~~~~~~~~~~
                                    SEQUELIZE
+
                                 ~~~~~~~~~~~~~~~
 
+* Added seeds for all the tables for easier testing after dropping a table
 * Setup foreign keys after site is setup
 * Try to make one single sync file, it isn't seeing the connection though
 * See which date works better. the Sequelize.DATE or the one it creates default

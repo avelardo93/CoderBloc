@@ -13,17 +13,17 @@ var app = angular.module("CodeBloc", []);
 		$scope.createUser = function(){ // declare an obj to hold the user data from the sign up form
 
 
-			var userData = {
+			var userData = { // grab the data from the form and get it ready for DB insertion
 				userEmail: $scope.formData.userEmail,
 				userName : $scope.formData.userName,
 				userPass : $scope.formData.userPass
 		};
 
-			$http.post("/api/users", userData)
-			   .then(function(data){
+			$http.post("/api/users", userData) // makes this data available in the http req
+			   .then(function(data){ // after successful post of new user
 
 				alert("POST WORKING");
-				$window.location.assign("/test.html");
+				$window.location.assign("/test.html"); // redirect to index.html with user landing features
 
 			   })
 			   .error(function(data){
