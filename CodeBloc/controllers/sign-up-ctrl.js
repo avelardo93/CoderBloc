@@ -2,28 +2,29 @@
  * Created by CodeBloc on 5/11/2016.
  */
 
+// !!!!ANGULAR IS CLIENTSIDE AND CONSOLE LOGS TO THE CHROME CONSOLE BY DEFAULT!!!!
+
 var app = angular.module("CodeBloc", []);
 
 	app.controller("signUpCtrl", ["$scope","$http","$window", function($scope, $http, $window){
 
 		$scope.formData= {};
 
-		$scope.createUser = function(){
+		$scope.createUser = function(){ // declare an obj to hold the user data from the sign up form
 
-			// declare an obj to hold the user data from the sign up form
 
 			var userData = {
 				userEmail: $scope.formData.userEmail,
 				userName: $scope.formData.userName,
 				userPass: $scope.formData.userPass
-				// userIp: req.headers['x-forwarded-for'] || req.connection.remoteAddress
 		};
 
 			$http.post("/api/users", userData)
-			   .success(function(data){
+			   .then(function(data){
 
-					console.log("POST WORKING");
-			   		$window.location.assign("/index.html");
+				alert("POST WORKING");
+				$window.location.assign("/test.html");
+
 			   })
 			   .error(function(data){
 			   	  console.log("Error: "+ data);
@@ -32,5 +33,3 @@ var app = angular.module("CodeBloc", []);
 		};
 
 	}]); //end app controller
-
-// module.exports = userData;

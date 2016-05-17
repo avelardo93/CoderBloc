@@ -54,12 +54,13 @@ router.route("/api/users")
 
 		Users.create({
 			userEmail: req.body.userEmail, // takes the values from the angular post requests
-			userName: req.body.userName,
-			userPass: req.body.userPass,
-			userIp: req.headers['x-forwarded-for'] || req.connection.remoteAddress // user IP address logged on sign up
+			userName : req.body.userName,
+			userPass : req.body.userPass,
+			userIp   : req.headers['x-forwarded-for'] || req.connection.remoteAddress // user IP address logged on sign up
 
 		}).then(function() { // what happens after the info is posted
 			console.log("POST WORKS IN API-ROUTES");
+			res.redirect("/test.html");
 		});
 });
 

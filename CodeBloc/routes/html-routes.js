@@ -15,8 +15,8 @@ router.get("/", function(req, res, then) {
 	res.sendFile(path.join(process.cwd(), "public", "/index.html")); // routing for the main page, displayed will differ if user is logged in or not
 });                                                                  // IF user IS logged in, send to logged in user home page
 
-router.get("/register", function(req, res, then) {
-	res.sendFile(path.join(process.cwd(), "public", "/register.html")); // register button will only be seen if not logged in next to the login button
+router.get("/test", function(req, res, then) {
+	res.sendFile(path.join(process.cwd(), "public", "/test.html")); // register button will only be seen if not logged in next to the login button
 });                                                                     // IF user ISN'T logged in, display register button next to login button with reduced info displayed
 
 router.get("/profile", function(req, res, then) {

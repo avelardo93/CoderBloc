@@ -46,7 +46,6 @@ app.use(express.static(__dirname + '/public')); // define static route for clien
 
 // define routes. do it here then use the router? what's the best approach?
 app.use("/", htmlRoutes);
-app.use("/", apiRoutes);
 app.get("/api/users", apiRoutes);
 app.post("/api/users", apiRoutes);
 
