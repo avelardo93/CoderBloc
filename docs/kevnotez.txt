@@ -6,6 +6,15 @@
                                      NOTEz
                                 ~~~~~~~~~~~~~~~
 
+**************************************************************************
+!!ATTENTION WINDOWS USERS: BCRYPT NPM PACKAGE REQUIRES ADDITIONAL CONFIG!!
+
+  REQUIRES Python 2.0.0 installed and added to your PATH
+  REQUIRES Microsoft C language packs. Install VS community 2015 with
+           all language options as a dirty fix
+**************************************************************************
+
+
 5/13
 ----
 * Noticed I had complete admin control on mySQL workbench. very cool.
