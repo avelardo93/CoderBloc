@@ -3,7 +3,7 @@
  */
 
 // !!!!ANGULAR IS CLIENTSIDE AND CONSOLE LOGS TO THE CHROME CONSOLE BY DEFAULT!!!!
-
+// var moment = require('moment');
 var app = angular.module("CodeBloc", []);
 
 	app.controller("signUpCtrl", ["$scope","$http","$window", function($scope, $http, $window){
