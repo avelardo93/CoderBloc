@@ -66,6 +66,7 @@ HTTP SETUP FOR FORUM
                      PUT(users may edit their posts as well as admins)
                      DELETE(admins may delete posts)
 -----------------------------------------------------------------------------------------------------
+
                                 ~~~~~~~~~~~~~~~
                                     ANGULAR
                                 ~~~~~~~~~~~~~~~
@@ -87,6 +88,9 @@ HTTP SETUP FOR FORUM
    4. If no errors and the data is valid, then save the user info into the user table
 
 * sha1 password hashing in suquelize after validation and pre input into user table
+
+* Users will hit a landing page after login. it's similar to the main page, but displays a welcome $USERNAME, the current date and time
+  and number of current logged in users
 
                                 ~~~~~~~~~~~~~~~
                                   HELP SURVEY
