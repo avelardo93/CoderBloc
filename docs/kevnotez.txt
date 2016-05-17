@@ -22,21 +22,28 @@
                                     API DOCS
                                 ~~~~~~~~~~~~~~~
 
+* JSDOCS for creation
+* People could use our API to display threads on their site or to show whether users are online or not
+
+                                ~~~~~~~~~~~~~~~
+                                      SEO
+                                ~~~~~~~~~~~~~~~
+
+* Domain is registered to my google developer console and taking advantage of google analytics
+* <meta> tags with keywords and keyword rich description
+* robots.txt to allow crawling
+* Generate a Sitemap
+
+                                ~~~~~~~~~~~~~~~
+                                  ROUTING/HTTP
+                                ~~~~~~~~~~~~~~~
+
 HTTP SETUP FOR FORUM
 --------------------
 * Come up with IDs for all of the DB fields and documents this, will later be used and expanded upon for API JSDOCS
 * Modal buttons for new thread? reply? or will that get annoying if it disappears on a misclick?
 * Users don't need a DELETE method
 * Only admins can create categories
-
-                                ~~~~~~~~~~~~~~~
-                                      SEO
-                                ~~~~~~~~~~~~~~~
-
-* Domain is registered to my google developer console
-* <meta> tags with keywords and keyword rich description
-* robots.txt to allow crawling
-* Generate a Sitemap
 
                                 ~~~~~~~~~~~~~~~
                                     ANGULAR
