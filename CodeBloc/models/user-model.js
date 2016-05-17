@@ -23,14 +23,12 @@ var Users = db.define("users", {
 	userName: {
 		type: Sequelize.STRING,
 		field: "user_name",
-		allowNull: false,
 		unique: true
 	},
 
 	userPass: {
 		type: Sequelize.STRING,
 		field: "user_pass",
-		allowNull: false
 	},
 
 	userEmail: {
@@ -61,24 +59,44 @@ var Users = db.define("users", {
 	userAbout: {
 		type: Sequelize.STRING,
 		field: "user_about"
+	},
+
+	userIp: {
+		type: Sequelize.STRING,
+		field: "user_IP"
 	}
 
 }, {
 	freezeTableName: true // model tableName will be the same as the model name
 });
 
-// Users.sync({force:false})
-// 	.then(Categories.sync({force:false}))
-// 	.then(Threads.sync({force:false}))
-// 	.then(Posts.sync({force:false}))
-// 	.then(function (err) { // sync the table with the db, IF it doesn't exist it will be created
-// 		if (err) {
-// 			console.error("ERROR - " + err); // for some reason, an error is being thrown on table creation every time. still succeeds though.
-// 		}
-//
-// 		else {
-// 			console.log("Table Created Successfully");
-// 		}
-// 	});
+// promise chain of syncing tables. working for now but will put into model-index.js later
+Users.sync({force:false})
+	.then(Categories.sync({force:false}))
+	.then(Threads.sync({force:false}))
+	.then(Posts.sync({force:false}))
+	.then(function (err) { // sync the table with the db, IF it doesn't exist it will be created
+		if (err) {
+			console.error("ERROR - " + err); // for some reason, an error is being thrown on table creation every time. still succeeds though.
+		}
+
+		else {
+			console.log("Table Created Successfully");
+		}
+	});
+
+// seed user. use bulkCreate() for more than one object
+Users.create({
+	userID: 1,
+	userName: "test",
+	userPass: "test",
+	userEmail: "test@gmail.com",
+	userLevel: 1,
+	userRealName: "test",
+	userPostCount: 1,
+	userFavLang: "test",
+	userAbout: "blahblah",
+	userIp: 1
+});
 
 module.exports = Users;

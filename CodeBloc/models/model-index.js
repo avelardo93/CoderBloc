@@ -217,6 +217,15 @@ Posts.sync({force:false})
 		}
 	});
 
+// seed user
 Users.create({
-	
+	userID: 1,
+	userName: "test",
+	userPass: "test",
+	userEmail: "test@gmail.com",
+	userLevel: 1,
+	userRealname: "test",
+	userPostCount: 1,
+	userFavLang: "test",
+	userAbout: "blahblah"
 });
