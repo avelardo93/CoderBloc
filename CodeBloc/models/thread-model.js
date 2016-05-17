@@ -21,16 +21,6 @@ var Threads = db.define("threads", {
 		unique: true
 	},
 
-	threadCat: {
-		type: Sequelize.STRING,
-		field: "thread_category"
-	},
-
-	threadAuthor: {
-		type: Sequelize.STRING,
-		field: "thread_author"
-	},
-
 	threadDate: {
 		type: Sequelize.DATE,
 		field: "thread_date"

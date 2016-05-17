@@ -8,7 +8,7 @@ CREATE TABLE users (
 	`user_name`   VARCHAR(30) NOT NULL,
 	`user_pass`   VARCHAR(255) NOT NULL,
 	`user_email`  VARCHAR(255) NOT NULL,
-	`user_date`   DATETIME NOT NULL
+	`user_date`   DATETIME NOT NULL,
 	`user_level`  INT(8) NOT NULL,
 	UNIQUE INDEX `user_email_unique` (`user_name`, `user_email`),
 	PRIMARY KEY (`user_id`)
@@ -25,18 +25,14 @@ CREATE TABLE `categories` (
 CREATE TABLE `threads` (
 	`thread_id`        INT(8) NOT NULL AUTO_INCREMENT,
 	`thread_name`   VARCHAR(255) NOT NULL,
-	`thread_date`      DATETIME NOT NULL,
-	`thread_cat`       INT(8) NOT NULL,
-	`thread_by`        INT(8) NOT NULL,
+	`thread_date`      DATETIME NOT NULL
 	PRIMARY KEY (`thread_id`)
 );
 
 CREATE TABLE `posts` (
 	`post_id`         INT(8) NOT NULL AUTO_INCREMENT,
 	`post_content`    TEXT NOT NULL,
-	`post_date`       DATETIME NOT NULL,
-	`post_topic`      INT(8) NOT NULL,
-	`post_by`     INT(8) NOT NULL,
+	`post_date`       DATETIME NOT NULL
 	PRIMARY KEY (`post_id`)
 );
 
@@ -46,13 +42,13 @@ ALTER TABLE `threads` ADD FOREIGN KEY(`thread_cat`) REFERENCES `categories`(`cat
 
 # links topics to the corresponding user. users cant be deleted if there are existing topics with the user_id. this is so
 # if a user account is deleted, their post's won't be deleted as well
-ALTER TABLE `threads` ADD FOREIGN KEY(`thread_by`) REFERENCES `users`(`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `threads` ADD FOREIGN KEY(`thread_author`) REFERENCES `users`(`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 # link posts to topics, same scenario as the first foreign key
 ALTER TABLE `posts` ADD FOREIGN KEY(`post_topic`) REFERENCES `threads`(`thread_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 # link posts to topics, same scenario as the second foreign key
-ALTER TABLE `posts` ADD FOREIGN KEY(`post_by`) REFERENCES `users`(`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `posts` ADD FOREIGN KEY(`post_author`) REFERENCES `users`(`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 # extended profile info
 ALTER TABLE `users` ADD `avatar` VARCHAR(256),
