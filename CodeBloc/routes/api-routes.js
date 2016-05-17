@@ -86,7 +86,7 @@ router.route("/api/users/:id")
 	}) // UPDATE user data with a chained route
 	.put(function(req,res, next){
 
-		
+
 
 	}) // DELETE user data with a chained route
 	.delete(function(req,res, next){
