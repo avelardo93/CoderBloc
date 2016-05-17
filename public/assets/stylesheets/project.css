@@ -1,0 +1,76 @@
+body {
+	background-image: url("../images/Technique-for-Faster-Web-Development-1.jpg");
+}
+
+.buttons{
+	background-image: url("../images/plussign.png");
+}
+
+#bulletin{
+	padding: 50px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	background-image: url("../images/school-bulletin-board-clipart.png");
+	height: 706px;
+	width: 940px;
+}
+
+#box1{
+	background-image: url("../images/yellowstick.png");
+	height: 231px;
+	width: 231px;
+	
+}
+
+#box2{
+	background-image: url("../images/purplestick.png");
+	height: 231px;
+	width: 231px;
+}
+
+#box3{
+	background-image: url("../images/pinkstick.png");
+	height: 231px;
+	width: 231px;	
+}
+
+#box4{
+	background-image: url("../images/pinkstick.png");
+	height: 231px;
+	width: 231px;
+	margin-top: 15px;				
+}
+
+#box5{
+	background-image: url("../images/purplestick.png");
+	height: 231px;
+	width: 231px;
+	margin-top: 15px;		
+}
+
+#box6{
+	background-image: url("../images/yellowstick.png");
+	height: 231px;
+	width: 231px;
+	margin-top: 15px;		
+}
+
+.addProject {
+	position: relative;
+	left: 70px;
+	top: 50px;
+}
+
+.plusSign {
+	position: relative;
+	left: 75px;
+	top: 50px;
+}
+
+h5{
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
+}

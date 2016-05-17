@@ -27,6 +27,10 @@ h2 {
 	text-align: center;	
 }
 
+#navBar {
+	background: rgba(32,32,32, 0.7);
+}
+
 #helpRoom {
 	border: 1px solid black;
 	margin-bottom: 5px;	
@@ -49,8 +53,64 @@ h2 {
 
 /*Mariah's Style: */
 
+
 .buttons{
 	text-align: center;
 }
 
+#navText {
+	color: white;
+	margin-left: 5px;
+	margin-top: 30px;
+	font-size: 25px;
+}
+
+
+.forum.table > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.forum .fa {
+    width: 1em;
+    text-align: center;
+}
+
+.forum.table th.cell-stat {
+    width: 6em;
+}
+
+.forum.table th.cell-stat-2x {
+    width: 14em;
+}
+
+#forumHeader {
+	background-color: white;
+}
+
+.lead {
+	background-color: white;
+}
+
+#tableHead {
+	background-color: dimgray;
+	color: white;
+}
+
+#gitHelp {
+	background-color: darkGray;
+	color: white;
+}
+
+#careerHelp {
+	background-color: white;
+}
+
+#openDiscussion {
+	background-color: darkGray;
+	color: white;
+}
+
+.buttons{
+	text-align: center;
+}
 
