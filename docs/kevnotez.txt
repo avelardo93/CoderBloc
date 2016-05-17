@@ -22,6 +22,22 @@
                                     API DOCS
                                 ~~~~~~~~~~~~~~~
 
+* JSDOCS for creation
+* People could use our API to display threads on their site or to show whether users are online or not
+
+                                ~~~~~~~~~~~~~~~
+                                      SEO
+                                ~~~~~~~~~~~~~~~
+
+* Domain is registered to my google developer console and taking advantage of google analytics
+* <meta> tags with keywords and keyword rich description
+* robots.txt to allow crawling
+* Generate a Sitemap
+
+                                ~~~~~~~~~~~~~~~
+                                  ROUTING/HTTP
+                                ~~~~~~~~~~~~~~~
+
 HTTP SETUP FOR FORUM
 --------------------
 * Come up with IDs for all of the DB fields and documents this, will later be used and expanded upon for API JSDOCS
@@ -29,14 +45,27 @@ HTTP SETUP FOR FORUM
 * Users don't need a DELETE method
 * Only admins can create categories
 
-                                ~~~~~~~~~~~~~~~
-                                      SEO
-                                ~~~~~~~~~~~~~~~
+----------------------------------------------------------------------------------------------------
+* User table routing - GET(list all users and info)
+                       POST(new user registration)
+                       PUT(update by id, profile details etc)
+                       DELETE(by id, admin only)
 
-* Domain is registered to my google developer console
-* <meta> tags with keywords and keyword rich description
-* robots.txt to allow crawling
-* Generate a Sitemap
+* Category table routing - GET(list categories on main forum page)
+                         POST(will rarely be used)
+                         PUT(used to update last post details)
+                         DELETE(rarely used)
+
+* Thread table routing - GET(list threads in a category)
+                       POST(used often, will create new threads)
+                       PUT(sometimes people want to edit thread titles usually admins only though)
+                       DELETE(admin only)
+
+* Post table routing - GET(display all posts in a thread[big hit on the DB])
+                     POST(create new post, used VERY often)
+                     PUT(users may edit their posts as well as admins)
+                     DELETE(admins may delete posts)
+-----------------------------------------------------------------------------------------------------
 
                                 ~~~~~~~~~~~~~~~
                                     ANGULAR
@@ -59,6 +88,9 @@ HTTP SETUP FOR FORUM
    4. If no errors and the data is valid, then save the user info into the user table
 
 * sha1 password hashing in suquelize after validation and pre input into user table
+
+* Users will hit a landing page after login. it's similar to the main page, but displays a welcome $USERNAME, the current date and time
+  and number of current logged in users
 
                                 ~~~~~~~~~~~~~~~
                                   HELP SURVEY

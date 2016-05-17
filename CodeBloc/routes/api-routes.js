@@ -19,7 +19,6 @@ const Users      = require("../models/user-model.js"),
 
 // Sequelize errors are thrown when the routes have a problem reaching the DB
 
-
 // GET user data
 
 router.route("/api/users")
@@ -70,82 +69,29 @@ router.route("/api/users/:id")
 
 		var response = {};
 
-		User.findById(req.params.id,function(err,data) {
+		Users.findById(req.params.id)
+			.then(function(data) {
+				response = {"error" : false, "data" : data}; // place data in the response obj
+				res.json(response); // display the response obj on the page
+				console.log(response);
+			}).catch(function (err) { // this will catch any errors that occur in our query chain
 
-			if(err) {
-				response = {"error" : true, "data" : "Error fetching data"};
-				console.error(err);
-			}
-
-			else {
-				response = {"error" : false, "data" : data};
-			}
-
+			response = {"error" : true, "data" : "ERROR " + err}; // puts any errors in the response obj
 			res.json(response);
+			console.error('SEQUELIZE ERROR: ', err);
+			return done(err);
 
 		});
 
 	}) // UPDATE user data with a chained route
 	.put(function(req,res, next){
 
-		var response = {};
-
-		User.findById(req.params.id,function(err,data) {
-
-			if(err) {
-				response = {"error" : true,"message" : "Error fetching data"};
-				console.error(err);
-			}
-
-			else {
-
-				data.save(function(err){
-					if(err) {
-						response = {"error" : true,"message" : "Error updating data"};
-						console.error(err);
-					}
-
-					else {
-						response = {"error" : false,"message" : "Data is updated for " + req.params.id};
-					}
-
-				});
-
-				res.json(req.body);
-			}
-
-		});
+		
 
 	}) // DELETE user data with a chained route
 	.delete(function(req,res, next){
-		var response = {};
 
-		User.findById(req.params.id,function(err,data){
 
-			if(err) {
-				response = {"error" : true,"message" : "Error fetching data"};
-				console.error(err);
-			}
-
-			else {
-
-				User.remove({_id : req.params.id},function(err){
-					if(err) {
-						response = {"error" : true,"message" : "Error deleting data"};
-						console.error(err);
-					}
-
-					else {
-						response = {"error" : true,"message" : "Data associated with " + req.params.id + "is deleted"};
-					}
-
-					res.json(response);
-
-				});
-
-			}
-
-		});
 
 	});
 

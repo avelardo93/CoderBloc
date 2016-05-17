@@ -15,8 +15,8 @@ var app = angular.module("CodeBloc", []);
 
 			var userData = {
 				userEmail: $scope.formData.userEmail,
-				userName: $scope.formData.userName,
-				userPass: $scope.formData.userPass
+				userName : $scope.formData.userName,
+				userPass : $scope.formData.userPass
 		};
 
 			$http.post("/api/users", userData)

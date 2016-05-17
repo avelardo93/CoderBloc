@@ -48,6 +48,10 @@ app.use(express.static(__dirname + '/public')); // define static route for clien
 app.use("/", htmlRoutes);
 app.get("/api/users", apiRoutes);
 app.post("/api/users", apiRoutes);
+app.put("/api/users", apiRoutes);
+app.get("/api/users/:id", apiRoutes);
+app.put("/api/users/:id", apiRoutes);
+app.delete("/api/users/:id", apiRoutes);
 
 // BEGIN listeners/error handlers
 function normalizePort(val) {
