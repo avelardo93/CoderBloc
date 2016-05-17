@@ -125,47 +125,8 @@ mySQL SCHEMA FOR USER ACCOUNTS
 * The column in the referencing table the foreign key refers to must be a primary key
 * The values that are referred to must exist in the referenced table
 
+* schema.sql included in .docs folder
 
-FIELDS
--------
-
-USER TABLE
-----------
-USER TABLE ON CREATION
-----------------------
-* userId - (PRIMARY KEY)
-* userName - (UNIQUE)
-* emailAddr (UNIQUE, PRIMARY, AUTO INC)
-* password - hashed * salted (mmmm)
-
-PROFILE FOR POST CREATION
--------------------------
-* Registration Date
-* postCount - this is incremented in the logic controller when someone POSTS a... new post or thread
-* avatar
-* session - the RCB session you are in
-* realName
-* location
-* favLang
-
-FORUM TABLES
-------------
-THREAD TABLE
-------------
-
-POST TABLE
-----------
-
-HELP ROOM TABLES
-----------------
-GIVE HELP
----------
-
-GET HELP
---------
-
-PROJECT TABLE
--------------
 
                                 ~~~~~~~~~~~~~~~
                                    SEQUELIZE
