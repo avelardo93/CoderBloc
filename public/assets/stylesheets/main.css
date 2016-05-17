@@ -114,3 +114,21 @@ h2 {
 	text-align: center;
 }
 
+/* Mariah's styles */
+
+#welcomeMessage {
+	font-size: 24px;
+
+}
+
+.main {
+	text-decoration: none;
+	color: white;
+}
+
+.main:hover {
+	text-decoration: none;
+	color: lightblue;
+}
+
+.ng-cloak { display:none; }

@@ -28,7 +28,7 @@ router.get("/helproom", function(req, res, then) {
 });                                                                     // possible working names: helpboard, helpzone
 
 router.get("/projectroom", function(req, res, then) {
-	res.sendFile(path.join(process.cwd(), "public", "/projectroom.html")); // different design than a message board specifically for projects? maybe images/descriptions that link to threads?
+	res.sendFile(path.join(process.cwd(), "public", "/project.html")); // different design than a message board specifically for projects? maybe images/descriptions that link to threads?
 });
 
 router.get("/panicroom", function(req, res, then) {
