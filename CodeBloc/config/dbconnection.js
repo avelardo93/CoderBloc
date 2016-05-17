@@ -4,8 +4,8 @@
 
 var Sequelize = require("sequelize");
 
-var   db = new Sequelize("codebloc", "root", "$S0LdIeRsQl!@#", {
-	host: "localhost",
+var   db = new Sequelize("codebloc", "KevoDB", "SoLdIeRdB123", {
+	host: "kevdbs.c8whnuhdyymu.us-west-2.rds.amazonaws.com",
 	port: 3306,
 	dialect: "mysql",
 	define: {

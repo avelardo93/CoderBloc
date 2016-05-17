@@ -18,10 +18,9 @@ var Categories = db.define("categories", {
 	catName: {
 		type: Sequelize.STRING,
 		field: "category_name",
-		allowNull: false,
 		unique: true
 	},
-	
+
 	catDescription: {
 		type: Sequelize.STRING,
 		field: "category_description"
@@ -29,6 +28,13 @@ var Categories = db.define("categories", {
 
 }, {
 	freezeTableName: true
+});
+
+// category seed
+Categories.create({
+	catId: 1,
+	catName: "help",
+	catDescription: "get help here"
 });
 
 module.exports = Categories;

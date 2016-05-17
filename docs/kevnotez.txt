@@ -10,6 +10,14 @@
 ----
 * Noticed I had complete admin control on mySQL workbench. very cool.
 
+5/16
+----
+* Server setup
+* Sequelize models and seeds created. All models separated with the seed at the bottom. Table creation currently happens at
+  the bottom of user-model.js
+* Angular module/controller setup for index.html sign up modal
+* GET/POST for user creation complete. angular successfully grabs the form info and send it the DB
+
                                 ~~~~~~~~~~~~~~~
                                     API DOCS
                                 ~~~~~~~~~~~~~~~
@@ -22,6 +30,21 @@ HTTP SETUP FOR FORUM
 * Only admins can create categories
 
                                 ~~~~~~~~~~~~~~~
+                                      SEO
+                                ~~~~~~~~~~~~~~~
+
+* Domain is registered to my google developer console
+* <meta> tags with keywords and keyword rich description
+* robots.txt to allow crawling
+* Generate a Sitemap
+
+                                ~~~~~~~~~~~~~~~
+                                    ANGULAR
+                                ~~~~~~~~~~~~~~~
+
+* Is it doing a double get because of the need for the redirect in both the angular controller and the route?
+
+                                ~~~~~~~~~~~~~~~
                                   REGISTRATION
                                 ~~~~~~~~~~~~~~~
 
@@ -31,8 +54,9 @@ HTTP SETUP FOR FORUM
   EMAIL (REGEX to verify it's an actual email, or use a service for this)
 
 *  1. Validate the user data
-   2. IF not valid, display error message and indicate error'd fields
-   3. If no erros and the data is valid, then save the user info into the user table
+   2. IF not valid, display error message and indicate error fields
+   3, IF userName is already taken, state that and tell the user to try again
+   4. If no errors and the data is valid, then save the user info into the user table
 
 * sha1 password hashing in suquelize after validation and pre input into user table
 

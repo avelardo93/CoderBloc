@@ -23,14 +23,12 @@ var Users = db.define("users", {
 	userName: {
 		type: Sequelize.STRING,
 		field: "user_name",
-		allowNull: false,
 		unique: true
 	},
 
 	userPass: {
 		type: Sequelize.STRING,
 		field: "user_pass",
-		allowNull: false
 	},
 
 	userEmail: {
@@ -61,12 +59,18 @@ var Users = db.define("users", {
 	userAbout: {
 		type: Sequelize.STRING,
 		field: "user_about"
+	},
+
+	userIp: {
+		type: Sequelize.STRING,
+		field: "user_IP"
 	}
 
 }, {
 	freezeTableName: true // model tableName will be the same as the model name
 });
 
+// promise chain of syncing tables. working for now but will put into model-index.js later
 Users.sync({force:false})
 	.then(Categories.sync({force:false}))
 	.then(Threads.sync({force:false}))
@@ -80,3 +84,19 @@ Users.sync({force:false})
 			console.log("Table Created Successfully");
 		}
 	});
+
+// seed user. use bulkCreate() for more than one object
+Users.create({
+	userID: 1,
+	userName: "test",
+	userPass: "test",
+	userEmail: "test@gmail.com",
+	userLevel: 1,
+	userRealName: "test",
+	userPostCount: 1,
+	userFavLang: "test",
+	userAbout: "blahblah",
+	userIp: 1
+});
+
+module.exports = Users;

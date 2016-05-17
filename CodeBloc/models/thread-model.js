@@ -18,7 +18,6 @@ var Threads = db.define("threads", {
 	threadName: {
 		type: Sequelize.STRING,
 		field: "thread_name",
-		allowNull: false,
 		unique: true
 	},
 
@@ -39,6 +38,13 @@ var Threads = db.define("threads", {
 
 }, {
 	freezeTableName: true
+});
+
+Threads.create({
+	threadId: 1,
+	threadName: "help me!",
+	threadCat: "help",
+	threadAuthor: "jimbojones",
 });
 
 module.exports = Threads;
