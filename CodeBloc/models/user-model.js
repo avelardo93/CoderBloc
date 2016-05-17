@@ -28,7 +28,7 @@ var Users = db.define("users", {
 
 	userPass: {
 		type: Sequelize.STRING,
-		field: "user_pass",
+		field: "user_pass"
 	},
 
 	userEmail: {
@@ -69,6 +69,13 @@ var Users = db.define("users", {
 }, {
 	freezeTableName: true // model tableName will be the same as the model name
 });
+
+
+// foreign keys are defined here. docs @ http://docs.sequelizejs.com/en/1.7.0/docs/associations/#foreign-keys
+Categories.hasOne(Threads, {foreignKey: "thread_cat"});
+Users.hasOne(Threads, {foreignKey: "thread_author"});
+Threads.hasOne(Posts, {foreignKey: "post_topic"});
+Users.hasOne(Posts, {foreignKey: "post_author"});
 
 // promise chain of syncing tables. working for now but will put into model-index.js later
 Users.sync({force:false})

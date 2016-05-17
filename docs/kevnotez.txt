@@ -169,9 +169,9 @@ PROJECT TABLE
 
                                 ~~~~~~~~~~~~~~~
                                    SEQUELIZE
-
                                 ~~~~~~~~~~~~~~~
 
+* Occasionally doesn't add a foreign key when creating the tables on server launch, seems to be an async issue
 * Added seeds for all the tables for easier testing after dropping a table
 * Setup foreign keys after site is setup
 * Try to make one single sync file, it isn't seeing the connection though

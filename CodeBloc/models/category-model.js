@@ -9,7 +9,7 @@ var Categories = db.define("categories", {
 
 	catId: {
 		type: Sequelize.INTEGER,
-		field: "category_id",
+		field: "cat_id",
 		allowNull: false,
 		autoIncrement: true,
 		primaryKey: true
@@ -17,13 +17,13 @@ var Categories = db.define("categories", {
 
 	catName: {
 		type: Sequelize.STRING,
-		field: "category_name",
+		field: "cat_name",
 		unique: true
 	},
 
 	catDescription: {
 		type: Sequelize.STRING,
-		field: "category_description"
+		field: "cat_description"
 	}
 
 }, {
