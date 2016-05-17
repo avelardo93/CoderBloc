@@ -12,6 +12,7 @@
 
 5/16
 ----
+* 404 catching middleware is currently commented out at the bottom of html-routes.js
 * Server setup
 * Sequelize models and seeds created. All models separated with the seed at the bottom. Table creation currently happens at
   the bottom of user-model.js
@@ -89,6 +90,11 @@ HTTP SETUP FOR FORUM
 
 * sha1 password hashing in suquelize after validation and pre input into user table
 
+                                ~~~~~~~~~~~~~~~
+                                  USER LANDING
+                                ~~~~~~~~~~~~~~~
+
+* Identify users in routing by userName?
 * Users will hit a landing page after login. it's similar to the main page, but displays a welcome $USERNAME, the current date and time
   and number of current logged in users
 

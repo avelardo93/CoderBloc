@@ -17,7 +17,7 @@ router.get("/", function(req, res, then) {
 
 router.get("/test", function(req, res, then) {
 	res.sendFile(path.join(process.cwd(), "public", "/test.html")); // register button will only be seen if not logged in next to the login button
-});                                                                     // IF user ISN'T logged in, display register button next to login button with reduced info displayed
+});                                                                 // IF user ISN'T logged in, display register button next to login button with reduced info displayed
 
 router.get("/profile", function(req, res, then) {
 	res.sendFile(path.join(process.cwd(), "public", "/profile.html")); // profile page available for logged in users, can replace the log in button?
