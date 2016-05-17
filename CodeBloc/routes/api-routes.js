@@ -69,7 +69,7 @@ router.route("/api/users/:id")
 
 		var response = {};
 
-		Users.findById(req.params.id)
+		Users.findById(req.params.id, options)
 			.then(function(data) {
 				response = {"error" : false, "data" : data}; // place data in the response obj
 				res.json(response); // display the response obj on the page
@@ -81,7 +81,7 @@ router.route("/api/users/:id")
 			console.error('SEQUELIZE ERROR: ', err);
 			return done(err);
 
-		});
+		    });
 
 	}) // UPDATE user data with a chained route
 	.put(function(req,res, next){

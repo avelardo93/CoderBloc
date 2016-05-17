@@ -22,8 +22,12 @@ var app = angular.module("CodeBloc", []);
 			$http.post("/api/users", userData) // makes this data available in the http req
 			   .then(function(data){ // after successful post of new user
 
-				alert("POST WORKING");
-				$window.location.assign("/test.html"); // redirect to index.html with user landing features
+				   //Mariah: adding usr info when they've successfully registered
+				   $scope.userLogInfo = "Thank you for registering, " + userData.userName;
+
+				// alert("POST WORKING");
+				// $window.location.assign("/index.html"); // redirect to index.html with user landing features
+
 
 			   })
 			   .error(function(data){
