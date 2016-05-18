@@ -1,0 +1,36 @@
+/*
+ * Created by CoderBloc on 5/17/2016.
+ */
+
+                                ~~~~~~~~~~~~~~~
+                                      SEO
+                                ~~~~~~~~~~~~~~~
+
+* URL - coderbloc.com
+
+* <title>CodeBloc, RCB Forum - Node.JS, JavaScript, Full Stack Dev</title>
+
+* <meta> tags with keywords and keyword rich description
+
+	<!-- BEGIN SEO -->
+	<meta name="keywords">
+	      content="RCB CODING NODE.JS NODE JAVASCRIPT HTML ANGULAR EXPRESS MEAN MONGO MONGODB SQL FORUM
+	      DISCUSSION PROJECT HELP COLLABORATION GROUP CODE NEWJERSEY NEW JERSEY JQUERY HTML CSS BOOTSTRAP
+	      LINUX WINDOWS MAC IOS ANDROID FULLSTACK FULL STACK DEV DEVELOPMENT JRDEV JR ISANYONESTILLREADINGTHIS">
+
+	<meta name="description"
+	      content="Social networking discussion forum to help bring RCB students together for support, collaboration, socialization, learning
+	               and guidance at rutgers coding boot camp in new brunswick new jersey">
+	<!-- END SEO -->
+
+Google results for "codebloc"
+-----------------------------
+* Code::Blocks, a cross-platform C, C++ and Fortran IDE for Linux, Windows and Mac
+* Whole first page of Google is Code::Blocks
+
+Other SEO Plans
+---------------
+* Domain is registered to Google developer console and taking full advantage of Google analytics
+* robots.txt to allow crawling
+* Optimized for mobile meeting Googles's guidelines
+* Generate a site-map post launch

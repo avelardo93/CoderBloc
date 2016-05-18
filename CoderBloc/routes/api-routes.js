@@ -1,5 +1,5 @@
 /*
- * Created by CodeBloc on 5/11/2016.
+ * Created by CoderBloc on 5/11/2016.
  */
 
 const express    = require("express"),
@@ -69,7 +69,7 @@ router.route("/api/users/:id")
 
 		var response = {};
 
-		Users.findById(req.params.id, options)
+		Users.findById(req.params.id)
 			.then(function(data) {
 				response = {"error" : false, "data" : data}; // place data in the response obj
 				res.json(response); // display the response obj on the page

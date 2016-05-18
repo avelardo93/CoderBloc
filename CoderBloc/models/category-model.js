@@ -1,5 +1,5 @@
 /*
- * Created by Kevo on 5/14/2016.
+ * Created by CoderBloc on 5/14/2016.
  */
 
 const Sequelize = require("sequelize");
