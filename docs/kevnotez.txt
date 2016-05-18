@@ -32,7 +32,16 @@
                                 ~~~~~~~~~~~~~~~
 TALKING POINTS
 --------------
+* Full Stack is DOCS TO DEPLOY & then some
 * Cut down on HTTP reqs with angular data binding
+* AWS EC2 instance on free tier running Linux Ubuntu 14.04 Server with Node.js & Nginx. PM2 keeps the node script running on crash
+  or server restart.
+* Monitoring and logging of Node server performance and usage
+* Ports are secured, Email service setup.......
+* Can create AWS AMI to preserve our server's image and to streamline future configuration of a similar environment
+* AWS RDS mySQL DB secured with user accounts which are granted only necessary privileges
+* Team connected to a central DB for testing
+* Purchased domain and linked DNS with the AWS instance
 
 
                                 ~~~~~~~~~~~~~~~
