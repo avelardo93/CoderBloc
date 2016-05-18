@@ -72,10 +72,19 @@ var Users = db.define("users", {
 
 
 // foreign keys are defined here. docs @ http://docs.sequelizejs.com/en/1.7.0/docs/associations/#foreign-keys
-Categories.hasOne(Threads, {foreignKey: "thread_cat"});
-Users.hasOne(Threads, {foreignKey: "thread_author"});
-Threads.hasOne(Posts, {foreignKey: "post_topic"});
-Users.hasOne(Posts, {foreignKey: "post_author"});
+
+// links topics to the corresponding category. on delete, all topics will be deleted in that category. if the cat_id changes every topic is updated as well.
+Categories.hasOne(Threads, {foreignKey: "thread_cat", onDelete: "CASCADE", onUpdate: "CASCADE"});
+
+// links topics to the corresponding user. users cant be deleted if there are existing topics with the user_id. this is soif a user account is deleted, their post's won't be deleted as well
+Users.hasOne(Threads, {foreignKey: "thread_author", onDelete: "RESTRICT", onUpdate: "CASCADE"});
+
+// link posts to topics, same scenario as the first foreign key
+Threads.hasOne(Posts, {foreignKey: "post_topic", onDelete: "CASCADE", onUpdate: "CASCADE"});
+
+// link posts to topics, same scenario as the second foreign key
+Users.hasOne(Posts, {foreignKey: "post_author", onDelete: "RESTRICT", onUpdate: "CASCADE"});
+
 
 // promise chain of syncing tables. working for now but will put into model-index.js later
 Users.sync({force:false})

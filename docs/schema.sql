@@ -25,14 +25,14 @@ CREATE TABLE `categories` (
 CREATE TABLE `threads` (
 	`thread_id`        INT(8) NOT NULL AUTO_INCREMENT,
 	`thread_name`   VARCHAR(255) NOT NULL,
-	`thread_date`      DATETIME NOT NULL
+	`thread_date`      DATETIME NOT NULL,
 	PRIMARY KEY (`thread_id`)
 );
 
 CREATE TABLE `posts` (
 	`post_id`         INT(8) NOT NULL AUTO_INCREMENT,
 	`post_content`    TEXT NOT NULL,
-	`post_date`       DATETIME NOT NULL
+	`post_date`       DATETIME NOT NULL,
 	PRIMARY KEY (`post_id`)
 );
 

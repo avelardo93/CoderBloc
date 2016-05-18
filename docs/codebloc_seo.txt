@@ -6,6 +6,11 @@
                                       SEO
                                 ~~~~~~~~~~~~~~~
 
+Google results for "codebloc"
+-----------------------------
+Code::Blocks, a cross-platform C, C++ and Fortran IDE for Linux, Windows and Mac
+
+
 * URL - code-bloc.com // coderbloc.com
 
 * <title>CodeBloc, Discuss Node.JS, Javascript and anything Code</title>
@@ -13,7 +18,7 @@
 * <meta> tags with keywords and keyword rich description
 
 	<!-- SEO -->
-	<meta name="keywords"
+	<meta name="keywords">
 	      content="RCB CODING NODE.JS NODE JAVASCRIPT">
 
 	<meta name="description"
