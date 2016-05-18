@@ -3,12 +3,13 @@
  */
 
                                 ~~~~~~~~~~~~~~~
+                                   CODERBLOC
                                       SEO
                                 ~~~~~~~~~~~~~~~
 
-* URL - coderbloc.com
+* Domain - coderbloc.com
 
-* <title>CodeBloc, RCB Forum - Node.JS, JavaScript, Full Stack Dev</title>
+* <title>CoderBloc, RCB Forum - Node.JS, JavaScript, Full Stack Dev</title>
 
 * <meta> tags with keywords and keyword rich description
 
@@ -23,10 +24,10 @@
 	               and guidance at rutgers coding boot camp in new brunswick new jersey">
 	<!-- END SEO -->
 
-Google results for "codebloc"
+Google results for "coderbloc"
 -----------------------------
 * Code::Blocks, a cross-platform C, C++ and Fortran IDE for Linux, Windows and Mac
-* Whole first page of Google is Code::Blocks
+* Random non-englsih results and dead links
 
 Other SEO Plans
 ---------------
