@@ -31,8 +31,8 @@ Folder & File Structure
       -- controllers(Angular Controllers)
       -- models(Sequelize Models)
       -- routes(Express Routing)
-        - html routes
-        - api routes
+        - html-routes.js
+        - api-routes.js
       -- tests(Unit Testing)
       -- views(HTML & View-Templates)
         -- layouts
