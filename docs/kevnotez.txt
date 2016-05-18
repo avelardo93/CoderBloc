@@ -5,10 +5,18 @@
 **************************************************************************
 !!ATTENTION WINDOWS USERS: BCRYPT NPM PACKAGE REQUIRES ADDITIONAL CONFIG!!
 
-  REQUIRES Python 2.0.0 installed and added to your PATH
+  REQUIRES Python 2.x.x installed and added to your PATH
   REQUIRES Microsoft C language packs. Install VS community 2015 with
            all language options as a dirty fix
 **************************************************************************
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                   CoderBloc
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                             \     ---------     /
+                              \ ~~~~~~~~~~~~~~~ /
+                               \     NOTEZ     /
+                                ~~~~~~~~~~~~~~~
 
                                 ~~~~~~~~~~~~~~~
                                     //TODO
@@ -16,10 +24,13 @@
 5/18
 ----
 * Change package.json git repo link names to "CoderBloc" once Anthony changes it
-
+* Finish Sign-up/Sign-in authentication and landing page
+* Post new thread
+* Post Reply
+* Wut wut
 
                                 ~~~~~~~~~~~~~~~
-                                      DONE
+                                     //DONE
                                 ~~~~~~~~~~~~~~~
 5/13
 ----
@@ -32,11 +43,20 @@
 * Sequelize models and seeds created. All models separated with the seed at the bottom. Table creation currently happens at
   the bottom of user-model.js
 * Angular module/controller setup for index.html sign up modal
-* GET/POST for user creation complete. angular successfully grabs the form info and send it the DB
+* GET/POST for user creation complete. angular successfully grabs the form info and sends it the DB
 
-                                ~~~~~~~~~~~~~~~
-                                     NOTEz
-                                ~~~~~~~~~~~~~~~
+5/17
+----
+* User registration routes defined
+* User registration angular controller complete
+
+5/18
+----
+* AWS DB finished. Models, Seeds, foreign keys/constraints & EER diagram
+* AWS EC2 Ubuntu 14.04 Server configured
+* coderbloc.com purchased and DNS records configured
+* Email service setup for support@coderbloc.com
+
 
 
                                 ~~~~~~~~~~~~~~~
@@ -76,15 +96,6 @@ TALKING POINTS
                                   ROUTING/HTTP
                                 ~~~~~~~~~~~~~~~
 
-ROUTING
--------
-Users
-Categories
-Threads
-Posts
-
-* Each have their own model, route file and controller
-
 HTTP SETUP FOR FORUM
 --------------------
 * Come up with IDs for all of the DB fields and documents this, will later be used and expanded upon for API JSDOCS
@@ -112,7 +123,61 @@ HTTP SETUP FOR FORUM
                      POST(create new post, used VERY often)
                      PUT(users may edit their posts as well as admins)
                      DELETE(admins may delete posts)
+
 -----------------------------------------------------------------------------------------------------
+
+Req -> Http (https) Request Object
+You can get the request query, params, body, headers and cookies from it.
+You can overwrite any value or add anything
+However, overwriting headers or cookies will not affect the output back to the browser.
+
+
+Res -> Http (https) Response Object
+The response back to the client browser.
+You can put new cookies value and that will write to the client browser (under cross domain rules)
+Once you res.send() or res.redirect() or res.render(). you can only do these once or you will get "ERROR: can't set headers after they have been sent"
+
+req = {
+    _startTime     :    Date,
+    app            :    function(req,res){},
+    body           :    {},
+    client         :    Socket,
+    complete       :    Boolean,
+    connection     :    Socket,
+    cookies        :     {},
+    files          :     {},
+    headers        :    {},
+    httpVersion    :    String,
+    httpVersionMajor    :    Number,
+    httpVersionMinor    :     Number,
+    method         :    String,  // e.g. GET POST PUT DELETE
+    next           :    function next(err){},
+    originalUrl    :    String,     /* e.g. /erer?param1=23¶m2=45 */
+    params         :    [],
+    query          :    {},
+    readable       :    Boolean,
+    res            :    ServerResponse,
+    route          :    Route,
+    signedCookies  :    {},
+    socket         :    Socket,
+    url            :    String /*e.g. /erer?param1=23¶m2=45 */
+}
+
+res = {
+    app            :    function(req, res) {},
+    chunkedEncoding:    Boolean,
+    connection     :     Socket,
+    finished       :    Boolean,
+    output         :    [],
+    outputEncodings:    [],
+    req            :    IncomingMessage,
+    sendDate       :    Boolean,
+    shouldkeepAlive    : Boolean,
+    socket         :     Socket,
+    useChunkedEncdoingByDefault    :    Boolean,
+    viewCallbacks  :    [],
+    writable       :     Boolean
+}
 
                                 ~~~~~~~~~~~~~~~
                                     ANGULAR
