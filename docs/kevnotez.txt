@@ -87,10 +87,7 @@ TALKING POINTS
                                       SEO
                                 ~~~~~~~~~~~~~~~
 
-* Domain is registered to my google developer console and taking advantage of google analytics
-* <meta> tags with keywords and keyword rich description
-* robots.txt to allow crawling
-* Generate a Sitemap
+* See ./coderbloc_seo.txt
 
                                 ~~~~~~~~~~~~~~~
                                   ROUTING/HTTP
@@ -312,4 +309,3 @@ WHERE   SHA(CONCAT(SUBSTRING(password, 1, 8), @typed_password)) = SUBSTRING(pass
                                 ~~~~~~~~~~~~~~~
 
 * Use Mocha or Chai?
-* Do it on post creation

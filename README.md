@@ -28,8 +28,8 @@ Folder & File Structure
     --CoderBloc
       -- config(DB config)
         - dbconnection.js
-      -- controllers
-      -- models(ORM/Schema)
+      -- controllers(Angular Controllers)
+      -- models(Sequelize Models)
       -- routes(Express Routing)
         - html routes
         - api routes
@@ -38,10 +38,12 @@ Folder & File Structure
         -- layouts
     -- public(Static Files & Client Side Code)
       -- assets
-      -- stylesheets
-      -- javascript
+        -- images
+        -- stylesheets
+        -- javascript
     -- node modules
     - package.json
+    - README.md
     - server.js(Express Setup)
 
 
