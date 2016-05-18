@@ -1,10 +1,10 @@
 /*
- * Created by CodeBloc on 5/11/2016.
+ * Created by CoderBloc on 5/11/2016.
  */
 
 const express      = require("express"),
-	  htmlRoutes   = require("./codebloc/routes/html-routes.js"), // html-routes for site navigation
-	  apiRoutes    = require("./codebloc/routes/api-routes.js"); // api-routes for backend CRUD
+	  htmlRoutes   = require("./CoderBloc/routes/html-routes.js"), // html-routes for site navigation
+	  apiRoutes    = require("./CoderBloc/routes/api-routes.js"); // api-routes for backend CRUD
 
 const mysql        = require("mysql"), // mySQL driver
 	  path         = require("path"), // handles and transforms file paths
@@ -13,7 +13,7 @@ const mysql        = require("mysql"), // mySQL driver
 	  cookieParser = require("cookie-parser"), // cookie parsing with signatures
 	  http         = require("http"), // default http service
 	  fs           = require("fs"), // default filesystem utility
-	  debug        = require("debug")("codebloc:server"), // debug utility
+	  debug        = require("debug")("coderbloc:server"), // debug utility
 	  moment       = require("moment"), // date and time utility
 
 	  now = moment().format(); // sets now to current time+date
@@ -41,7 +41,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use('/node_modules', express.static(__dirname + '/node_modules')); // define static route for node modules
-app.use('/CodeBloc/controllers', express.static(__dirname + '/CodeBloc/controllers')); // allows controllers to be used
+app.use('/CoderBloc/controllers', express.static(__dirname + '/CoderBloc/controllers')); // allows controllers to be used
 app.use(express.static(__dirname + '/public')); // define static route for client side static files
 
 // define routes. do it here then use the router? what's the best approach?

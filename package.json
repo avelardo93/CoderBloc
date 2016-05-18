@@ -1,5 +1,5 @@
 {
-  "name": "codebloc",
+  "name": "coderbloc",
   "version": "1.0.0",
   "description": "RCB Coding Support Network",
   "main": "server.js",
@@ -32,6 +32,7 @@
     "url": "git+https://github.com/avelardo93/CodeBlock.git"
   },
   "keywords": [
+    "CODERBLOC",
     "RCB",
     "SUPPORT",
     "HELP",

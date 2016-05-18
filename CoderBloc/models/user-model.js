@@ -1,7 +1,7 @@
-// /*
-//  * Created by CodeBloc on 5/11/2016.
-//  */
-//
+/*
+ * Created by CoderBloc on 5/11/2016.
+*/
+
 
 const Sequelize = require("sequelize");
 const db = require("../config/dbconnection.js"); // connection to the db

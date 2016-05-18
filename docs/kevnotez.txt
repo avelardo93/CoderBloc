@@ -2,10 +2,6 @@
  * Created by kevo on 5/11/2016.
  */
 
-                                ~~~~~~~~~~~~~~~
-                                     NOTEz
-                                ~~~~~~~~~~~~~~~
-
 **************************************************************************
 !!ATTENTION WINDOWS USERS: BCRYPT NPM PACKAGE REQUIRES ADDITIONAL CONFIG!!
 
@@ -14,6 +10,17 @@
            all language options as a dirty fix
 **************************************************************************
 
+                                ~~~~~~~~~~~~~~~
+                                    //TODO
+                                ~~~~~~~~~~~~~~~
+5/18
+----
+* Change package.json git repo link names to "CoderBloc" once Anthony changes it
+
+
+                                ~~~~~~~~~~~~~~~
+                                      DONE
+                                ~~~~~~~~~~~~~~~
 5/13
 ----
 * Noticed I had complete admin control on mySQL workbench. very cool.
@@ -26,6 +33,11 @@
   the bottom of user-model.js
 * Angular module/controller setup for index.html sign up modal
 * GET/POST for user creation complete. angular successfully grabs the form info and send it the DB
+
+                                ~~~~~~~~~~~~~~~
+                                     NOTEz
+                                ~~~~~~~~~~~~~~~
+
 
                                 ~~~~~~~~~~~~~~~
                                   PRESENTATION

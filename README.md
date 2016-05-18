@@ -12,8 +12,8 @@ You'll Learn, We Promise®
 
 *"Bloc" - a combination of persons, groups, or nations forming a unit with a common interest or purpose*
 
-CodeBloc Deconstructed
-----------------------
+CoderBloc Deconstructed
+-----------------------
 * RCB support network with message board, projects and live help. Focused on RCB and being local for now
 * Utilize the express router to provide GET, POST, PUT & DELETE Functionality
 * SEO Utilization meeting Google's basic guidelines
@@ -25,7 +25,7 @@ CodeBloc Deconstructed
 -------------------------
 Folder & File Structure
 -------------------------
-    --CodeBloc
+    --CoderBloc
       -- config(DB config)
         - dbconnection.js
       -- controllers
