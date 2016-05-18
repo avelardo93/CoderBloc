@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Forum Page 1</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- SEO -->
+	<meta name="keywords"
+	      content="RCB CODING NODE.JS NODE JAVASCRIPT">
+
+	<meta name="description"
+	      content="Social networking app to help bring RCB students together for support, collaboration, socialization, learning
+	               and Rutgers Coding Bootcamp New Jersey Code">
+	<!-- END SEO -->
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/t/bs-3.3.6/jq-2.2.0,dt-1.10.11,af-2.1.1,b-1.1.2/datatables.min.css"/>
+	<link rel="stylesheet" href="../assets/stylesheets/main.css">
+  <link rel="stylesheet" href="../assets/stylesheets/forum.css">
+</head>
+
+<body>
+
+
+<div class="container" style="margin-top: 35px">
+  <div class="page-header page-heading" id="forumHeader">
+    <h1 class="pull-left">Languages</h1>
+
+    <div class="clearfix"></div>
+   <p class="lead">This is the right place to discuss any questions regarding the various languages of programming.</p> 
+  </div>
+  
+  <!-- COMMENT SECTION -->
+
+
+  <!-- END Comment section -->
+
+  <table class="table forum table-striped">
+    <thead id="tableHead">
+      <tr>
+            <li>
+                <div class="commenterImage">
+                  <img src="http://lorempixel.com/100/100/people/6" />
+                </div>
+                <div class="commentText">
+                    <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
+
+                </div>
+            </li>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+            <li>
+                <div class="commenterImage">
+                  <img src="http://lorempixel.com/100/100/people/6" />
+                </div>
+                <div class="commentText">
+                    <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
+
+                </div>
+            </li>
+      </tr>
+      <tr id="gitHelp"> 
+            <li>
+                <div class="commenterImage">
+                  <img src="http://lorempixel.com/50/50/people/7" />
+                </div>
+                <div class="commentText">
+                    <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
+
+                </div>
+            </li>
+      </tr>
+      <tr id="careerHelp"> 
+        <li>
+                <div class="commenterImage">
+                  <img src="http://lorempixel.com/50/50/people/9" />
+                </div>
+                <div class="commentText">
+                    <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
+
+                </div>
+            </li>
+      </tr>
+      <tr id="openDiscussion"> 
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="input-group">
+              <textarea class="span6" rows="3" placeholder="Comment.." required></textarea>
+                <span class="input-group-btn">
+                  <button class="btn btn-default" id="post" type="button">Post</button>
+                </span>
+            </div><!-- /input-group -->
+          </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>
+</div>
+
+
+</div> 
+</body>
+
+<!-- BEGIN scripts -->
+<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+<script src="assets/javascript/app.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../node_modules/angular/angular.js"></script>
+<script src="../node_modules/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="assets/javascript/angular-app.js"></script> <!-- Angular Module and Service Initialization -->
+<script type="text/javascript" src="../codebloc/controllers/sign-up-ctrl.js"></script> <!-- Angular Controller for user account creation -->
+<!-- END scripts -->
+
+</html>
