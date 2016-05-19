@@ -5,6 +5,7 @@
 
 // !!!!ANGULAR IS CLIENTSIDE AND CONSOLE LOGS TO THE CHROME CONSOLE BY DEFAULT!!!!
 // var moment = require('moment');
+
 var app = angular.module("CoderBloc", []);
 
 	app.controller("signUpCtrl", ["$scope","$http","$window", function($scope, $http, $window){
@@ -40,7 +41,7 @@ var app = angular.module("CoderBloc", []);
 	}]); //end app controller
 
 
-//controller for LOGIN
+//controller for LOGIN:
 
 
 app.controller("loginCtrl", ["$scope","$http","$window", function($scope, $http, $window){
@@ -58,21 +59,16 @@ app.controller("loginCtrl", ["$scope","$http","$window", function($scope, $http,
 		console.log(logData); // works
 
 
-		$http.get("/api/users", logData) // makes this data available in the http req
-			.then(function(req, res){ // after successful post of new user
+		$http.get("/api/users/", logData) // makes this data available in the http req
+			.then(function(data){ // after successful post of new user
 
-				console.log(logData.userName);
-				// console.log(data);
-				console.log(req);
-				// alert("POST WORKING");
-				// $window.location.assign("/index.html"); // redirect to index.html with user landing features
 
-				// if($scope.logData.userName === req.params.userName){
-				// 	alert('name found!');
-				//
-				// 	//Mariah: adding usr info when they've successfully registered
-				// 	$scope.userLogInfo = "Welcome back, " + logData.userName;
-				// }
+				console.log("login username: "+logData.userName);
+
+				
+				console.log(data);
+
+
 
 
 			})
@@ -83,6 +79,7 @@ app.controller("loginCtrl", ["$scope","$http","$window", function($scope, $http,
 
 
 
-	};
+
+	};//end login function
 
 }]); //end app controller
