@@ -32,12 +32,12 @@ router.route("/api/users")
 			res.json(response); // display the response obj on the page
 			console.log(response);
 
-			}).catch(function (err) { // this will catch any errors that occur in our query chain
+		}).catch(function (err) { // this will catch any errors that occur in our query chain
 
-				response = {"error" : true, "data" : "ERROR " + err}; // puts any errors in the response obj
-				res.json(response);
-				console.error('SEQUELIZE ERROR: ', err);
-				return done(err);
+			response = {"error" : true, "data" : "ERROR " + err}; // puts any errors in the response obj
+			res.json(response);
+			console.error('SEQUELIZE ERROR: ', err);
+			return done(err);
 
 		});
 	})
@@ -62,39 +62,40 @@ router.route("/api/users")
 		});
 });
 
-// // GET user by data id
-// router.route("/api/users/:id")
-// 	.get(function(req,res, next) {
-//
-// 		var response = {};
-//
-// 		Users.findById(req.params.id)
-// 			.then(function(data) {
-//
-// 				response = {"error" : false, "data" : data}; // place data in the response obj
-// 				res.json(response); // display the response obj on the page
-// 				console.log(response);
-//
-// 			}).catch(function (err) { // this will catch any errors that occur in our query chain
-//
-// 			response = {"error" : true, "data" : "ERROR " + err}; // puts any errors in the response obj
-// 			res.json(response);
-// 			console.error('SEQUELIZE ERROR: ', err);
-// 			return done(err);
-//
-// 		    });
-//
-// 	}) // UPDATE user data with a chained route
-// 	.put(function(req,res, next){
-//
-//
-//
-// 	}) // DELETE user data with a chained route
-// 	.delete(function(req,res, next){
-//
-//
-//
-// 	});
+// GET user by data id
+router.route("/api/users/id/:id")
+	.get(function(req,res, next) {
+
+		var response = {};
+
+		Users.findById(req.params.id)
+
+		.then(function(data) {
+
+			response = {"error" : false, "data" : data}; // place data in the response obj
+			res.json(response); // display the response obj on the page
+			console.log(response);
+
+		}).catch(function (err) { // this will catch any errors that occur in our query chain
+
+			response = {"error" : true, "data" : "ERROR " + err}; // puts any errors in the response obj
+			res.json(response);
+			console.error('SEQUELIZE ERROR: ', err);
+			return done(err);
+
+	    });
+
+	}) // UPDATE user data with a chained route
+	.put(function(req,res, next){
+
+
+
+	}) // DELETE user data with a chained route
+	.delete(function(req,res, next){
+
+
+
+});
 
 
 
@@ -102,7 +103,7 @@ router.route("/api/users")
 
 // this is also doing... nothing. seems to only be able to find by ID and nothing else
 
-router.route("/api/users/:userName")
+router.route("/api/users/name/:userName")
 	.get(function(req,res, next) {
 
 		console.log(req.params.userName);
@@ -110,19 +111,21 @@ router.route("/api/users/:userName")
 		var response = {};
 
 		Users.findAll({
+
 			where: { userName: req.params.userName }
+
 		}).then(function(data) {
 
 			response = {"error" : false, "data" : data}; // place data in the response obj
 			res.json(response); // display the response obj on the page
 			console.log(response);
 
-			}).catch(function (err) { // this will catch any errors that occur in our query chain
+		}).catch(function (err) { // this will catch any errors that occur in our query chain
 
-				response = {"error" : true, "data" : "ERROR " + err}; // puts any errors in the response obj
-				res.json(response);
-				console.error('SEQUELIZE ERROR: ', err);
-				return done(err);
+			response = {"error" : true, "data" : "ERROR " + err}; // puts any errors in the response obj
+			res.json(response);
+			console.error('SEQUELIZE ERROR: ', err);
+			return done(err);
 
 		});
 
@@ -130,9 +133,9 @@ router.route("/api/users/:userName")
 	.put(function(req,res, next){
 
 
-
 	}) // DELETE POST data with a chained route ~ admin only, users shouldn't have access
 	.delete(function(req,res, next){
+
 
 });
 
