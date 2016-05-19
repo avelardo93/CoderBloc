@@ -1,11 +1,11 @@
 /*
- * Created by CodeBloc on 5/11/2016.
+ * Created by CoderBloc on 5/11/2016.
  */
 
 
 // !!!!ANGULAR IS CLIENTSIDE AND CONSOLE LOGS TO THE CHROME CONSOLE BY DEFAULT!!!!
 // var moment = require('moment');
-var app = angular.module("CodeBloc", []);
+var app = angular.module("CoderBloc", []);
 
 	app.controller("signUpCtrl", ["$scope","$http","$window", function($scope, $http, $window){
 

@@ -1,23 +1,23 @@
 {
-  "name": "codebloc",
+  "name": "coderbloc",
   "version": "1.0.0",
-  "description": "RCB Coding Support Network",
+  "description": "RCB Coder Support Network",
   "main": "server.js",
   "maintainers": [
     {
-      "name": "kevinh",
+      "name": "kevinH",
       "email": "kevo548@gmail.com"
     },
     {
-      "name": "",
+      "name": "mariahM",
       "email": ""
     },
     {
-      "name": "",
+      "name": "anthonyV",
       "email": ""
     },
     {
-      "name": "",
+      "name": "raghavM",
       "email": ""
     }
   ],
@@ -32,6 +32,7 @@
     "url": "git+https://github.com/avelardo93/CodeBlock.git"
   },
   "keywords": [
+    "CODERBLOC",
     "RCB",
     "SUPPORT",
     "HELP",

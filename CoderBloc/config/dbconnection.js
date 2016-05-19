@@ -1,10 +1,10 @@
 /*
- * Created by CodeBloc on 5/11/2016.
+ * Created by CoderBloc on 5/11/2016.
  */
 
 var Sequelize = require("sequelize");
 
-var   db = new Sequelize("codebloc", "KevoDB", "SoLdIeRdB123", {
+var   db = new Sequelize("coderbloc", "KevoDB", "SoLdIeRdB123", {
 	host: "kevdbs.c8whnuhdyymu.us-west-2.rds.amazonaws.com",
 	port: 3306,
 	dialect: "mysql",

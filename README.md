@@ -2,18 +2,18 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  _____       Raghav.M   Mariah.M  |  RCB    Week    16
 /  __ \      Anthony.V  Kevin.H   |    Group Project
-| /  \/ .----. .----. .----..----. .-.    .----.  .---.
-| |    /  {}  \| {}  \| {}  |  {  }| |   /})    \/  ___}
-| \__/\\      /|     /| {}  | }   }| `--.\.learn/\     }
- \____/ `----' `----' `----'`----' `----' `----'  `---'
+| /  \/ .----. .----. .----..----.   .----. .-.    .----.  .---.
+| |    /  {}  \| {}  \| {__'| {}  }  | {}  }| |   /})    \/ /```
+| \__/\\      /|     /| {__ | .-. \  | {}  }| `--.\.learn/\ \__.    
+ \____/ `----' `----' `____''_' '_'  `----' `----' `----'  `---'
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 You'll Learn, We Promise®
 -------------------------
 
 *"Bloc" - a combination of persons, groups, or nations forming a unit with a common interest or purpose*
 
-CodeBloc Deconstructed
-----------------------
+CoderBloc Deconstructed
+-----------------------
 * RCB support network with message board, projects and live help. Focused on RCB and being local for now
 * Utilize the express router to provide GET, POST, PUT & DELETE Functionality
 * SEO Utilization meeting Google's basic guidelines
@@ -25,23 +25,25 @@ CodeBloc Deconstructed
 -------------------------
 Folder & File Structure
 -------------------------
-    --CodeBloc
+    --CoderBloc
       -- config(DB config)
         - dbconnection.js
-      -- controllers
-      -- models(ORM/Schema)
+      -- controllers(Angular Controllers)
+      -- models(Sequelize Models)
       -- routes(Express Routing)
-        - html routes
-        - api routes
+        - html-routes.js
+        - api-routes.js
       -- tests(Unit Testing)
       -- views(HTML & View-Templates)
         -- layouts
     -- public(Static Files & Client Side Code)
       -- assets
-      -- stylesheets
-      -- javascript
+        -- images
+        -- stylesheets
+        -- javascript
     -- node modules
     - package.json
+    - README.md
     - server.js(Express Setup)
 
 
