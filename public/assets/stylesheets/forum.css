@@ -45,17 +45,21 @@
     display:table-cell;
 }
 .commenterImage {
-    width:30px;
+    width:50px;
     margin-right:5px;
     height:100%;
     float:left;
+    background-color: white;
 }
 .commenterImage img {
     width:100%;
-    border-radius:50%;
+    
 }
 .commentText p {
     margin:0;
+    height: 60px;
+    background-color: white;
+
 }
 .sub-text {
     color:#aaa;
@@ -76,5 +80,18 @@ textarea {
     height: 60px;
     margin-bottom: 4px;
 }
+
+#dates{
+    background-color: white;
+}
+
+.commenters{
+    background-color: white;
+    border: 1px solid black;    
+}
+
+
+
+
 
 
