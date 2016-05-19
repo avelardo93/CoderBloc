@@ -24,10 +24,11 @@
 5/18
 ----
 * Change package.json git repo link names to "CoderBloc" once Anthony changes it
-* Finish Sign-up/Sign-in authentication and landing page
+* GET/POST for Cats, Threads, Posts. work on PUT/DELETE later
+* Seeds for categories
 * Post new thread
-* Post Reply
-* Wut wut
+* Post reply
+* Finish Sign-up/Sign-in authentication and landing page
 
                                 ~~~~~~~~~~~~~~~
                                      //DONE
@@ -56,6 +57,7 @@
 * AWS EC2 Ubuntu 14.04 Server configured
 * coderbloc.com purchased and DNS records configured
 * Email service setup for support@coderbloc.com
+* Waiting for DNS to propagate @ 6:30 PM
 
 
 
