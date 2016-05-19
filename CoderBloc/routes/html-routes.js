@@ -40,14 +40,7 @@ router.get("/about", function(req, res, then) {
 });
 
 router.get("/contact", function(req, res, then) {
-	res.sendFile(path.join(process.cwd(), "public", "/contact.html"));
+	res.sendFile(path.join(process.cwd(), "public", "/contact.html")); // email form to contact support@coderbloc.com
 });
-
-// middleware to catch 404s. can create or template custom 404 page
-// this is different than the 404 handler in server.js
-// router.use(function(req, res, then) {
-// 	res.sendFile(path.join(process.cwd(), "public", "/404.html"));
-// 	then(console.log("This is a promise!"));
-// });
 
 module.exports = router;

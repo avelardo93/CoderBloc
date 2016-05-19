@@ -21,10 +21,9 @@
                                 ~~~~~~~~~~~~~~~
                                     //TODO
                                 ~~~~~~~~~~~~~~~
-5/18
+5/19
 ----
-* Change package.json git repo link names to "CoderBloc" once Anthony changes it
-* GET/POST for Cats, Threads, Posts. work on PUT/DELETE later
+* Change package.json git repo link names to "CoderBloc" once Anthony changes it=
 * Seeds for categories
 * Post new thread
 * Post reply
@@ -33,9 +32,22 @@
                                 ~~~~~~~~~~~~~~~
                                      //DONE
                                 ~~~~~~~~~~~~~~~
-5/13
+5/19
 ----
-* Noticed I had complete admin control on mySQL workbench. very cool.
+* Mocha/Chai added to package.json and tests added to ./test/test.js
+
+5/18
+----
+* AWS DB finished. Models, Seeds, foreign keys/constraints & EER diagram
+* AWS EC2 Ubuntu 14.04 Server configured
+* coderbloc.com purchased and DNS records configured
+* Email service setup for support@coderbloc.com
+* Waiting for DNS to propagate @ 6:30 PM
+
+5/17
+----
+* User registration routes defined
+* User registration angular controller complete
 
 5/16
 ----
@@ -46,18 +58,9 @@
 * Angular module/controller setup for index.html sign up modal
 * GET/POST for user creation complete. angular successfully grabs the form info and sends it the DB
 
-5/17
+5/13
 ----
-* User registration routes defined
-* User registration angular controller complete
-
-5/18
-----
-* AWS DB finished. Models, Seeds, foreign keys/constraints & EER diagram
-* AWS EC2 Ubuntu 14.04 Server configured
-* coderbloc.com purchased and DNS records configured
-* Email service setup for support@coderbloc.com
-* Waiting for DNS to propagate @ 6:30 PM
+* Noticed I had complete admin control on mySQL workbench. very cool.
 
 
 
@@ -76,6 +79,13 @@ TALKING POINTS
 * AWS RDS mySQL DB secured with user accounts which are granted only necessary privileges
 * Team connected to a central DB for testing
 * Purchased domain and linked DNS with the AWS instance
+
+                                ~~~~~~~~~~~~~~~
+                                  UNIT TESTING
+                                ~~~~~~~~~~~~~~~
+
+* Mocha with Chai assertion framework also using "Chair as Promised" ~ https://www.npmjs.com/package/chai-as-promised
+* Tests located in ./test/test.js
 
 
                                 ~~~~~~~~~~~~~~~
@@ -97,7 +107,7 @@ TALKING POINTS
 
 HTTP SETUP FOR FORUM
 --------------------
-* Come up with IDs for all of the DB fields and documents this, will later be used and expanded upon for API JSDOCS
+* Come up with IDs for all of the DB fields and documents, will later be used and expanded upon for API JSDOCS
 * Modal buttons for new thread? reply? or will that get annoying if it disappears on a misclick?
 * Users don't need a DELETE method
 * Only admins can create categories

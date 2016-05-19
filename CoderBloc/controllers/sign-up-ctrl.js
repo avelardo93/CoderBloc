@@ -63,7 +63,7 @@ app.controller("loginCtrl", ["$scope","$http","$window", function($scope, $http,
 			.then(function(data){ // after successful post of new user
 
 
-				console.log("login username: "+logData.userName);
+				console.log("login username: " + logData.userName);
 
 				
 				console.log(data);
