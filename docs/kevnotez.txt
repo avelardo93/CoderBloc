@@ -97,7 +97,7 @@ TALKING POINTS
 
 HTTP SETUP FOR FORUM
 --------------------
-* Come up with IDs for all of the DB fields and documents this, will later be used and expanded upon for API JSDOCS
+* Come up with IDs for all of the DB fields and documents, will later be used and expanded upon for API JSDOCS
 * Modal buttons for new thread? reply? or will that get annoying if it disappears on a misclick?
 * Users don't need a DELETE method
 * Only admins can create categories

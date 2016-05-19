@@ -57,9 +57,11 @@ app.use("/", htmlRoutes);
 app.get("/api/users", userRoutes);
 app.post("/api/users", userRoutes);
 app.put("/api/users", userRoutes);
-app.get("/api/users/:id", userRoutes);
-app.put("/api/users/:id", userRoutes);
-app.delete("/api/users/:id", userRoutes);
+// app.get("/api/users/:id", userRoutes);
+// app.put("/api/users/:id", userRoutes);
+// app.delete("/api/users/:id", userRoutes);
+
+app.get("/api/users/:userName", userRoutes);
 
 // CATEGORY DATA ROUTES
 app.get("/api/users", catRoutes);
