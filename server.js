@@ -1,10 +1,13 @@
 /*
- * Created by CodeBloc on 5/11/2016.
+ * Created by CoderBloc on 5/11/2016.
  */
 
 const express      = require("express"),
-	  htmlRoutes   = require("./codebloc/routes/html-routes.js"), // html-routes for site navigation
-	  apiRoutes    = require("./codebloc/routes/api-routes.js"); // api-routes for backend CRUD
+	  htmlRoutes   = require("./CoderBloc/routes/html-routes.js"), // html-routes for site navigation
+	  userRoutes   = require("./CoderBloc/routes/user-routes.js"), // user-routes for backend CRUD
+	  catRoutes    = require("./CoderBloc/routes/cat-routes.js"),
+	  threadRoutes = require("./CoderBloc/routes/thread-routes.js"),
+	  postRoutes   = require("./CoderBloc/routes/post-routes.js");
 
 const mysql        = require("mysql"), // mySQL driver
 	  path         = require("path"), // handles and transforms file paths
@@ -13,7 +16,7 @@ const mysql        = require("mysql"), // mySQL driver
 	  cookieParser = require("cookie-parser"), // cookie parsing with signatures
 	  http         = require("http"), // default http service
 	  fs           = require("fs"), // default filesystem utility
-	  debug        = require("debug")("codebloc:server"), // debug utility
+	  debug        = require("debug")("coderbloc:server"), // debug utility
 	  moment       = require("moment"), // date and time utility
 
 	  now = moment().format(); // sets now to current time+date
@@ -41,17 +44,46 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use('/node_modules', express.static(__dirname + '/node_modules')); // define static route for node modules
-app.use('/CodeBloc/controllers', express.static(__dirname + '/CodeBloc/controllers')); // allows controllers to be used
+app.use('/CoderBloc/controllers', express.static(__dirname + '/CoderBloc/controllers')); // allows controllers to be used
 app.use(express.static(__dirname + '/public')); // define static route for client side static files
 
-// define routes. do it here then use the router? what's the best approach?
+
+//TODO find out how to condense routes with the router. doesn't seem to work with app.use for the general route path
+
+// HTML ROUTES
 app.use("/", htmlRoutes);
-app.get("/api/users", apiRoutes);
-app.post("/api/users", apiRoutes);
-app.put("/api/users", apiRoutes);
-app.get("/api/users/:id", apiRoutes);
-app.put("/api/users/:id", apiRoutes);
-app.delete("/api/users/:id", apiRoutes);
+
+// USER DATA ROUTES
+app.get("/api/users", userRoutes);
+app.post("/api/users", userRoutes);
+app.put("/api/users", userRoutes);
+app.get("/api/users/:id", userRoutes);
+app.put("/api/users/:id", userRoutes);
+app.delete("/api/users/:id", userRoutes);
+
+// CATEGORY DATA ROUTES
+app.get("/api/users", catRoutes);
+app.post("/api/users", catRoutes);
+app.put("/api/users", catRoutes);
+app.get("/api/users/:id", catRoutes);
+app.put("/api/users/:id", catRoutes);
+app.delete("/api/users/:id", catRoutes);
+
+// THREAD DATA ROUTES
+app.get("/api/users", threadRoutes);
+app.post("/api/users", threadRoutes);
+app.put("/api/users", threadRoutes);
+app.get("/api/users/:id", threadRoutes);
+app.put("/api/users/:id", threadRoutes);
+app.delete("/api/users/:id", threadRoutes);
+
+// POST DATA ROUTES
+app.get("/api/users", postRoutes);
+app.post("/api/users", postRoutes);
+app.put("/api/users", postRoutes);
+app.get("/api/users/:id", postRoutes);
+app.put("/api/users/:id", postRoutes);
+app.delete("/api/users/:id", postRoutes);
 
 // BEGIN listeners/error handlers
 function normalizePort(val) {
