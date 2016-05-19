@@ -89,10 +89,8 @@ router.route("/api/users/id/:id")
 	.put(function(req,res, next){
 
 
-
 	}) // DELETE user data with a chained route
 	.delete(function(req,res, next){
-
 
 
 });
@@ -131,6 +129,7 @@ router.route("/api/users/name/:userName")
 
 	}) // UPDATE POST data with a chained route ~ user post editing
 	.put(function(req,res, next){
+
 
 
 	}) // DELETE POST data with a chained route ~ admin only, users shouldn't have access

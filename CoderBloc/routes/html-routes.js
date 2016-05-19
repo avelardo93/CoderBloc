@@ -40,7 +40,7 @@ router.get("/about", function(req, res, then) {
 });
 
 router.get("/contact", function(req, res, then) {
-	res.sendFile(path.join(process.cwd(), "public", "/contact.html"));
+	res.sendFile(path.join(process.cwd(), "public", "/contact.html")); // email form to contact support@coderbloc.com
 });
 
 module.exports = router;

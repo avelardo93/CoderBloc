@@ -31,7 +31,7 @@ app.set('port', PORT);
 
 var server = http.createServer(app); // establish connection and attaches it to app
 
-console.log("Hey!"); // log connection result
+console.log("Hey, Listen!!"); // log connection result
 console.log("Server Listening on " + PORT + " @ " + now);
 server.listen(PORT);
 server.on('error', onError);
@@ -55,6 +55,9 @@ app.use("/", htmlRoutes);
 
 // API ROUTES
 app.use("/", require("./CoderBloc/routes/user-routes.js"));
+app.use("/", require("./CoderBloc/routes/cat-routes.js"));
+app.use("/", require("./CoderBloc/routes/thread-routes.js"));
+app.use("/", require("./CoderBloc/routes/post-routes.js"));
 
 // // USER DATA ROUTES
 // app.get("/api/users", userRoutes);
