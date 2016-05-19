@@ -39,6 +39,15 @@
                                   ROUTING/HTTP
                                 ~~~~~~~~~~~~~~~
 
+ROUTING
+-------
+Users
+Categories
+Threads
+Posts
+
+* Each have their own model, route file and controller
+
 HTTP SETUP FOR FORUM
 --------------------
 * Come up with IDs for all of the DB fields and documents this, will later be used and expanded upon for API JSDOCS
@@ -162,6 +171,8 @@ PROJECT TABLE
                                    SEQUELIZE
                                 ~~~~~~~~~~~~~~~
 
+* Occasionally doesn't add a foreign key when creating the tables on server launch, seems to be an async issue
+* Added seeds for all the tables for easier testing after dropping a table
 * Setup foreign keys after site is setup
 * Try to make one single sync file, it isn't seeing the connection though
 * See which date works better. the Sequelize.DATE or the one it creates default

@@ -20,16 +20,6 @@ var Posts = db.define("posts", {
 		field: "post_body",
 	},
 
-	postAuthor: {
-		type: Sequelize.STRING,
-		field: "post_author",
-	},
-
-	postTopic: {
-		type: Sequelize.STRING,
-		field: "post_topic"
-	},
-
 	postDate: {
 		type: Sequelize.DATE,
 		field: "post_date"

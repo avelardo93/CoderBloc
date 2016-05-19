@@ -29,6 +29,7 @@ h2 {
 
 #navBar {
 	background: rgba(32,32,32, 0.7);
+
 }
 
 #helpRoom {
@@ -114,3 +115,42 @@ h2 {
 	text-align: center;
 }
 
+
+
+/* Mariah's styles */
+
+.nav {
+	position: absolute;
+	display: inline-block;
+	top:0;
+	right: 10px;
+}
+
+.navbar {
+	display: inline-block;
+	max-height: 100px;
+
+}
+#welcomeMessage {
+	display: block;
+	font-size: 18px;
+	horiz-align: center;
+	/*background-color: blue;*/
+	align-items: center;
+	text-align: center;
+
+	margin-top: 30px;
+
+}
+
+.main {
+	text-decoration: none;
+	color: white;
+}
+
+.main:hover {
+	text-decoration: none;
+	color: lightblue;
+}
+
+.ng-cloak { display:none; }

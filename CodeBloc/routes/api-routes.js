@@ -81,12 +81,12 @@ router.route("/api/users/:id")
 			console.error('SEQUELIZE ERROR: ', err);
 			return done(err);
 
-		});
+		    });
 
 	}) // UPDATE user data with a chained route
 	.put(function(req,res, next){
 
-		
+
 
 	}) // DELETE user data with a chained route
 	.delete(function(req,res, next){
