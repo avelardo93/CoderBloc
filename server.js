@@ -53,45 +53,11 @@ app.use(express.static(__dirname + '/public')); // define static route for clien
 // HTML ROUTES
 app.use("/", htmlRoutes);
 
-// API ROUTES
+// API ROUTES - NOT USING A ROUTE-INDEX FILE FOR NOW
 app.use("/", require("./CoderBloc/routes/user-routes.js"));
 app.use("/", require("./CoderBloc/routes/cat-routes.js"));
 app.use("/", require("./CoderBloc/routes/thread-routes.js"));
 app.use("/", require("./CoderBloc/routes/post-routes.js"));
-
-// // USER DATA ROUTES
-// app.get("/api/users", userRoutes);
-// app.post("/api/users", userRoutes);
-// app.put("/api/users", userRoutes);
-// app.get("/api/users/id/:id", userRoutes);
-// app.put("/api/users/id/:id", userRoutes);
-// app.delete("/api/users/id/:id", userRoutes);
-//
-// app.get("/api/users/name/:userName", userRoutes);
-//
-// // CATEGORY DATA ROUTES
-// app.get("/api/users", catRoutes);
-// app.post("/api/users", catRoutes);
-// app.put("/api/users", catRoutes);
-// app.get("/api/users/:id", catRoutes);
-// app.put("/api/users/:id", catRoutes);
-// app.delete("/api/users/:id", catRoutes);
-//
-// // THREAD DATA ROUTES
-// app.get("/api/users", threadRoutes);
-// app.post("/api/users", threadRoutes);
-// app.put("/api/users", threadRoutes);
-// app.get("/api/users/:id", threadRoutes);
-// app.put("/api/users/:id", threadRoutes);
-// app.delete("/api/users/:id", threadRoutes);
-//
-// // POST DATA ROUTES
-// app.get("/api/users", postRoutes);
-// app.post("/api/users", postRoutes);
-// app.put("/api/users", postRoutes);
-// app.get("/api/users/:id", postRoutes);
-// app.put("/api/users/:id", postRoutes);
-// app.delete("/api/users/:id", postRoutes);
 
 // BEGIN listeners/error handlers
 function normalizePort(val) {
@@ -143,7 +109,7 @@ app.use(function(req, res, then) {
 	res.sendFile(path.join(process.cwd(), "public", "/404.html"));
 });
 
-// catch 404 and forward to error handler
+// catch 404 and throw to error handler with the requested URL
 app.use(function(req, res, next) {
 	var err = new Error('Not Found' + req.originalUrl); // also outputs the req route
 	err.status = 404;
