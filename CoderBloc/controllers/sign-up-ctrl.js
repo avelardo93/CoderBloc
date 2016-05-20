@@ -57,7 +57,7 @@ var app = angular.module("CoderBloc", []);
 		// $scope.displayLoginModal = false
 
 		$scope.login = function(){ // declare an obj to hold the user data from the sign up form
-			
+
 			var logData = { // grab the data from the form and get it ready for DB insertion
 				userName : $scope.loginData.userName,
 				userPass : $scope.loginData.pass
