@@ -59,15 +59,24 @@ app.controller("loginCtrl", ["$scope","$http","$window", function($scope, $http,
 		console.log(logData); // works
 
 
-		$http.get("/api/users/", logData) // makes this data available in the http req
+		$http.get("/api/users/name/"+ $scope.loginData.userName) // makes this data available in the http req
 			.then(function(data){ // after successful post of new user
 
+				var loginName = $scope.loginData.userName;
 
-				console.log("login username: " + logData.userName);
 
-				
-				console.log(data);
+				// console.log(dbName);
+				//if there's no data, it means the user name is incorrect, else, logged in
+				//once we get the pw check implemnted
+				if(data.data.data === null){
 
+					console.log(' incorrect username');
+
+					//TASK: create a errormessage on the modal when incorrect name
+
+				}else if(loginName === data.data.data.userName){
+					console.log('yay logged in');
+				}
 
 
 

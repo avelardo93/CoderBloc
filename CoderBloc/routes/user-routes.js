@@ -110,7 +110,8 @@ router.route("/api/users/name/:userName")
 
 		Users.findAll({
 
-			where: { userName: req.params.userName }
+			where: { userName: req.params.userName },
+			plain: true
 
 		}).then(function(data) {
 
