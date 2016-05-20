@@ -71,6 +71,13 @@ body {
 	top: 50px;
 }
 
+
+button {
+    background: transparent;
+    border: none !important;
+    font-size:0;
+}
+
 h5{
 	text-align: center;
 }
@@ -78,3 +85,25 @@ h5{
 h1 {
 	text-align: center;
 }
+
+.name{
+	padding-top: 35px;
+	font-size: 25px;
+	text-align: center;
+}
+
+.url{
+	padding: 8px;
+	text-align: center;
+    white-space: pre-wrap; /* css-3 */    
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */    
+    white-space: -o-pre-wrap; /* Opera 7 */    
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+.descr{
+	padding-top: 8px;
+	text-align: center;
+}
+
