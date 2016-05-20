@@ -1,5 +1,13 @@
 @import url(//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css);
 
+body {
+    background: url("../images/Technique-for-Faster-Web-Development-1.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .detailBox {
     width:320px;
     border:1px solid #bbb;
