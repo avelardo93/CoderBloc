@@ -42,7 +42,7 @@
       <span class="icon-bar"></span>
     </button>
 
-    <a class="navbar-brand" href="#"><img src="coderbloc-03-03.png" alt="logo" id="logo"></a>
+    <a class="navbar-brand" href="/"><img src="coderbloc-03-03.png" alt="logo" id="logo"></a>
 
   </div>
 
@@ -95,7 +95,6 @@
 
       </div>
       <div>
-        {{formData}}
       </div>
       <div class="modal-footer">
         <button type="submit" ng-click="createUser()" class="btn btn-default" data-dismiss="modal" id="register">Register</button>
@@ -126,11 +125,9 @@
             <label for="loginPassword">Password:</label>
             <input ng-keyup="$event.keyCode == 13 && login()" type="password" class="form-control" id="loginPassword" placeholder="Password" ng-model="loginData.userPass">
           </div>
-          {{loginStatusDiv}}
-          {{loginData}}
           <!-- <button type="submit" class="btn btn-default" id="login">Login</button> -->
         </form>
-
+        {{loginStatusDiv}}
 
       </div>
       <div class="modal-footer">

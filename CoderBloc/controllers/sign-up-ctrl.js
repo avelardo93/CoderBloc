@@ -6,7 +6,7 @@
 // !!!!ANGULAR IS CLIENTSIDE AND CONSOLE LOGS TO THE CHROME CONSOLE BY DEFAULT!!!!
 // var moment = require('moment');
 
-var app = angular.module("CoderBloc", ["ngTable"]);
+var app = angular.module("CoderBloc", []);
 
 	app.controller("signUpCtrl", ["$scope","$http","$window", function($scope, $http, $window){
 
@@ -106,7 +106,7 @@ var app = angular.module("CoderBloc", ["ngTable"]);
 
 }]); //end app controller
 
-app.controller("helpThreadCtrl", ["$scope","$http","$window","NgTableParams","$filter", function($scope, $http, $window, NgTableParams, $filter){
+app.controller("helpThreadCtrl", ["$scope","$http","$window","$filter", function($scope, $http, $window,  $filter){
 
 	$scope.catName = "Looking For Help";
 
@@ -123,10 +123,10 @@ app.controller("helpThreadCtrl", ["$scope","$http","$window","NgTableParams","$f
 
 			$scope.threads = data.data.data;
 
-			// for (var i = 0; i < $scope.threads.length; i++) {
-			// 	console.log($scope.threads[i]);
-			// 	$scope.threadNames = $scope.threads[i].threadName
-			// }
+			for (var i = 0; i < $scope.threads.length; i++) {
+				console.log($scope.threads[i]);
+				$scope.threadNames = $scope.threads[i].threadName
+			}
 
 			// $scope.threadTable = new NgTableParams({
 			// 	page: 1,
