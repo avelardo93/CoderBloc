@@ -98,11 +98,16 @@ h2 {
 
 #forumHeader {
 	background-color: white;
+	padding: 10px;
+	text-align: center;
+
 }
 
 .lead {
 	background-color: white;
+
 }
+
 
 #tableHead {
 	background-color: dimgray;
@@ -145,14 +150,17 @@ h2 {
 }
 
 #welcomeMessage {
-	display: block;
-	/*font-size: 18px;*/
+	display: inline;
+	width:100%;
+	position: fixed;
+	top:0;
+	font-size: 1.5em;
 	horiz-align: center;
 	/*background-color: blue;*/
 	align-items: center;
 	text-align: center;
 
-	/*margin-top: -25px;*/
+
 
 }
 
@@ -174,4 +182,31 @@ h2 {
 	position: fixed;
 	top: 0;
 
+}
+
+#roomChoice {
+	text-align: center;
+
+}
+
+.page-heading {
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
+}
+
+.commenterImage {
+	margin-top: 4px;
+	margin-left:4px;
+}
+
+.date {
+	margin-left: 4px;
+}
+
+.pagination {
+	margin-top: 0;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 0;
 }
