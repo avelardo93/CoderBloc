@@ -51,9 +51,9 @@
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/avelardo93/CodeBlock/issues"
+    "url": "https://github.com/avelardo93/CoderBlock/issues"
   },
-  "homepage": "https://github.com/avelardo93/CodeBlock#readme",
+  "homepage": "https://github.com/avelardo93/CoderBlock#readme",
   "dependencies": {
     "angular": "^1.5.5",
     "angular-route": "^1.5.5",
@@ -63,10 +63,12 @@
     "cookie-parser": "^1.4.1",
     "debug": "^2.2.0",
     "express": "^4.13.4",
+    "lodash": "^4.12.0",
     "mocha": "^2.4.5",
     "moment": "^2.13.0",
     "morgan": "^1.7.0",
     "mysql": "^2.10.2",
+    "ng-table-async": "0.0.9",
     "node-gyp": "^3.3.1",
     "path": "^0.12.7",
     "sequelize": "^3.23.0",
