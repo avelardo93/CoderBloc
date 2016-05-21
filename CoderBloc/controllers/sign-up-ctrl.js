@@ -123,10 +123,10 @@ app.controller("helpThreadCtrl", ["$scope","$http","$window","NgTableParams","$f
 
 			$scope.threads = data.data.data;
 
-			for (var i = 0; i < $scope.threads.length; i++) {
-				console.log($scope.threads[i]);
-				$scope.threadNames = $scope.threads[i].threadName
-			}
+			// for (var i = 0; i < $scope.threads.length; i++) {
+			// 	console.log($scope.threads[i]);
+			// 	$scope.threadNames = $scope.threads[i].threadName
+			// }
 
 			// $scope.threadTable = new NgTableParams({
 			// 	page: 1,
