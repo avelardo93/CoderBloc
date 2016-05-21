@@ -4,7 +4,10 @@
 
 const express      = require("express"),
 	  htmlRoutes   = require("./CoderBloc/routes/html-routes.js"), // html-routes for site navigation
-	  apiRoutes    = require("./CoderBloc/routes/api-routes.js"); // api-routes for backend CRUD
+	  userRoutes   = require("./CoderBloc/routes/user-routes.js"), // user-routes for backend CRUD
+	  catRoutes    = require("./CoderBloc/routes/cat-routes.js"),
+	  threadRoutes = require("./CoderBloc/routes/thread-routes.js"),
+	  postRoutes   = require("./CoderBloc/routes/post-routes.js");
 
 const mysql        = require("mysql"), // mySQL driver
 	  path         = require("path"), // handles and transforms file paths
@@ -17,18 +20,18 @@ const mysql        = require("mysql"), // mySQL driver
 	  moment       = require("moment"), // date and time utility
 
 	  now = moment().format(); // sets now to current time+date
-// END const declarations //
 
 // var favicon = require("serve-favicon");
 
 var app = express(); // define express
 
 var PORT = normalizePort(process.env.PORT || 5000); // set the port to listen on
+
 app.set('port', PORT);
 
 var server = http.createServer(app); // establish connection and attaches it to app
 
-console.log("Hey!"); // log connection result
+console.log("Hey, Listen!!"); // log connection result
 console.log("Server Listening on " + PORT + " @ " + now);
 server.listen(PORT);
 server.on('error', onError);
@@ -39,19 +42,22 @@ server.on('error', onError);
 app.use(logger('dev')); // define logging middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser());
+app.use(cookieParser("secret"));
 app.use('/node_modules', express.static(__dirname + '/node_modules')); // define static route for node modules
 app.use('/CoderBloc/controllers', express.static(__dirname + '/CoderBloc/controllers')); // allows controllers to be used
 app.use(express.static(__dirname + '/public')); // define static route for client side static files
 
-// define routes. do it here then use the router? what's the best approach?
+
+//TODO find out how to condense routes with the router. doesn't seem to work with app.use for the general route path
+
+// HTML ROUTES
 app.use("/", htmlRoutes);
-app.get("/api/users", apiRoutes);
-app.post("/api/users", apiRoutes);
-app.put("/api/users", apiRoutes);
-app.get("/api/users/:id", apiRoutes);
-app.put("/api/users/:id", apiRoutes);
-app.delete("/api/users/:id", apiRoutes);
+
+// API ROUTES - NOT USING A ROUTE-INDEX FILE FOR NOW
+app.use("/", require("./CoderBloc/routes/user-routes.js"));
+app.use("/", require("./CoderBloc/routes/cat-routes.js"));
+app.use("/", require("./CoderBloc/routes/thread-routes.js"));
+app.use("/", require("./CoderBloc/routes/post-routes.js"));
 
 // BEGIN listeners/error handlers
 function normalizePort(val) {
@@ -97,7 +103,13 @@ function onError(error) {
 	}
 }
 
-// catch 404 and forward to error handler
+// middleware to catch 404s. can create or template custom 404 page
+// this is different than the 404 handler below
+app.use(function(req, res, then) {
+	res.sendFile(path.join(process.cwd(), "public", "/404.html"));
+});
+
+// catch 404 and throw to error handler with the requested URL
 app.use(function(req, res, next) {
 	var err = new Error('Not Found' + req.originalUrl); // also outputs the req route
 	err.status = 404;

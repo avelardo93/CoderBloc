@@ -1,5 +1,5 @@
-*{box-sizing: border-box; margin: 0; padding: 0}
-body, html{height: 100%;}
+/**{box-sizing: border-box; margin: 0; padding: 0}*/
+/*body, html{height: 100%;}*/
 
 /* stop blue highlighting of elements */
 html {
@@ -11,8 +11,17 @@ button:focus {
 	outline:0;
 }
 
+/*body {*/
+	/*background-image: url("../images/Technique-for-Faster-Web-Development-1.jpg");*/
+/*}*/
+
 body {
-	background-image: url("../images/Technique-for-Faster-Web-Development-1.jpg");
+	background: url("../images/Technique-for-Faster-Web-Development-1.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	overflow-x: hidden;
 }
 
 #roomChoice {
@@ -29,6 +38,10 @@ h2 {
 
 #navBar {
 	background: rgba(32,32,32, 0.7);
+
+}
+
+#navBarBtn {
 }
 
 #helpRoom {
@@ -114,10 +127,32 @@ h2 {
 	text-align: center;
 }
 
+
+
 /* Mariah's styles */
 
+.nav {
+	position: absolute;
+	display: inline-block;
+	top:0;
+	right: 10px;
+}
+
+.navbar {
+	display: inline-block;
+	max-height: 100px;
+
+}
+
 #welcomeMessage {
-	font-size: 24px;
+	display: block;
+	/*font-size: 18px;*/
+	horiz-align: center;
+	/*background-color: blue;*/
+	align-items: center;
+	text-align: center;
+
+	/*margin-top: -25px;*/
 
 }
 

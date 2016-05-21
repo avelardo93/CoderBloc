@@ -40,30 +40,31 @@
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
+
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">CoderBloc</a>
+				<a class="navbar-brand" href="/index">CoderBloc</a>
 			</div>
 
+			<p align="center" class="navbar-text" id="welcomeMessage" ng-cloak>{{userLogInfo}}</p>
+
 			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse navbar-ex1-collapse">
+			<div class="">
 
 				<!-- testing to add user's login info once they've signed in -->
 				<!--<div ng-bind-html="userLogInfo">HIIII</div>-->
-				<div id="welcomeMessage" ng-cloak>
-					{{userLogInfo}}
-				</div>
-
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#" data-toggle="modal" data-target="#loginModal"><span class="badge btnColor">Login</span></a></li>
-					<li><a href="#registerModal" data-toggle="modal" data-target="#regModal"><span class="badge btnColor">Register</span></a></li>
+					<li><a href="#" data-toggle="modal" data-target="#loginModal"><span class="badge btnColor navBarBtn">Login</span></a></li>
+					<li><a href="#registerModal" data-toggle="modal" data-target="#regModal"><span class="badge btnColor navBarBtn">Register</span></a></li>
 				</ul>
+
 			</div><!-- /.navbar-collapse -->
+
 		</nav> <!-- END navbar -->
 
 
@@ -124,10 +125,7 @@
 </div>
 
 
-
 <!-- Mariah : added modal for register and login -->
-
-
 
 
 <!-- Modal for REGISTER -->
@@ -145,15 +143,15 @@
 		<form ng-submit="createUser()">
 		  <div class="form-group">
 		    <label for="regEmail">Email:</label>
-		    <input ng-model="formData.userEmail" type="email" class="form-control" id="regEmail" placeholder="John@AOL.com">
+		    <input ng-keyup="$event.keyCode == 13 && createUser()" ng-model="formData.userEmail" type="email" class="form-control" id="regEmail" placeholder="John@AOL.com" ng-required>
 		  </div>			
 		  <div class="form-group">
 		    <label for="regUserName">User Name:</label>
-		    <input type="text" ng-model="formData.userName" class="form-control" id="regUserName" placeholder="User Name">
+		    <input ng-keyup="$event.keyCode == 13 && createUser()" type="text" ng-model="formData.userName" class="form-control" id="regUserName" placeholder="User Name">
 		  </div>
 		  <div class="form-group">
 		    <label for="regPassword">Password:</label>
-		    <input type="password" ng-model="formData.userPass"  class="form-control" id="regPassword" placeholder="Password">
+		    <input ng-keyup="$event.keyCode == 13 && createUser()" type="password" ng-model="formData.userPass"  class="form-control" id="regPassword" placeholder="Password">
 		  </div>
 			
 		  <!-- <button type="submit" class="btn btn-default" id="register">Register</button> -->
@@ -173,7 +171,7 @@
 </div>
 
 <!-- Modal for login -->
-<div id="loginModal" class="modal fade" role="dialog">
+<div id="loginModal" data-backdrop="false" ng-hide="hideLoginModal" class="modal fade" role="dialog" ng-controller="loginCtrl">
   <div class="modal-dialog">
 
     <!-- Modal content-->
@@ -184,23 +182,24 @@
       </div>
       <div class="modal-body">
 			
-		<form>			
+		<form ng-submit="login()">
 		  <div class="form-group">
 		    <label for="loginUserName">User Name:</label>
-		    <input type="text" class="form-control" id="loginUserName" placeholder="User Name">
+		    <input ng-keyup="$event.keyCode == 13 && login()" type="text" class="form-control" id="loginUserName" placeholder="User Name" ng-model="loginData.userName">
 		  </div>
 		  <div class="form-group">
-		    <label for="exampleInputPassword1">Password:</label>
-		    <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+		    <label for="loginPassword">Password:</label>
+		    <input ng-keyup="$event.keyCode == 13 && login()" type="password" class="form-control" id="loginPassword" placeholder="Password" ng-model="loginData.userPass">
 		  </div>
-			
+			{{loginStatusDiv}}
+			{{loginData}}
 		  <!-- <button type="submit" class="btn btn-default" id="login">Login</button> -->
 		</form>
 
 
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-default" data-dismiss="modal" id="login">Login</button>
+        <button type="submit" class="btn btn-default" data-dismiss="" id="login" ng-click="login()">Login</button>
       </div>
     </div>
 

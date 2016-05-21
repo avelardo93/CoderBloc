@@ -1,5 +1,13 @@
 @import url(//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css);
 
+body {
+    background: url("../images/Technique-for-Faster-Web-Development-1.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .detailBox {
     width:320px;
     border:1px solid #bbb;
@@ -45,17 +53,21 @@
     display:table-cell;
 }
 .commenterImage {
-    width:30px;
+    width:50px;
     margin-right:5px;
     height:100%;
     float:left;
+    background-color: white;
 }
 .commenterImage img {
     width:100%;
-    border-radius:50%;
+    
 }
 .commentText p {
     margin:0;
+    height: 60px;
+    background-color: white;
+
 }
 .sub-text {
     color:#aaa;
@@ -76,5 +88,18 @@ textarea {
     height: 60px;
     margin-bottom: 4px;
 }
+
+#dates{
+    background-color: white;
+}
+
+.commenters{
+    background-color: white;
+    border: 1px solid black;    
+}
+
+
+
+
 
 
