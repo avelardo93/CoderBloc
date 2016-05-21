@@ -68,6 +68,7 @@
     "moment": "^2.13.0",
     "morgan": "^1.7.0",
     "mysql": "^2.10.2",
+    "ng-table": "^0.8.3",
     "ng-table-async": "0.0.9",
     "node-gyp": "^3.3.1",
     "path": "^0.12.7",
