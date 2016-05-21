@@ -42,7 +42,7 @@ server.on('error', onError);
 app.use(logger('dev')); // define logging middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser());
+app.use(cookieParser("secret"));
 app.use('/node_modules', express.static(__dirname + '/node_modules')); // define static route for node modules
 app.use('/CoderBloc/controllers', express.static(__dirname + '/CoderBloc/controllers')); // allows controllers to be used
 app.use(express.static(__dirname + '/public')); // define static route for client side static files

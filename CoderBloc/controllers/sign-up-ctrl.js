@@ -30,7 +30,6 @@ var app = angular.module("CoderBloc", []);
 				// alert("POST WORKING");
 				// $window.location.assign("/index.html"); // redirect to index.html with user landing features
 
-
 			   })
 			   .error(function(data){
 			   	  console.log("Error: "+ data);
@@ -58,22 +57,19 @@ var app = angular.module("CoderBloc", []);
 
 		$scope.login = function(){ // declare an obj to hold the user data from the sign up form
 
-			var logData = { // grab the data from the form and get it ready for DB insertion
+			var logData = {// grab the data from the form and get it ready for DB insertion
 				userName : $scope.loginData.userName,
-				userPass : $scope.loginData.pass
+				userPass : $scope.loginData.userPass
 			};
 
-			console.log(logData); // works
+			// console.log(logData); // works
 
-			$http.get("/api/users/name/"+ $scope.loginData.userName) // makes this data available in the http req
-				.then(function(data){ // after successful post of new user
+			$http.get("/api/users/name/" + $scope.loginData.userName, {params:{userLoginPass: logData.userPass}}) // makes this data available in the http req including the password. how can i mask this?
+				.then(function(data){ // after getting user credentials
 
 					var loginName = $scope.loginData.userName;
 
-					// console.log(dbName);
-					//if there's no data, it means the user name is incorrect, else, logged in
-					//once we get the pw check implemnted
-					if(data.data.data === null){
+					if(data.data.data.userName != loginName){
 
 						$scope.loginStatusDiv = "Sorry, User Not Found";
 
@@ -83,8 +79,9 @@ var app = angular.module("CoderBloc", []);
 
 					}
 
-					else if(loginName === data.data.data.userName){ // IF user credentials are VALID
+					else if (loginName === data.data.data.userName){ // IF user credentials are VALID
 
+						console.log(data);
 						// called with a 3 second timeout below. hides the modal and displays welcome messages.
 						// can add other landing page features here in the future
 						function successLogin() {
