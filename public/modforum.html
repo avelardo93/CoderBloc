@@ -1,0 +1,339 @@
+<!<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Help</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- SEO -->
+	<meta name="keywords"
+	      content="RCB CODING NODE.JS NODE JAVASCRIPT">
+
+	<meta name="description"
+	      content="Social networking app to help bring RCB students together for support, collaboration, socialization, learning
+	               and Rutgers Coding Bootcamp New Jersey Code">
+	<!-- END SEO -->
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/t/bs-3.3.6/jq-2.2.0,dt-1.10.11,af-2.1.1,b-1.1.2/datatables.min.css"/>
+	<link rel="stylesheet" type="text/css" href="../node_modules/ng-table-async/dist/ng-table-async.min.css">
+	<link rel="stylesheet" href="assets/stylesheets/main.css">
+	<link rel="stylesheet" href="assets/stylesheets/forum.css">
+</head>
+
+<style>
+	[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide {
+		display: none !important;
+	}
+</style>
+
+<body ng-app="CoderBloc" ng-controller="signUpCtrl" class=".ng-cloak">
+
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+
+		<a class="navbar-brand" href="#"><img src="coderbloc-03-03.png" alt="logo" id="logo"></a>
+
+	</div>
+
+	<p align="center" class="navbar-text" id="welcomeMessage" ng-cloak>{{userLogInfo}}</p>
+
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="">
+
+		<!-- testing to add user's login info once they've signed in -->
+		<!--<div ng-bind-html="userLogInfo">HIIII</div>-->
+
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="#" data-toggle="modal" data-target="#loginModal"><span class="badge btnColor navBarBtn">Login</span></a></li>
+			<li><a href="#registerModal" data-toggle="modal" data-target="#regModal"><span class="badge btnColor navBarBtn">Register</span></a></li>
+		</ul>
+
+	</div><!-- /.navbar-collapse -->
+
+</nav> <!-- END navbar -->
+
+<!-- Modal for REGISTER -->
+<div id="regModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Please fill out your information below</h4>
+			</div>
+			<div class="modal-body">
+
+				<form ng-submit="createUser()">
+					<div class="form-group">
+						<label for="regEmail">Email:</label>
+						<input ng-keyup="$event.keyCode == 13 && createUser()" ng-model="formData.userEmail" type="email" class="form-control" id="regEmail" placeholder="John@AOL.com" ng-required>
+					</div>
+					<div class="form-group">
+						<label for="regUserName">User Name:</label>
+						<input ng-keyup="$event.keyCode == 13 && createUser()" type="text" ng-model="formData.userName" class="form-control" id="regUserName" placeholder="User Name">
+					</div>
+					<div class="form-group">
+						<label for="regPassword">Password:</label>
+						<input ng-keyup="$event.keyCode == 13 && createUser()" type="password" ng-model="formData.userPass"  class="form-control" id="regPassword" placeholder="Password">
+					</div>
+
+					<!-- <button type="submit" class="btn btn-default" id="register">Register</button> -->
+				</form>
+
+
+			</div>
+			<div>
+				{{formData}}
+			</div>
+			<div class="modal-footer">
+				<button type="submit" ng-click="createUser()" class="btn btn-default" data-dismiss="modal" id="register">Register</button>
+			</div>
+		</div>
+
+	</div><!-- end modal -->
+</div>
+
+<!-- Modal for login -->
+<div id="loginModal" data-backdrop="false" ng-hide="hideLoginModal" class="modal fade" role="dialog" ng-controller="loginCtrl">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Welcome Back</h4>
+			</div>
+			<div class="modal-body">
+
+				<form ng-submit="login()">
+					<div class="form-group">
+						<label for="loginUserName">User Name:</label>
+						<input ng-keyup="$event.keyCode == 13 && login()" type="text" class="form-control" id="loginUserName" placeholder="User Name" ng-model="loginData.userName">
+					</div>
+					<div class="form-group">
+						<label for="loginPassword">Password:</label>
+						<input ng-keyup="$event.keyCode == 13 && login()" type="password" class="form-control" id="loginPassword" placeholder="Password" ng-model="loginData.userPass">
+					</div>
+					{{loginStatusDiv}}
+					{{loginData}}
+					<!-- <button type="submit" class="btn btn-default" id="login">Login</button> -->
+				</form>
+
+
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-default" data-dismiss="" id="login" ng-click="login()">Login</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="container" style="margin-top: 35px" ng-controller="threadCtrl">
+	<div class="page-header page-heading" id="forumHeader">
+		<h1>Git</h1>
+
+		<div class="clearfix"></div>
+		<p class="lead">Discuss any questions regarding git and version control here.</p>
+	</div>
+
+	<!-- COMMENT SECTION -->
+
+
+	<!-- END Comment section -->
+
+	<table class="table forum table-striped">
+		<thead id="tableHead">
+		<tr id="row1">
+			<li>
+				<div class="commenters">
+					<div class="commenterImage">
+						<img src="http://lorempixel.com/50/50/" />
+					</div>
+					<div class="commentText">
+						<p class="">Hello this is a test comment.</p> <div class="date sub-text" id="dates">March 5th, 2014</div>
+
+					</div>
+				</div>
+			</li>
+		</tr>
+		</thead>
+		<tbody>
+		<tr id="row2">
+			<li>
+				<div class="commenters">
+					<div class="commenterImage">
+						<img src="http://lorempixel.com/50/50/" />
+					</div>
+					<div class="commentText">
+						<p class="">Hello this is a test comment.</p> <span class="date sub-text">March 5th, 2014</span>
+					</div>
+				</div>
+			</li>
+		</tr>
+		<tr id="row3">
+			<li>
+				<div class="commenters">
+					<div class="commenterImage">
+						<img src="http://lorempixel.com/50/50" />
+					</div>
+					<div class="commentText">
+						<p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">March 5th, 2014</span>
+					</div>
+				</div>
+			</li>
+		</tr>
+		<tr id="row4">
+			<li>
+				<div class="commenters">
+					<div class="commenterImage">
+						<img src="http://lorempixel.com/50/50" />
+					</div>
+					<div class="commentText">
+						<p class="">Hello this is a test comment.</p> <span class="date sub-text">March 5th, 2014</span>
+					</div>
+				</div>
+			</li>
+		</tr>
+		<tr id="row5">
+			<li>
+				<div class="commenters">
+					<div class="commenterImage">
+						<img src="http://lorempixel.com/50/50" />
+					</div>
+					<div class="commentText">
+						<p class="">Hello this is a test comment.</p> <span class="date sub-text">March 5th, 2014</span>
+					</div>
+				</div>
+			</li>
+		</tr>
+		<tr id="row6">
+			<li>
+				<div class="commenters">
+					<div class="commenterImage">
+						<img src="http://lorempixel.com/50/50" />
+					</div>
+					<div class="commentText">
+						<p class="">Hello this is a test comment.</p> <span class="date sub-text">March 5th, 2014</span>
+					</div>
+				</div>
+			</li>
+		</tr>
+		<tr id="row7">
+			<li>
+				<div class="commenters">
+					<div class="commenterImage">
+						<img src="http://lorempixel.com/50/50" />
+					</div>
+					<div class="commentText">
+						<p class="">Hello this is a test comment.</p> <span class="date sub-text">March 5th, 2014</span>
+					</div>
+				</div>
+			</li>
+		</tr>
+		<tr id="row8">
+			<li>
+				<div class="commenters">
+					<div class="commenterImage">
+						<img src="http://lorempixel.com/50/50" />
+					</div>
+					<div class="commentText">
+						<p class="">Hello this is a test comment.</p> <span class="date sub-text">March 5th, 2014</span>
+					</div>
+				</div>
+			</li>
+		</tr>
+		<tr id="row9">
+			<li>
+				<div class="commenters">
+					<div class="commenterImage">
+						<img src="http://lorempixel.com/50/50" />
+					</div>
+					<div class="commentText">
+						<p class="">Hello this is a test comment.</p> <span class="date sub-text">March 5th, 2014</span>
+					</div>
+				</div>
+			</li>
+		</tr>
+		<tr id="row10">
+			<li>
+				<div class="commenters">
+					<div class="commenterImage">
+						<img src="http://lorempixel.com/50/50" />
+					</div>
+					<div class="commentText">
+						<p class="">Hello this is a test comment.</p> <span class="date sub-text">March 5th, 2014</span>
+					</div>
+				</div>
+			</li>
+		</tr>
+
+		<br>
+		<tr id="commentText">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="input-group">
+						<textarea class="span6" rows="3" placeholder="Comment.." required></textarea>
+                <span class="input-group-btn">
+                  <button class="btn btn-default" id="post" type="button">Post</button>
+                </span>
+					</div><!-- /input-group -->
+				</div><!-- /.col-lg-6 -->
+			</div><!-- /.row -->
+		</tr>
+
+		<br>
+		<nav>
+			<ul class="pagination">
+				<li>
+					<a href="#" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+					</a>
+				</li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li>
+					<a href="#" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		</tbody>
+
+	</table>
+
+</div>
+</div>
+
+
+</div>
+</body>
+
+<!-- BEGIN scripts -->
+<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+<script src="assets/javascript/app.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../node_modules/angular/angular.js"></script>
+<script src="../node_modules/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="assets/javascript/angular-app.js"></script> <!-- Angular Module and Service Initialization -->
+<script src="../CoderBloc/controllers/sign-up-ctrl.js"></script> <!-- Angular Controller for user account creation -->
+<script src="../node_modules/ng-table-async/dist/ng-table-async.min.js"></script>
+<!-- END scripts -->
+
+</html>

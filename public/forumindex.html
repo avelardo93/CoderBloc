@@ -26,7 +26,7 @@
   }
 </style>
 
-<body>
+<body ng-app="CoderBloc" ng-controller="signUpCtrl" class=".ng-cloak">
 
 
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -60,6 +60,84 @@
   </div><!-- /.navbar-collapse -->
 
 </nav> <!-- END navbar -->
+
+<!-- Modal for REGISTER -->
+<div id="regModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Please fill out your information below</h4>
+			</div>
+			<div class="modal-body">
+
+				<form ng-submit="createUser()">
+					<div class="form-group">
+						<label for="regEmail">Email:</label>
+						<input ng-keyup="$event.keyCode == 13 && createUser()" ng-model="formData.userEmail" type="email" class="form-control" id="regEmail" placeholder="John@AOL.com" ng-required>
+					</div>
+					<div class="form-group">
+						<label for="regUserName">User Name:</label>
+						<input ng-keyup="$event.keyCode == 13 && createUser()" type="text" ng-model="formData.userName" class="form-control" id="regUserName" placeholder="User Name">
+					</div>
+					<div class="form-group">
+						<label for="regPassword">Password:</label>
+						<input ng-keyup="$event.keyCode == 13 && createUser()" type="password" ng-model="formData.userPass"  class="form-control" id="regPassword" placeholder="Password">
+					</div>
+
+					<!-- <button type="submit" class="btn btn-default" id="register">Register</button> -->
+				</form>
+
+
+			</div>
+			<div>
+				{{formData}}
+			</div>
+			<div class="modal-footer">
+				<button type="submit" ng-click="createUser()" class="btn btn-default" data-dismiss="modal" id="register">Register</button>
+			</div>
+		</div>
+
+	</div><!-- end modal -->
+</div>
+
+<!-- Modal for login -->
+<div id="loginModal" data-backdrop="false" ng-hide="hideLoginModal" class="modal fade" role="dialog" ng-controller="loginCtrl">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Welcome Back</h4>
+			</div>
+			<div class="modal-body">
+
+				<form ng-submit="login()">
+					<div class="form-group">
+						<label for="loginUserName">User Name:</label>
+						<input ng-keyup="$event.keyCode == 13 && login()" type="text" class="form-control" id="loginUserName" placeholder="User Name" ng-model="loginData.userName">
+					</div>
+					<div class="form-group">
+						<label for="loginPassword">Password:</label>
+						<input ng-keyup="$event.keyCode == 13 && login()" type="password" class="form-control" id="loginPassword" placeholder="Password" ng-model="loginData.userPass">
+					</div>
+					{{loginStatusDiv}}
+					{{loginData}}
+					<!-- <button type="submit" class="btn btn-default" id="login">Login</button> -->
+				</form>
+
+
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-default" data-dismiss="" id="login" ng-click="login()">Login</button>
+			</div>
+		</div>
+
+	</div>
+</div>
 
 
 <div class="container" style="margin-top: 35px">
@@ -107,7 +185,7 @@
       <tr id="careerHelp">
         <td class="text-center"></td>
         <td>
-          <h4><a href="/tool_forum">Career</a><br><small>Career help</small></h4>
+          <h4><a href="/proj_forum">Career</a><br><small>Career help</small></h4>
         </td>
         <td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
         <td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>
@@ -116,7 +194,7 @@
       <tr id="openDiscussion">
         <td class="text-center"></td>
         <td>
-          <h4><a href="/gen_forum">Open Discussion</a><br><small>General Discussions</small></h4>
+          <h4><a href="/tool_forum">Open Discussion</a><br><small>General Discussions</small></h4>
         </td>
         <td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
         <td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>
@@ -125,7 +203,7 @@
       <tr>
         <td class="text-center"></td>
         <td>
-          <h4><a href="/help_forum">Languages</a><br><small>Help on various programming languages</small></h4>
+          <h4><a href="/gen_forum">Languages</a><br><small>Help on various programming languages</small></h4>
         </td>
         <td class="text-center hidden-xs hidden-sm"><a href="#">9 542</a></td>
         <td class="text-center hidden-xs hidden-sm"><a href="#">89 897</a></td>
@@ -134,7 +212,7 @@
       <tr id="gitHelp">
         <td class="text-center"></td>
         <td>
-          <h4><a href="/peer_forum">Git</a><br><small>Git help</small></h4>
+          <h4><a href="/mod_forum">Git</a><br><small>Git help</small></h4>
         </td>
         <td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
         <td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>

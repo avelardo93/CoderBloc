@@ -104,15 +104,51 @@ Users.sync({force:false})
 // seed user. use bulkCreate() for more than one object
 Users.create({
 	userID: 1,
-	userName: "test",
-	userPass: "test",
-	userEmail: "test@gmail.com",
+	userName: "Kev",
+	userPass: "asd",
+	userEmail: "kevo548@gmail.com",
 	userLevel: 1,
-	userRealName: "test",
+	userRealName: "Kevin Haas",
 	userPostCount: 1,
-	userFavLang: "test",
-	userAbout: "blahblah",
-	userIp: 1
-});
+	userFavLang: "node.js",
+	userAbout: "hai",
+	userIp: 1337
+})
+	.then(Users.create( {
+		userID: 2,
+		userName: "Mariah",
+		userPass: "asd",
+		userEmail: "mariah@mariah.com",
+		userLevel: 1,
+		userRealName: "Mariah",
+		userPostCount: 1,
+		userFavLang: "node.js",
+		userAbout: "puppyfarts",
+		userIp: 1337
+	}))
+	.then(Users.create( {
+		userID: 3,
+		userName: "Anthony",
+		userPass: "asd",
+		userEmail: "test@gmail.com",
+		userLevel: 1,
+		userRealName: "Anthony",
+		userPostCount: 1,
+		userFavLang: "node.js",
+		userAbout: "yoo",
+		userIp: 1337
+	}))	.then(Users.create( {
+		userID: 4,
+		userName: "Raghav",
+		userPass: "asd",
+		userEmail: "test@gmail.com",
+		userLevel: 1,
+		userRealName: "Raghav",
+		userPostCount: 1,
+		userFavLang: "node.js",
+		userAbout: "supp",
+		userIp: 1337
+	}));
+
 
 module.exports = Users;
