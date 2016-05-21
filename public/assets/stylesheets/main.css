@@ -98,11 +98,16 @@ h2 {
 
 #forumHeader {
 	background-color: white;
+	padding: 10px;
+	text-align: center;
+
 }
 
 .lead {
 	background-color: white;
+
 }
+
 
 #tableHead {
 	background-color: dimgray;
@@ -181,5 +186,27 @@ h2 {
 
 #roomChoice {
 	text-align: center;
-	
+
+}
+
+.page-heading {
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
+}
+
+.commenterImage {
+	margin-top: 4px;
+	margin-left:4px;
+}
+
+.date {
+	margin-left: 4px;
+}
+
+.pagination {
+	margin-top: 0;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 0;
 }
