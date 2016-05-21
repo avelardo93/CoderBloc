@@ -163,3 +163,11 @@ h2 {
 }
 
 .ng-cloak { display:none; }
+
+#logo {
+	max-width: 150px;
+	display: inline-block;
+	position: fixed;
+	top: 0;
+
+}
