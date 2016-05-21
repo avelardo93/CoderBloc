@@ -145,14 +145,17 @@ h2 {
 }
 
 #welcomeMessage {
-	display: block;
-	/*font-size: 18px;*/
+	display: inline;
+	width:100%;
+	position: fixed;
+	top:0;
+	font-size: 1.5em;
 	horiz-align: center;
 	/*background-color: blue;*/
 	align-items: center;
 	text-align: center;
 
-	/*margin-top: -25px;*/
+
 
 }
 
