@@ -23,17 +23,37 @@ router.get("/profile", function(req, res, then) {
 	res.sendFile(path.join(process.cwd(), "public", "/profile.html")); // profile page available for logged in users, can replace the log in button?
 });                                                                    // IF user IS logged in, display profile button
 
-router.get("/helproom", function(req, res, then) {
-	res.sendFile(path.join(process.cwd(), "public", "/helproom.html")); // message board to get/post help
+router.get("/forum_index", function(req, res, then) {
+	res.sendFile(path.join(process.cwd(), "public", "/forumindex.html")); // message board to get/post help
 });                                                                     // possible working names: helpboard, helpzone
 
-router.get("/projectroom", function(req, res, then) {
-	res.sendFile(path.join(process.cwd(), "public", "/project.html")); // different design than a message board specifically for projects? maybe images/descriptions that link to threads?
+router.get("/help_forum", function(req, res, then) {
+	res.sendFile(path.join(process.cwd(), "public", "/helpforum.html")); // message board to get/post help
+});                                                                     // possible working names: helpboard, helpzone
+
+router.get("/peer_forum", function(req, res, then) {
+	res.sendFile(path.join(process.cwd(), "public", "/peerforum.html")); // message board to get/post help
+});                                                                     // possible working names: helpboard, helpzone
+
+router.get("/proj_forum", function(req, res, then) {
+	res.sendFile(path.join(process.cwd(), "public", "/projforum.html")); // message board to get/post help
+});                                                                     // possible working names: helpboard, helpzone
+
+router.get("/tool_forum", function(req, res, then) {
+	res.sendFile(path.join(process.cwd(), "public", "/toolforum.html")); // message board to get/post help
+});                                                                     // possible working names: helpboard, helpzone
+
+router.get("/gen_forum", function(req, res, then) {
+	res.sendFile(path.join(process.cwd(), "public", "/genforum.html")); // message board to get/post help
+});                                                                     // possible working names: helpboard, helpzone
+
+router.get("/mod_forum", function(req, res, then) {
+	res.sendFile(path.join(process.cwd(), "public", "/modforum.html")); // message board to get/post help
 });
 
-router.get("/panicroom", function(req, res, then) {
-	res.sendFile(path.join(process.cwd(), "public", "/panicroom.html")); // urgent help chat room, slack//freenode integration?
-});                                                                      //
+router.get("/project_board", function(req, res, then) {
+	res.sendFile(path.join(process.cwd(), "public", "/project.html")); // different design than a message board specifically for projects? maybe images/descriptions that link to threads?
+});
 
 router.get("/about", function(req, res, then) {
 	res.sendFile(path.join(process.cwd(), "public", "/about.html"));
