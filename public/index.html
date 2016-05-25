@@ -28,7 +28,7 @@
 	}
 </style>
 
-<body ng-app="CoderBloc" ng-controller="signUpCtrl" class=".ng-cloak">
+<body ng-app="CoderBloc" class=".ng-cloak">
 
 <div class="row">
 	
@@ -128,7 +128,7 @@
 
 
 <!-- Modal for REGISTER -->
-<div id="regModal" class="modal fade" role="dialog">
+<div id="regModal" class="modal fade" role="dialog" ng-controller="signUpCtrl">
   <div class="modal-dialog">
 
     <!-- Modal content-->
@@ -191,8 +191,8 @@
 		  </div>
 		  <!-- <button type="submit" class="btn btn-default" id="login">Login</button> -->
 		</form>
-
 		  {{loginStatusDiv}}
+	      {{loginData}}
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-default" data-dismiss="" id="login" ng-click="login()">Login</button>
@@ -369,6 +369,7 @@
 <script src="../node_modules/angular-route/angular-route.js"></script>
 <script type="text/javascript" src="../CoderBloc/controllers/core.js"></script> <!-- Main Angular App Module -->
 <script type="text/javascript" src="../CoderBloc/controllers/sign-up-ctrl.js"></script> <!-- Angular Controller for user account creation -->
+<script type="text/javascript" src="../CoderBloc/controllers/thread-ctrl.js"></script> <!-- Angular Controller for user account creation -->
 <!-- END scripts -->
 
 </html>

@@ -93,13 +93,14 @@ textarea {
     background-color: white;
 }
 
-.commenters{
+.commenters {
     background-color: white;
-    border: 1px solid black;    
+    border: 1px solid black;
 }
 
-
-
-
-
-
+.forumHeader {
+    margin-top: 70px;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+}
