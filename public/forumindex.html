@@ -16,7 +16,6 @@
 
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/t/bs-3.3.6/jq-2.2.0,dt-1.10.11,af-2.1.1,b-1.1.2/datatables.min.css"/>
 	<link rel="stylesheet" href="./assets/stylesheets/main.css">
 </head>
 
@@ -26,10 +25,10 @@
   }
 </style>
 
-<body>
+<body ng-app="CoderBloc" class=".ng-cloak">
 
 
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="signUpCtrl">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
 
@@ -60,6 +59,85 @@
   </div><!-- /.navbar-collapse -->
 
 </nav> <!-- END navbar -->
+
+<!-- Modal for REGISTER -->
+<div id="regModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Please fill out your information below</h4>
+			</div>
+			<div class="modal-body">
+
+				<form ng-submit="createUser()">
+					<div class="form-group">
+						<label for="regEmail">Email:</label>
+						<input ng-keyup="$event.keyCode == 13 && createUser()" ng-model="formData.userEmail" type="email" class="form-control" id="regEmail" placeholder="John@AOL.com" ng-required>
+					</div>
+					<div class="form-group">
+						<label for="regUserName">User Name:</label>
+						<input ng-keyup="$event.keyCode == 13 && createUser()" type="text" ng-model="formData.userName" class="form-control" id="regUserName" placeholder="User Name">
+					</div>
+					<div class="form-group">
+						<label for="regPassword">Password:</label>
+						<input ng-keyup="$event.keyCode == 13 && createUser()" type="password" ng-model="formData.userPass"  class="form-control" id="regPassword" placeholder="Password">
+					</div>
+
+					<!-- <button type="submit" class="btn btn-default" id="register">Register</button> -->
+				</form>
+
+
+			</div>
+			<div>
+				{{registerStatusDiv}}
+				{{formData}}
+			</div>
+			<div class="modal-footer">
+				<button type="submit" ng-click="createUser()" class="btn btn-default" data-dismiss="modal" id="register">Register</button>
+			</div>
+		</div>
+
+	</div><!-- end modal -->
+</div>
+
+<!-- Modal for login -->
+<div id="loginModal" data-backdrop="false" ng-hide="hideLoginModal" class="modal fade" role="dialog" ng-controller="loginCtrl">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Welcome Back</h4>
+			</div>
+			<div class="modal-body">
+
+				<form ng-submit="login()">
+					<div class="form-group">
+						<label for="loginUserName">User Name:</label>
+						<input ng-keyup="$event.keyCode == 13 && login()" type="text" class="form-control" id="loginUserName" placeholder="User Name" ng-model="loginData.userName">
+					</div>
+					<div class="form-group">
+						<label for="loginPassword">Password:</label>
+						<input ng-keyup="$event.keyCode == 13 && login()" type="password" class="form-control" id="loginPassword" placeholder="Password" ng-model="loginData.userPass">
+					</div>
+					{{loginStatusDiv}}
+					{{loginData}}
+					<!-- <button type="submit" class="btn btn-default" id="login">Login</button> -->
+				</form>
+
+
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-default" data-dismiss="" id="login" ng-click="login()">Login</button>
+			</div>
+		</div>
+
+	</div>
+</div>
 
 
 <div class="container" style="margin-top: 35px">
@@ -107,7 +185,7 @@
       <tr id="careerHelp">
         <td class="text-center"></td>
         <td>
-          <h4><a href="/tool_forum">Career</a><br><small>Career help</small></h4>
+          <h4><a href="/proj_forum">Career</a><br><small>Career help</small></h4>
         </td>
         <td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
         <td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>
@@ -116,7 +194,7 @@
       <tr id="openDiscussion">
         <td class="text-center"></td>
         <td>
-          <h4><a href="/gen_forum">Open Discussion</a><br><small>General Discussions</small></h4>
+          <h4><a href="/tool_forum">Open Discussion</a><br><small>General Discussions</small></h4>
         </td>
         <td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
         <td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>
@@ -125,7 +203,7 @@
       <tr>
         <td class="text-center"></td>
         <td>
-          <h4><a href="/help_forum">Languages</a><br><small>Help on various programming languages</small></h4>
+          <h4><a href="/gen_forum">Languages</a><br><small>Help on various programming languages</small></h4>
         </td>
         <td class="text-center hidden-xs hidden-sm"><a href="#">9 542</a></td>
         <td class="text-center hidden-xs hidden-sm"><a href="#">89 897</a></td>
@@ -134,7 +212,7 @@
       <tr id="gitHelp">
         <td class="text-center"></td>
         <td>
-          <h4><a href="/peer_forum">Git</a><br><small>Git help</small></h4>
+          <h4><a href="/mod_forum">Git</a><br><small>Git help</small></h4>
         </td>
         <td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
         <td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>
@@ -150,12 +228,13 @@
 
 <!-- BEGIN scripts -->
 <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
-<script src="assets/javascript/app.js" type="text/javascript"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../node_modules/angular/angular.js"></script>
 <script src="../node_modules/angular-route/angular-route.js"></script>
 <script type="text/javascript" src="assets/javascript/angular-app.js"></script> <!-- Angular Module and Service Initialization -->
+<script type="text/javascript" src="../CoderBloc/controllers/core.js"></script> <!-- Main Angular App Module -->
 <script type="text/javascript" src="../CoderBloc/controllers/sign-up-ctrl.js"></script> <!-- Angular Controller for user account creation -->
+<script type="text/javascript" src="../CoderBloc/controllers/thread-ctrl.js"></script> <!-- Controller for thread creation and display -->
 <!-- END scripts -->
 
 </html>

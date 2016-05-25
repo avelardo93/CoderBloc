@@ -56,17 +56,32 @@ router.route("/api/users")
 						this.hash = hash;
 		});
 
-		Users.create({
+		Users.findOrCreate({
 
+			where: { // these values exist
+				userEmail: req.body.userEmail,
+				userName : req.body.userName
+			},
+
+			defaults : {
 			userEmail: req.body.userEmail, // takes the values from the angular post requests
 			userName : req.body.userName,
 			userPass : hash,
 			userIp   : req.headers['x-forwarded-for'] || req.connection.remoteAddress // user IP address logged on sign up
 
-		}).then(function() { // what happens after the info is posted
+			}
 
-			console.log("POST WORKS IN API-ROUTES");
-			res.redirect("/test.html");
+		}).then(function(res) { // what happens after the info is posted
+
+			created = res[1]; // boolean of whether it was created or not
+
+			console.log(res);
+
+			if (created) {
+				console.log("working");
+			}
+
+			// console.log("POST WORKS IN API-ROUTES");
 
 		});
 });

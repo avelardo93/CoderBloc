@@ -46,7 +46,7 @@ CodeBloc Deconstructed
       -- assets
       -- stylesheets
       -- javascript
-        - angular-app.js(Angular app)
+        - angular-core.js(Angular app)
     -- node modules
     - package.json
     - server.js(Express Setup)

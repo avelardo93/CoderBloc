@@ -32,9 +32,31 @@ var Threads = db.define("threads", {
 
 Threads.create({
 	threadId: 1,
-	threadName: "help me!",
-	threadCat: "help",
-	threadAuthor: "jimbojones",
-});
+	threadName: "help me!"
+})
+	.then(Threads.create( {
+		threadId: 2,
+		threadName: "how do i javaskirp?"
+	}))
+	.then(Threads.create( {
+		threadId: 3,
+		threadName: "JSON boyyy"
+	}))
+	.then(Threads.create( {
+		threadId: 4,
+		threadName: "what language should i learn?"
+	}))
+	.then(Threads.create( {
+		threadId: 5,
+		threadName: "PANCAKE stack tutorial"
+	}))
+	.then(Threads.create( {
+		threadId: 6,
+		threadName: "WebStorm Pwnsz0rz!!1"
+	}))
+	.then(Threads.create( {
+		threadId: 7,
+		threadName: "what do you guys eat while you code?"
+	}));
 
 module.exports = Threads;
