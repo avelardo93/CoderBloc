@@ -6,9 +6,9 @@
 // !!!!ANGULAR IS CLIENTSIDE AND CONSOLE LOGS TO THE CHROME CONSOLE BY DEFAULT!!!!
 // var moment = require('moment');
 
-var app = angular.module("CoderBloc", ["ngTable"]);
+var user = angular.module("userCtrl", []);
 
-	app.controller("signUpCtrl", ["$scope","$http","$window", function($scope, $http, $window){
+	user.controller("signUpCtrl", ["$scope","$http","$window", function($scope, $http, $window){
 
 		$scope.formData= {};
 
@@ -43,7 +43,7 @@ var app = angular.module("CoderBloc", ["ngTable"]);
 //controller for LOGIN:
 
 
-	app.controller("loginCtrl", ["$rootScope","$scope","$http","$window","$timeout", function($rootScope, $scope, $http, $window, $timeout){
+	user.controller("loginCtrl", ["$rootScope","$scope","$http","$window","$timeout", function($rootScope, $scope, $http, $window, $timeout){
 		//check this out in the modal! Captures the information
 		$scope.loginData= {};
 
@@ -73,9 +73,7 @@ var app = angular.module("CoderBloc", ["ngTable"]);
 
 						$scope.loginStatusDiv = "Sorry, User Not Found";
 
-						console.error(' incorrect username');
-
-						//TODO: create a errormessage on the modal when incorrect name
+						console.error('incorrect username');
 
 					}
 
@@ -106,7 +104,7 @@ var app = angular.module("CoderBloc", ["ngTable"]);
 
 }]); //end app controller
 
-app.controller("helpThreadCtrl", ["$scope","$http","$window","NgTableParams","$filter", function($scope, $http, $window, NgTableParams, $filter){
+user.controller("helpThreadCtrl", ["$scope","$http","$window", function($scope, $http, $window){
 
 	$scope.catName = "Looking For Help";
 
