@@ -28,42 +28,38 @@
 
 <body ng-app="CoderBloc" class=".ng-cloak">
 
-<div class="wrapper">
-	<div class="container">
-		<!-- BEGIN navbar -->
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
 
-				<!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">-->
-				<!--<span class="sr-only">Toggle navigation</span>-->
-				<!--<span class="icon-bar"></span>-->
-				<!--<span class="icon-bar"></span>-->
-				<!--<span class="icon-bar"></span>-->
-				<!--</button>-->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="signUpCtrl">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
 
-				<a class="navbar-brand" href="/"><img src="coderbloc-03-03.png" alt="logo" id="logo"></a>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
 
-			</div>
+    <a class="navbar-brand" href="#"><img src="coderbloc-03-03.png" alt="logo" id="logo"></a>
 
-			<div class="navbar-text" id="welcomeMessage" ng-cloak>{{userLogInfo}}</div>
+  </div>
 
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="">
+  <p align="center" class="navbar-text" id="welcomeMessage" ng-cloak>{{userLogInfo}}</p>
 
-				<!-- testing to add user's login info once they've signed in -->
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="">
 
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#" data-toggle="modal" data-target="#loginModal"><span class="badge btnColor navBarBtn">Login</span></a></li>
-					<li><a href="#registerModal" data-toggle="modal" data-target="#regModal"><span class="badge btnColor navBarBtn">Register</span></a></li>
-				</ul>
+    <!-- testing to add user's login info once they've signed in -->
+    <!--<div ng-bind-html="userLogInfo">HIIII</div>-->
 
-			</div><!-- /.navbar-collapse -->
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#" data-toggle="modal" data-target="#loginModal"><span class="badge btnColor navBarBtn">Login</span></a></li>
+      <li><a href="#registerModal" data-toggle="modal" data-target="#regModal"><span class="badge btnColor navBarBtn">Register</span></a></li>
+    </ul>
 
-		</nav> <!-- END navbar -->
+  </div><!-- /.navbar-collapse -->
 
-	</div> <!-- END initial container -->
-</div> <!-- END initial wrapper -->
+</nav> <!-- END navbar -->
 
 <!-- Modal for REGISTER -->
 <div id="regModal" class="modal fade" role="dialog">
@@ -130,6 +126,7 @@
 						<input ng-keyup="$event.keyCode == 13 && login()" type="password" class="form-control" id="loginPassword" placeholder="Password" ng-model="loginData.userPass">
 					</div>
 					{{loginStatusDiv}}
+					{{loginData}}
 					<!-- <button type="submit" class="btn btn-default" id="login">Login</button> -->
 				</form>
 
@@ -144,15 +141,12 @@
 </div>
 
 
-<div class="container">
-  <div class="page-header page-heading forumHeader">
+<div class="container" style="margin-top: 35px">
+  <div class="page-header page-heading" id="forumHeader">
     <h1>Welcome to the discussion</h1>
     <!--<div class="clearfix"></div>-->
    <p class="lead">Discuss ideas, questions, critiques, and more. Please follow the forum rules and always check FAQ before posting to prevent duplicate posts.</p>
   </div>
-
-
-
 
 
   <table class="table forum table-striped">
@@ -162,47 +156,65 @@
         <th>
           <h3>Topic</h3>
         </th>
-        <th class="cell-stat text-center hidden-xs hidden-sm">Subcategories</th>
-        <th class="cell-stat text-center hidden-xs hidden-sm">Threads</th>
-        <th class="cell-stat-2x hidden-xs hidden-sm">Posts</th>
+        <th class="cell-stat text-center">Threads</th>
+        <th class="cell-stat text-center">Posts</th>
+        <th class="cell-stat-2x">Last Post</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td class="text-center"></td>
         <td>
-          <h4><a href="/help_forum">Help Room</a><br><small>Get help with anything related to coding</small></h4>
+          <h4><a href="/help_forum">Help Room</a><br><small>Help on various programming languages</small></h4>
         </td>
-        <td class="text-center hidden-xs hidden-sm"><a href="#">9 542</a></td>
-        <td class="text-center hidden-xs hidden-sm"><a href="#">89 897</a></td>
-        <td class="hidden-xs hidden-sm">by <a href="#">Mariah</a><br><small><i class="fa fa-clock-o"></i> 2 minutes ago</small></td>
+        <td class="text-center"><a href="#">9 542</a></td>
+        <td class="text-center"><a href="#">89 897</a></td>
+        <td class="">by <a href="#">John Doe</a><br><small><i class="fa fa-clock-o"></i> 3 months ago</small></td>
       </tr>
       <tr id="gitHelp">
         <td class="text-center"></td>
         <td>
-          <h4><a href="/peer_forum">Peer Programmers</a><br><small>Read Lessons, Tutorials, Tips and Tricks Post By Your Fellow Students</small></h4>
+          <h4><a href="/peer_forum">Git</a><br><small>Git help</small></h4>
         </td>
-        <td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
-        <td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>
-        <td class="hidden-xs hidden-sm">by <a href="#">Anthony</a><br><small><i class="fa fa-clock-o"></i> 1 hour ago</small></td>
+        <td class="text-center"><a href="#">6532</a></td>
+        <td class="text-center"><a href="#">152123</a></td>
+        <td class="">by <a href="#">Jane Doe</a><br><small><i class="fa fa-clock-o"></i> 1 years ago</small></td>
       </tr>
       <tr id="careerHelp">
         <td class="text-center"></td>
         <td>
-          <h4><a href="/proj_forum">Project Room</a><br><small>Collaborate and Brainstorm - Threads Posted Here Also Display on the Project Board</small></h4>
+          <h4><a href="/proj_forum">Career</a><br><small>Career help</small></h4>
         </td>
-        <td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
-        <td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>
-        <td class="hidden-xs hidden-sm">by <a href="#">Kevin</a><br><small><i class="fa fa-clock-o"></i> 2 hours ago</small></td>
+        <td class="text-center"><a href="#">6532</a></td>
+        <td class="text-center"><a href="#">152123</a></td>
+        <td class="">by <a href="#">Jane Doe</a><br><small><i class="fa fa-clock-o"></i> 1 years ago</small></td>
       </tr>
       <tr id="openDiscussion">
         <td class="text-center"></td>
         <td>
-          <h4><a href="/tool_forum">Tool room</a><br><small>IDEs, Books, Videos, Outside Tutorials and Much More</small></h4>
+          <h4><a href="/tool_forum">Open Discussion</a><br><small>General Discussions</small></h4>
         </td>
-        <td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
-        <td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>
-        <td class="hidden-xs hidden-sm">by <a href="#">Raghav</a><br><small><i class="fa fa-clock-o"></i> 1 day ago</small></td>
+        <td class="text-center"><a href="#">6532</a></td>
+        <td class="text-center"><a href="#">152123</a></td>
+        <td class="">by <a href="#">Jane Doe</a><br><small><i class="fa fa-clock-o"></i> 1 years ago</small></td>
+      </tr>
+      <tr>
+        <td class="text-center"></td>
+        <td>
+          <h4><a href="/gen_forum">Languages</a><br><small>Help on various programming languages</small></h4>
+        </td>
+        <td class="text-center"><a href="#">9 542</a></td>
+        <td class="text-center"><a href="#">89 897</a></td>
+        <td class="">by <a href="#">John Doe</a><br><small><i class="fa fa-clock-o"></i> 3 months ago</small></td>
+      </tr>
+      <tr id="gitHelp">
+        <td class="text-center"></td>
+        <td>
+          <h4><a href="/mod_forum">Git</a><br><small>Git help</small></h4>
+        </td>
+        <td class="text-center"><a href="#">6532</a></td>
+        <td class="text-center"><a href="#">152123</a></td>
+        <td class="">by <a href="#">Jane Doe</a><br><small><i class="fa fa-clock-o"></i> 1 years ago</small></td>
       </tr>
     </tbody>
   </table>
