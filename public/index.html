@@ -32,49 +32,42 @@
 
 <div class="row">
 
-<div class="wrapper">
-	<div class="container">
+	<div class="wrapper">
+		<div class="container">
 
-		<!-- BEGIN navbar -->
+			<!-- BEGIN navbar -->
 
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">CodeBloc</a>
+				</div>
 
-				<!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">-->
-					<!--<span class="sr-only">Toggle navigation</span>-->
-					<!--<span class="icon-bar"></span>-->
-					<!--<span class="icon-bar"></span>-->
-					<!--<span class="icon-bar"></span>-->
-				<!--</button>-->
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
 
-				<a class="navbar-brand" href="/"><img src="coderbloc-03-03.png" alt="logo" id="logo"></a>
-
-			</div>
-
-			<div class="navbar-text" id="welcomeMessage" ng-cloak>{{userLogInfo}}</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="">
-
-				<!-- testing to add user's login info once they've signed in -->
-
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#" data-toggle="modal" data-target="#loginModal"><span class="badge btnColor navBarBtn">Login</span></a></li>
-					<li><a href="#registerModal" data-toggle="modal" data-target="#regModal"><span class="badge btnColor navBarBtn">Register</span></a></li>
-				</ul>
-
-			</div><!-- /.navbar-collapse -->
-
-		</nav> <!-- END navbar -->
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#" data-toggle="modal" data-target="#loginModal"><span class="badge btnColor">Login</span></a></li>
+						<li><a href="#" data-toggle="modal" data-target="#registerModal"><span class="badge btnColor">Register</span></a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</nav> <!-- END navbar -->
 
 
 
-	</div> <!-- END initial container -->
+		</div> <!-- END initial container -->
 
 
-</div> <!-- END initial wrapper -->
+	</div> <!-- END initial wrapper -->
 </div> <!-- END initial row -->
+
+
 
 <div class="row"> <!-- Beginning second row -->
 	<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -156,6 +149,8 @@
 		  <!-- <button type="submit" class="btn btn-default" id="register">Register</button> -->
 		</form>
 
+	      {{registerStatusDiv}}
+	      {{formData}}
 
       </div>
       <div>

@@ -151,17 +151,14 @@ h2 {
 
 #welcomeMessage {
 	display: inline;
-	width:100%;
+	width: 100%;
 	position: fixed;
-	top:0;
+	top: 0;
 	font-size: 1.5em;
-	horiz-align: center;
+	/*horiz-align: center;*/
 	/*background-color: blue;*/
-	align-items: center;
+	/*align-items: center;*/
 	text-align: center;
-
-
-
 }
 
 .main {
@@ -181,7 +178,6 @@ h2 {
 	display: inline-block;
 	position: fixed;
 	top: 0;
-
 }
 
 #roomChoice {
